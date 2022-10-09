@@ -1,4 +1,4 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Blog.AmitApple</title><link>http://blog.amitapple.com/feed.xml</link><description>Blog.AmitApple</description><item><guid isPermaLink="true">http://blog.amitapple.com/post/2020/05/teams-role-based-messaging/</guid><link>http://blog.amitapple.com/post/2020/05/teams-role-based-messaging/</link><title>Role-Based Messaging in Microsoft Teams</title><description>&lt;h2&gt;What is Microsoft Teams?&lt;/h2&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Blog.AmitApple</title><link>https://blog.amitapple.com/feed.xml</link><description>Blog.AmitApple</description><item><guid isPermaLink="true">https://blog.amitapple.com/post/2020/05/teams-role-based-messaging/</guid><link>https://blog.amitapple.com/post/2020/05/teams-role-based-messaging/</link><title>Role-Based Messaging in Microsoft Teams</title><description>&lt;h2&gt;What is Microsoft Teams?&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href="https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software"&gt;Microsoft Teams&lt;/a&gt; is a collaboration and communication platform for organizations and teams that includes messaging, meetings, calls, file storage, application integrations and more.&lt;/p&gt;
 
@@ -113,7 +113,7 @@ Or as a way to group members of a team, for example add the &lt;strong&gt;Party 
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/managetags.png" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.amitapple.com/images/managetags.png" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
@@ -129,30 +129,30 @@ Or as a way to group members of a team, for example add the &lt;strong&gt;Party 
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/managetags3.png" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.amitapple.com/images/managetags3.png" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;Once you have your tags/roles you can start using them when writing a channel message to send a notification to the right person by mentioning the tag.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/mention1.png" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.amitapple.com/images/mention1.png" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;Or by starting a chat conversation with the person (or people) with that tag.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/chat1.png" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.amitapple.com/images/chat1.png" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;While this post describes how to manage and use tags on desktop/web, you can also do it on the mobile app in a similar way.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/managetagsmobile1.png" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.amitapple.com/images/managetagsmobile1.png" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;You can find more information on using Tags &lt;a href="https://support.office.com/en-us/article/using-tags-in-teams-667bd56f-32b8-4118-9a0b-56807c96d91e"&gt;here&lt;/a&gt; and &lt;a href="https://docs.microsoft.com/en-us/microsoftteams/manage-tags"&gt;here&lt;/a&gt;.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://blog.amitapple.com/post/2015/11/story-new-logging-approach/</guid><link>http://blog.amitapple.com/post/2015/11/story-new-logging-approach/</link><title>New approach to logging - Story</title><description>&lt;p&gt;Writing logs is usually pretty easy in a project, just select/add your favorite logging framework (Trace, NLog, Log4Net, ...), maybe configure it a bit, and start writing logs.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">https://blog.amitapple.com/post/2015/11/story-new-logging-approach/</guid><link>https://blog.amitapple.com/post/2015/11/story-new-logging-approach/</link><title>New approach to logging - Story</title><description>&lt;p&gt;Writing logs is usually pretty easy in a project, just select/add your favorite logging framework (Trace, NLog, Log4Net, ...), maybe configure it a bit, and start writing logs.&lt;/p&gt;
 
 &lt;p&gt;But then comes the time when you actually need to use these logs, maybe to debug an issue, this is when you realize the mess: here is an error log but wait what happened before that, who was the user, what was the action and how long did it take... someone please put me in context!&lt;/p&gt;
 
@@ -416,7 +416,7 @@ public class StoryRuleset : Ruleset&amp;lt;IStory, IStoryHandler&amp;gt;
 To make the second one work you'll need to add a connection string for your azure storage account with the name "StoryTableStorage" (can be in the web/app.config or the azure portal settings if using azure).&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;If you use the azure table storage story handler to persist your stories and also use Azure Web Apps to deploy your web application you can install the &lt;a href="https://www.siteextensions.net/packages/websitelogs/"&gt;Azure Websites Log Browser&lt;/a&gt; (&lt;a href="http://blog.amitapple.com/post/2014/06/azure-website-logging/"&gt;blog post here&lt;/a&gt;) which now supports viewing your stories in a readable way.&lt;/p&gt;
+  &lt;p&gt;If you use the azure table storage story handler to persist your stories and also use Azure Web Apps to deploy your web application you can install the &lt;a href="https://www.siteextensions.net/packages/websitelogs/"&gt;Azure Websites Log Browser&lt;/a&gt; (&lt;a href="https://blog.amitapple.com/post/2014/06/azure-website-logging/"&gt;blog post here&lt;/a&gt;) which now supports viewing your stories in a readable way.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;img src="/images/viewstory.png" alt="Log Browser" /&gt;&lt;/p&gt;
@@ -690,17 +690,17 @@ public class StoryRuleset : Ruleset&amp;lt;IStory, IStoryHandler&amp;gt;
 To make the second one work you'll need to add a connection string for your azure storage account with the name "StoryTableStorage" (can be in the web/app.config or the azure portal settings if using azure).&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;If you use the azure table storage story handler to persist your stories and also use Azure Web Apps to deploy your web application you can install the &lt;a href="https://www.siteextensions.net/packages/websitelogs/"&gt;Azure Websites Log Browser&lt;/a&gt; (&lt;a href="http://blog.amitapple.com/post/2014/06/azure-website-logging/"&gt;blog post here&lt;/a&gt;) which now supports viewing your stories in a readable way.&lt;/p&gt;
+  &lt;p&gt;If you use the azure table storage story handler to persist your stories and also use Azure Web Apps to deploy your web application you can install the &lt;a href="https://www.siteextensions.net/packages/websitelogs/"&gt;Azure Websites Log Browser&lt;/a&gt; (&lt;a href="https://blog.amitapple.com/post/2014/06/azure-website-logging/"&gt;blog post here&lt;/a&gt;) which now supports viewing your stories in a readable way.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/viewstory.png" alt="Log Browser" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.amitapple.com/images/viewstory.png" alt="Log Browser" /&gt;&lt;/p&gt;
 
 &lt;p&gt;You can find the full sample app &lt;a href="https://github.com/amitapl/FooWebApplication"&gt;here on github&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;It also has a &lt;strong&gt;Deploy to Azure&lt;/strong&gt; button if you want to try it out on the cloud and try out the log browser site extension, just make sure to set the azure storage connection string (when asked). To access the log browser, go to: &lt;code&gt;https://{sitename}.scm.azurewebsites.net/websitelogs/&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;You can find more information about the Story framework &lt;a href="https://github.com/narratr/story"&gt;here&lt;/a&gt;.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://blog.amitapple.com/post/2015/06/scheduling-azure-webjobs/</guid><link>http://blog.amitapple.com/post/2015/06/scheduling-azure-webjobs/</link><title>Scheduling Azure WebJobs with cron expressions</title><description>&lt;p&gt;Scheduled WebJobs have existed from the beginning of Azure WebJobs, they are a result of combining 2 different Azure resources: a triggered WebJob containing the script to run and an Azure Scheduler job containing the schedule to use.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">https://blog.amitapple.com/post/2015/06/scheduling-azure-webjobs/</guid><link>https://blog.amitapple.com/post/2015/06/scheduling-azure-webjobs/</link><title>Scheduling Azure WebJobs with cron expressions</title><description>&lt;p&gt;Scheduled WebJobs have existed from the beginning of Azure WebJobs, they are a result of combining 2 different Azure resources: a triggered WebJob containing the script to run and an Azure Scheduler job containing the schedule to use.&lt;/p&gt;
 
 &lt;p&gt;The Azure Scheduler job would point to the triggered WebJob invoke url and would make a request to it on schedule.&lt;/p&gt;
 
@@ -970,13 +970,13 @@ In the solution explorer you'll need to change the properties of that &lt;code&g
 &lt;p&gt;To summarize, we've introduced a new way to schedule WebJobs that is continuous deployment friendly, in some cases it won't be the right one to choose but if the cons doesn't bother you it is a simpler and way for you to schedule triggered WebJobs.&lt;/p&gt;
 
 &lt;p&gt;Please let us know how it works for you in the comments or better yet on &lt;a href="https://github.com/projectkudu/kudu/issues"&gt;kudu project issues&lt;/a&gt;.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://blog.amitapple.com/post/2015/05/azure-web-apps-rename/</guid><link>http://blog.amitapple.com/post/2015/05/azure-web-apps-rename/</link><title>Azure Websites --&gt; Web Apps Rename</title><description>&lt;p&gt;Recently &lt;strong&gt;Azure Websites&lt;/strong&gt; were renamed to &lt;strong&gt;Azure Web Apps&lt;/strong&gt;, I've applied (or at least tried to apply) this rename to my blog posts.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">https://blog.amitapple.com/post/2015/05/azure-web-apps-rename/</guid><link>https://blog.amitapple.com/post/2015/05/azure-web-apps-rename/</link><title>Azure Websites --&gt; Web Apps Rename</title><description>&lt;p&gt;Recently &lt;strong&gt;Azure Websites&lt;/strong&gt; were renamed to &lt;strong&gt;Azure Web Apps&lt;/strong&gt;, I've applied (or at least tried to apply) this rename to my blog posts.&lt;/p&gt;
 
 &lt;p&gt;One more concept that was renamed is &lt;strong&gt;Web Hosting Plan&lt;/strong&gt; (also known as &lt;em&gt;Server Farm&lt;/em&gt;) renamed to &lt;strong&gt;App Service Plan&lt;/strong&gt;.&lt;/p&gt;
 </description><pubDate>Wed, 20 May 2015 00:00:00 Z</pubDate><a10:updated>2015-05-20T00:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;Recently &lt;strong&gt;Azure Websites&lt;/strong&gt; were renamed to &lt;strong&gt;Azure Web Apps&lt;/strong&gt;, I've applied (or at least tried to apply) this rename to my blog posts.&lt;/p&gt;
 
 &lt;p&gt;One more concept that was renamed is &lt;strong&gt;Web Hosting Plan&lt;/strong&gt; (also known as &lt;em&gt;Server Farm&lt;/em&gt;) renamed to &lt;strong&gt;App Service Plan&lt;/strong&gt;.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://blog.amitapple.com/post/2014/11/azure-websites-slots/</guid><link>http://blog.amitapple.com/post/2014/11/azure-websites-slots/</link><title>Azure Web Apps (Websites) Deployment Slots - Explained</title><description>&lt;p&gt;One of the premium features you get when using Azure Web Apps in a standard SKU is the &lt;strong&gt;deployment slots&lt;/strong&gt; feature also known as &lt;strong&gt;staged deployment&lt;/strong&gt; but it is actually more than that.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">https://blog.amitapple.com/post/2014/11/azure-websites-slots/</guid><link>https://blog.amitapple.com/post/2014/11/azure-websites-slots/</link><title>Azure Web Apps (Websites) Deployment Slots - Explained</title><description>&lt;p&gt;One of the premium features you get when using Azure Web Apps in a standard SKU is the &lt;strong&gt;deployment slots&lt;/strong&gt; feature also known as &lt;strong&gt;staged deployment&lt;/strong&gt; but it is actually more than that.&lt;/p&gt;
 
 &lt;p&gt;In this post I will go over the &lt;strong&gt;deployment slots&lt;/strong&gt; concept and what you can do with it.&lt;/p&gt;
 
@@ -1123,7 +1123,7 @@ In the solution explorer you'll need to change the properties of that &lt;code&g
 
 &lt;p&gt;In this post I will go over the &lt;strong&gt;deployment slots&lt;/strong&gt; concept and what you can do with it.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/slots1.png" alt="Deployment slots" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.amitapple.com/images/slots1.png" alt="Deployment slots" /&gt;&lt;/p&gt;
 
 &lt;h2&gt;What are those deployment slots?&lt;/h2&gt;
 
@@ -1133,7 +1133,7 @@ In the solution explorer you'll need to change the properties of that &lt;code&g
 
 &lt;p&gt;If my Azure Web App is called &lt;strong&gt;mysite&lt;/strong&gt; and I create a slot called &lt;strong&gt;staging&lt;/strong&gt; then my slot will be an Azure Web App with the name &lt;strong&gt;mysite(staging)&lt;/strong&gt; and its url will be &lt;strong&gt;http://mysite-staging.azurewebsites.net&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/slots2.png" alt="Add deployment slot" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.amitapple.com/images/slots2.png" alt="Add deployment slot" /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;It's important to emphasize that the slot is in itself a regular Azure Web App, it will have its own app settings, connection string, any other configuration settings and even an scm site (&lt;strong&gt;https://mysite-staging.scm.azurewebsites.net&lt;/strong&gt;).&lt;/p&gt;
@@ -1147,7 +1147,7 @@ In the solution explorer you'll need to change the properties of that &lt;code&g
 
 &lt;p&gt;The first feature of deployment slots is the &lt;strong&gt;Swap Slots&lt;/strong&gt; and it's used for &lt;strong&gt;Staged Deployment&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/slots5.png" alt="Add deployment slot" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.amitapple.com/images/slots5.png" alt="Add deployment slot" /&gt;&lt;/p&gt;
 
 &lt;p&gt;In short, the &lt;strong&gt;Swap&lt;/strong&gt; operation will exchange the website's content between 2 deployment slots.&lt;/p&gt;
 
@@ -1249,7 +1249,7 @@ In the solution explorer you'll need to change the properties of that &lt;code&g
 
 &lt;p&gt;In the portal under your website there is a tile called &lt;strong&gt;Testing in production&lt;/strong&gt;, click on it to get to the "Testing in production" &lt;em&gt;blade&lt;/em&gt; where you can direct traffic coming to your website between all of your &lt;strong&gt;deployment slots&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/slots4.png" alt="Testing in production" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.amitapple.com/images/slots4.png" alt="Testing in production" /&gt;&lt;/p&gt;
 
 &lt;p&gt;One usage scenario for this feature is &lt;a href="http://en.wikipedia.org/wiki/A/B_testing"&gt;A/B testing&lt;/a&gt;.&lt;/p&gt;
 
@@ -1262,7 +1262,7 @@ In the solution explorer you'll need to change the properties of that &lt;code&g
 &lt;h2&gt;Wrap Up&lt;/h2&gt;
 
 &lt;p&gt;I hope that if the &lt;strong&gt;deployment slots&lt;/strong&gt; were just a mysterious link/tile/concept before, you now know how to master them as they can bring lots of value to your production website.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://blog.amitapple.com/post/2014/06/azure-website-logging/</guid><link>http://blog.amitapple.com/post/2014/06/azure-website-logging/</link><title>Azure Web App (Website) Logging - Tips and Tools</title><description>&lt;p&gt;Using Azure Web Apps includes many benefits that come just out of the box, you just need to know that they're there and how to use them properly. Logging is one of those benefits that integrate seamlessly to your Azure Web App.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">https://blog.amitapple.com/post/2014/06/azure-website-logging/</guid><link>https://blog.amitapple.com/post/2014/06/azure-website-logging/</link><title>Azure Web App (Website) Logging - Tips and Tools</title><description>&lt;p&gt;Using Azure Web Apps includes many benefits that come just out of the box, you just need to know that they're there and how to use them properly. Logging is one of those benefits that integrate seamlessly to your Azure Web App.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Reference to the official &lt;a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/"&gt;Azure Web Apps Logging Document&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
@@ -1490,7 +1490,7 @@ In the solution explorer you'll need to change the properties of that &lt;code&g
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/sitediagnostics.png" alt="Setting different logs in the Azure portal" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.amitapple.com/images/sitediagnostics.png" alt="Setting different logs in the Azure portal" /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Setting different logs in the Azure portal&lt;/em&gt;&lt;/p&gt;
 
@@ -1516,7 +1516,7 @@ In the solution explorer you'll need to change the properties of that &lt;code&g
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/applicationdiagnostics.png" alt="Setting application logs in the Azure portal" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.amitapple.com/images/applicationdiagnostics.png" alt="Setting application logs in the Azure portal" /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Setting application logs in the Azure portal&lt;/em&gt;&lt;/p&gt;
 
@@ -1635,25 +1635,25 @@ In the solution explorer you'll need to change the properties of that &lt;code&g
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/logbrowserazureportal.PNG" alt="Install the Log Browser from the new Azure Portal" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.amitapple.com/images/logbrowserazureportal.PNG" alt="Install the Log Browser from the new Azure Portal" /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Install the Log Browser from the new Azure Portal&lt;/em&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/logbrowsermain.PNG" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.amitapple.com/images/logbrowsermain.PNG" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Main page&lt;/em&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/logbrowserviewlog.PNG" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.amitapple.com/images/logbrowserviewlog.PNG" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;View a log file&lt;/em&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/logbrowsertablestorage.PNG" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.amitapple.com/images/logbrowsertablestorage.PNG" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;View log entries from table storage&lt;/em&gt;&lt;/p&gt;
 
@@ -1664,7 +1664,7 @@ In the solution explorer you'll need to change the properties of that &lt;code&g
 &lt;h2&gt;Final Thoughts&lt;/h2&gt;
 
 &lt;p&gt;Azure Web Apps has a very nice and powerful logging experience, together with the &lt;strong&gt;Log Browser&lt;/strong&gt; you get an online dashboard and log viewing experience for free and with minimal effort.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://blog.amitapple.com/post/2014/05/webjobs-graceful-shutdown/</guid><link>http://blog.amitapple.com/post/2014/05/webjobs-graceful-shutdown/</link><title>WebJobs Graceful Shutdown</title><description>&lt;p&gt;&lt;strong&gt;Azure WebJobs&lt;/strong&gt; are doing work and running some process you expect not to be interrupted but as in life not everything is as expected and sometimes there are interruptions which can stop your WebJob abruptly without notice aborting your process and maybe leaving your work in some bad state.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">https://blog.amitapple.com/post/2014/05/webjobs-graceful-shutdown/</guid><link>https://blog.amitapple.com/post/2014/05/webjobs-graceful-shutdown/</link><title>WebJobs Graceful Shutdown</title><description>&lt;p&gt;&lt;strong&gt;Azure WebJobs&lt;/strong&gt; are doing work and running some process you expect not to be interrupted but as in life not everything is as expected and sometimes there are interruptions which can stop your WebJob abruptly without notice aborting your process and maybe leaving your work in some bad state.&lt;/p&gt;
 
 &lt;p&gt;These interruptions could be due to: stopping your site, restarting your site, some configuration change to your site which causes your site to restart, Azure maintenance (version update for example) or even the VM simply crashing for some reason.&lt;/p&gt;
 
@@ -1810,12 +1810,12 @@ In the solution explorer you'll need to change the properties of that &lt;code&g
 &lt;/blockquote&gt;
 
 &lt;p&gt;If you have any questions on this topic feel free to leave comments.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://blog.amitapple.com/post/2014/03/webjobs-notification/</guid><link>http://blog.amitapple.com/post/2014/03/webjobs-notification/</link><title>Getting notified when your Azure triggered WebJobs completes</title><description>&lt;p&gt;&lt;strong&gt;Microsoft Azure WebJobs&lt;/strong&gt; are awesome, and now a little bit more... I'm going to show you how you can setup a notification whenever your triggered (on-demand or scheduled) WebJobs completes.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">https://blog.amitapple.com/post/2014/03/webjobs-notification/</guid><link>https://blog.amitapple.com/post/2014/03/webjobs-notification/</link><title>Getting notified when your Azure triggered WebJobs completes</title><description>&lt;p&gt;&lt;strong&gt;Microsoft Azure WebJobs&lt;/strong&gt; are awesome, and now a little bit more... I'm going to show you how you can setup a notification whenever your triggered (on-demand or scheduled) WebJobs completes.&lt;/p&gt;
 
 &lt;p&gt;The notification part is done by integration between Azure and Zapier which provides many different notification types such as: email, phone call, SMS, Facebook post and more, for this post I'll use a phone call but it is very easy to use any of them.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;NOTE: In a previous &lt;a href="http://blog.amitapple.com/post/56390805814/deployment-email/"&gt;post&lt;/a&gt; I explained about &lt;a href="http://zapier.com"&gt;Zapier&lt;/a&gt; and how you can have a notification when your Azure Web App deployment completes, this is very similar only with a triggered WebJob.&lt;/p&gt;
+  &lt;p&gt;NOTE: In a previous &lt;a href="https://blog.amitapple.com/post/56390805814/deployment-email/"&gt;post&lt;/a&gt; I explained about &lt;a href="http://zapier.com"&gt;Zapier&lt;/a&gt; and how you can have a notification when your Azure Web App deployment completes, this is very similar only with a triggered WebJob.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;strong&gt;Let's do it:&lt;/strong&gt;&lt;/p&gt;
@@ -1874,7 +1874,7 @@ In the solution explorer you'll need to change the properties of that &lt;code&g
 &lt;p&gt;The notification part is done by integration between Azure and Zapier which provides many different notification types such as: email, phone call, SMS, Facebook post and more, for this post I'll use a phone call but it is very easy to use any of them.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;NOTE: In a previous &lt;a href="http://blog.amitapple.com/post/56390805814/deployment-email/"&gt;post&lt;/a&gt; I explained about &lt;a href="http://zapier.com"&gt;Zapier&lt;/a&gt; and how you can have a notification when your Azure Web App deployment completes, this is very similar only with a triggered WebJob.&lt;/p&gt;
+  &lt;p&gt;NOTE: In a previous &lt;a href="https://blog.amitapple.com/post/56390805814/deployment-email/"&gt;post&lt;/a&gt; I explained about &lt;a href="http://zapier.com"&gt;Zapier&lt;/a&gt; and how you can have a notification when your Azure Web App deployment completes, this is very similar only with a triggered WebJob.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;strong&gt;Let's do it:&lt;/strong&gt;&lt;/p&gt;
@@ -1895,7 +1895,7 @@ In the solution explorer you'll need to change the properties of that &lt;code&g
 &lt;li&gt;&lt;p&gt;For the trigger select &lt;strong&gt;New Triggered WebJob Run&lt;/strong&gt;.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;For the action, we'll select &lt;strong&gt;Phone&lt;/strong&gt; and &lt;strong&gt;Call Phone&lt;/strong&gt; for this sample but any can be selected.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/webjobs_phone1.png" alt="" /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src="https://blog.amitapple.com/images/webjobs_phone1.png" alt="" /&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Click Continue&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;We need to connect to our Azure Web Site hosting our triggered WebJob, for this we need one piece of information from the Azure portal.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -1905,22 +1905,22 @@ In the solution explorer you'll need to change the properties of that &lt;code&g
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;If your website has continuous deployment setup --&gt; in the Azure portal go to your website, click on the &lt;strong&gt;CONFIGURE&lt;/strong&gt; tab and under the &lt;strong&gt;git&lt;/strong&gt; section copy the url which is under the &lt;strong&gt;DEPLOYMENT TRIGGER URL&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/2013-09-06-deployment-email.md3.png" alt="" /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src="https://blog.amitapple.com/images/2013-09-06-deployment-email.md3.png" alt="" /&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;If you don't have continuous deployment, you can author this url yourself, it is: &lt;code&gt;https://{userName}:{password}@{siteName}.scm.azurewebsites.net/deploy&lt;/code&gt; where you get the &lt;code&gt;{userName}&lt;/code&gt; and &lt;code&gt;{password}&lt;/code&gt; from your site's publishing profile.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/webjobs_phone3.png" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.amitapple.com/images/webjobs_phone3.png" alt="" /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/webjobs_phone4.png" alt="" /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src="https://blog.amitapple.com/images/webjobs_phone4.png" alt="" /&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Go back to the Zapier site and paste this url to the &lt;strong&gt;Deployment URL&lt;/strong&gt; textbox, enter a name for this website account and click continue.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/webjobs_phone2.png" alt="" /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src="https://blog.amitapple.com/images/webjobs_phone2.png" alt="" /&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Now create your phone account by providing the phone number and verifying it.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;At this point you can filter when you actually want to initiate the action, for example only when the WebJob run fails or only for a specific WebJob (by name), for now we keep this empty as we want to be notified on all WebJobs runs, click continue.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Next you specify the content of the message, it can be static and dynamic using the WebJob run result.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;For example we'll use: &lt;code&gt;Hello the WebJob named {{job_name}} has completed with status {{status}} and took {{duration}}&lt;/code&gt;, on the right you can use the "Insert fields" button to add other interesting dynamic fields.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;You can even choose the voice of the caller (Man/Woman), I'll let you pick this one.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/webjobs_phone5.png" alt="" /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src="https://blog.amitapple.com/images/webjobs_phone5.png" alt="" /&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Continue&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Test this Zap&lt;/strong&gt; lets you test your zap by getting previous WebJob runs and doing the selected action on them, click the button and then you can skip the step or test your Zap.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Name and turn this Zap on&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
@@ -1928,7 +1928,7 @@ In the solution explorer you'll need to change the properties of that &lt;code&g
 &lt;/ul&gt;
 
 &lt;p&gt;Get more help about &lt;a href="https://zapier.com/help/windows-azure-web-sites/"&gt;Windows Azure Web Sites on Zapier&lt;/a&gt;.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://blog.amitapple.com/post/2014/03/access-specific-instance/</guid><link>http://blog.amitapple.com/post/2014/03/access-specific-instance/</link><title>Request for a specific Azure Web App instance</title><description>&lt;p&gt;In Microsoft Azure Web Apps you have the ability to scale your site by adding more instances to it where each instance is running on a different VM.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">https://blog.amitapple.com/post/2014/03/access-specific-instance/</guid><link>https://blog.amitapple.com/post/2014/03/access-specific-instance/</link><title>Request for a specific Azure Web App instance</title><description>&lt;p&gt;In Microsoft Azure Web Apps you have the ability to scale your site by adding more instances to it where each instance is running on a different VM.&lt;/p&gt;
 
 &lt;p&gt;When you have more than one instance a request made to your site can go to any of them using a load-balancer that will decide which instance to route the request to based on how busy each instance is at the time.&lt;/p&gt;
 
@@ -2174,7 +2174,7 @@ data:    6d016e86bc41ff8e2fcf5d66da0116e929b41609a8cace17b40b6c5e4eb15b44
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Hope this helps.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://blog.amitapple.com/post/2014/01/sandra-snow/</guid><link>http://blog.amitapple.com/post/2014/01/sandra-snow/</link><title>Blog.Amit Apple now powered by Sandra.Snow</title><description>&lt;p&gt;I've been wanting to self-host my blog on my own Microsoft Azure Web App for some time now and I've found the perfect solution (for me) to do that in &lt;a href="https://github.com/Sandra/Sandra.Snow"&gt;Sandra.Snow&lt;/a&gt;.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">https://blog.amitapple.com/post/2014/01/sandra-snow/</guid><link>https://blog.amitapple.com/post/2014/01/sandra-snow/</link><title>Blog.Amit Apple now powered by Sandra.Snow</title><description>&lt;p&gt;I've been wanting to self-host my blog on my own Microsoft Azure Web App for some time now and I've found the perfect solution (for me) to do that in &lt;a href="https://github.com/Sandra/Sandra.Snow"&gt;Sandra.Snow&lt;/a&gt;.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Sandra.Snow is a Jekyll inspired static site generation tool that can be run locally, as a CAAS(Compiler as a Service) or setup with Azure to build your site when your repository changes. It is built on top of NancyFX.&lt;/p&gt;

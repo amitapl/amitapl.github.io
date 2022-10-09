@@ -18,7 +18,7 @@
         appInsights.logPageView();
     </script>
 
-    <link rel="canonical" href="http://blog.amitapple.com/" />
+    <link rel="canonical" href="https://blog.amitapple.com/" />
 </head>
 <body>
     <div class="navbar navbar-default navbar-fixed-top">
@@ -29,7 +29,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/"><img class="img img-circle" src="http://www.gravatar.com/avatar/39b6f2748dea9f8eef5323c14e7be79d.jpg?s=80" /></a>
+                <a class="navbar-brand" href="/"><img class="img img-circle" src="https://www.gravatar.com/avatar/39b6f2748dea9f8eef5323c14e7be79d.jpg?s=80" /></a>
             </div>
             <ul class="nav navbar-nav">
                 <li><a style="font-weight: bold" href="/">Blog.Amit Apple</a></li>
@@ -412,7 +412,7 @@ public class StoryRuleset : Ruleset&lt;IStory, IStoryHandler&gt;
 To make the second one work you'll need to add a connection string for your azure storage account with the name "StoryTableStorage" (can be in the web/app.config or the azure portal settings if using azure).</p>
 
 <blockquote>
-  <p>If you use the azure table storage story handler to persist your stories and also use Azure Web Apps to deploy your web application you can install the <a href="https://www.siteextensions.net/packages/websitelogs/">Azure Websites Log Browser</a> (<a href="http://blog.amitapple.com/post/2014/06/azure-website-logging/">blog post here</a>) which now supports viewing your stories in a readable way.</p>
+  <p>If you use the azure table storage story handler to persist your stories and also use Azure Web Apps to deploy your web application you can install the <a href="https://www.siteextensions.net/packages/websitelogs/">Azure Websites Log Browser</a> (<a href="https://blog.amitapple.com/post/2014/06/azure-website-logging/">blog post here</a>) which now supports viewing your stories in a readable way.</p>
 </blockquote>
 
 <p><img src="/images/viewstory.png" alt="Log Browser" /></p>
@@ -450,7 +450,7 @@ To make the second one work you'll need to add a connection string for your azur
 <p>There are many pages that can teach you how to write a cron expression, I will describe the main format used for the scheduled WebJob.</p>
 
 <ul>
-<li>The cron parsing is implemented by <a href="http://www.nuget.org/packages/ncrontab/">NCrontab</a> nuget package.</li>
+<li>The cron parsing is implemented by <a href="https://www.nuget.org/packages/ncrontab/">NCrontab</a> nuget package.</li>
 <li>The cron expression is composed of 6 fields: <code>{second} {minute} {hour} {day} {month} {day of the week}</code>.</li>
 <li>The supported operators are: <code>,</code> <code>-</code> <code>*</code> <code>/</code></li>
 <li>Each field can have a specific value (1), a range (1-10), a set of values (1,2,3), all values (), an interval value (/2 == 0,2,4,6,...) or a mix of these (1,5-10).</li>
