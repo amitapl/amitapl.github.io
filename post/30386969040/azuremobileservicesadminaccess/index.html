@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="last-modified" content="2020-05-28T20:51:05.6982304+00:00" />
+    <meta name="keywords" content="Azure Mobile Services" />
+    <title>Blog.Amit Apple</title>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="/stylesheets/prettify.css">
+    <link href="/stylesheets/styles.css" rel="stylesheet" media="screen">
+
+    <script type="text/javascript">
+        window.appInsights={queue:[],applicationInsightsId:null,accountId:null,appUserId:null,configUrl:null,start:function(n){function u(n){t[n]=function(){var i=arguments;t.queue.push(function(){t[n].apply(t,i)})}}function f(n,t){if(n){var u=r.createElement(i);u.type="text/javascript";u.src=n;u.async=!0;u.onload=t;u.onerror=t;r.getElementsByTagName(i)[0].parentNode.appendChild(u)}else t()}var r=document,t=this,i;t.applicationInsightsId=n;u("logEvent");u("logPageView");i="script";f(t.configUrl,function(){f("//az416426.vo.msecnd.net/scripts/a/ai.0.7.js")});t.start=function(){}}};
+        
+        appInsights.start("21e48bf6-b6c7-4526-99b0-8afef5a10e20");
+        appInsights.logPageView();
+    </script>
+
+    <link rel="canonical" href="http://blog.amitapple.com/post/30386969040/azuremobileservicesadminaccess" />
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img class="img img-circle" src="http://www.gravatar.com/avatar/39b6f2748dea9f8eef5323c14e7be79d.jpg?s=80" /></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a style="font-weight: bold" href="/">Blog.Amit Apple</a></li>
+            </ul>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/category">Categories</a></li>
+                    <li><a href="/archive">Archive</a></li>
+                    <li><a href="/feed.xml">RSS</a></li>
+                </ul>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </div>
+
+    
+
+    <div class="container">
+
+        <div class="row">
+            
+
+<div class="blog-main" id="post">
+    <h1 class="blog-post-title">Azure Mobile Services - Admin Access</h1>
+
+    <div class="blog-post-meta">
+        posted on 28 Aug 2012
+            | <a class="label label-info" href="/category/azure-mobile-services">Azure Mobile Services</a>
+    </div>
+
+    <div class="row">
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style row pull-right" style="margin:10px">
+            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+            <a class="addthis_button_tweet"></a>
+        </div>
+        <script type="text/javascript">var addthis_config = { "data_track_addressbar": true };</script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-537248a1187b7a5c"></script>
+    </div>
+    <div class="blog-post">
+        <!-- AddThis Button END -->
+        
+
+        <p>So you already took the first step and created your own Windows 8 App backend in Azure.</p>
+
+<p>You've added windows live authentication and have your own Users table.</p>
+
+<p>You've even added a couple of server-side scripts, for example to limit a read operation on your table to get only items related to the current authenticated user.</p>
+
+<p>But now you want to have some administration control over your data.</p>
+
+<p>One way to do it is to create an admin Windows 8 app that uses the Azure mobile service sdk which I find currently as the simplest way.</p>
+
+<p>But there is one glitch, since your permissions might be set to User Authenticated (for user related tables) you actually need to login to get that table and even if you do login, your script will only return that user's related rows only.</p>
+
+<h2>The solution:</h2>
+
+<ol>
+<li><p>Use your master key (you can find it under Configure --> Manage Keys) to get administrator privileges, the master key is added as a header to the http request made to your mobile service and allows you to access any of your tables configured with any permission.</p></li>
+<li><p>Add "noScript=true" as a query parameter to the http request made to your mobile service, this (must be accompanied with the master key) will disable the server-side script which allows you to handle raw table data.</p></li>
+</ol>
+
+<p><em>Getting to the Master Key:</em></p>
+
+<p><img src="/images/2012-08-28-azure-mobile-services-admin-access.md1.png" alt="" /></p>
+
+<p>In order to alter the http request as required by the solution we'll use the IServiceFilter interface from the Mobile Services SDK which allows us to hook up to all requests made by the SDK to our mobile service just before they are sent.</p>
+
+<p>Here is the code:</p>
+
+<script src="https://gist.github.com/3446947.js"> </script>
+
+<p>And to link the filter:</p>
+
+<script src="https://gist.github.com/3447179.js"> </script>
+
+<p><strong>A word of caution - do not publish an app with the master key as users of your app may get to it.</strong></p>
+
+    </div>
+
+    <div id="disqus_thread"></div>
+<script>
+    var reset_disqus = function(){
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                //this.page.identifier = '';
+                this.page.url = 'http://blog.amitapple.com/post/30386969040/azuremobileservicesadminaccess';
+                //this.page.title = '';
+            }
+        });
+    };
+
+    var disqus_shortname = 'blogamitapple';
+    var disqus_url = 'http://blog.amitapple.com/post/30386969040/azuremobileservicesadminaccess';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    window.addEventListener('orientationchange', reset_disqus);
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>&copy; 2014 - Powered by <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a>.</p>
+        </footer>
+    </div> <!-- /container -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/prettify.js"></script>
+
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-34307246-1']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+    <script>
+        $('pre').addClass('prettyprint');
+        !function ($) {
+            $(function () {
+                window.prettyPrint && prettyPrint()
+            })
+        }(window.jQuery)
+    </script>
+</body>
+</html>

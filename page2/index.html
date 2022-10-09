@@ -1,0 +1,488 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="last-modified" content="2020-05-28T20:51:05.6982304+00:00" />
+    <meta name="keywords" content="Analytics,Azure Mobile Services,Azure Site Extensions,Azure Web Apps,Azure WebJobs,Azure Websites,Deployment Slots,Logging,Messaging,Microsoft Teams,Sandra.Snow,Tags,Telecommunication,Telemetry,Web Applications,Windows 8" />
+    <title>Blog.Amit Apple</title>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="/stylesheets/prettify.css">
+    <link href="/stylesheets/styles.css" rel="stylesheet" media="screen">
+
+    <script type="text/javascript">
+        window.appInsights={queue:[],applicationInsightsId:null,accountId:null,appUserId:null,configUrl:null,start:function(n){function u(n){t[n]=function(){var i=arguments;t.queue.push(function(){t[n].apply(t,i)})}}function f(n,t){if(n){var u=r.createElement(i);u.type="text/javascript";u.src=n;u.async=!0;u.onload=t;u.onerror=t;r.getElementsByTagName(i)[0].parentNode.appendChild(u)}else t()}var r=document,t=this,i;t.applicationInsightsId=n;u("logEvent");u("logPageView");i="script";f(t.configUrl,function(){f("//az416426.vo.msecnd.net/scripts/a/ai.0.7.js")});t.start=function(){}}};
+        
+        appInsights.start("21e48bf6-b6c7-4526-99b0-8afef5a10e20");
+        appInsights.logPageView();
+    </script>
+
+    <link rel="canonical" href="http://blog.amitapple.com/page2/" />
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img class="img img-circle" src="http://www.gravatar.com/avatar/39b6f2748dea9f8eef5323c14e7be79d.jpg?s=80" /></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a style="font-weight: bold" href="/">Blog.Amit Apple</a></li>
+            </ul>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/category">Categories</a></li>
+                    <li><a href="/archive">Archive</a></li>
+                    <li><a href="/feed.xml">RSS</a></li>
+                </ul>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </div>
+
+    
+    <div class="blog-header">
+        <h1 class="blog-title">Blog.Amit Apple</h1>
+        <p class="lead blog-description">Blog by Amit Apple</p>
+    </div>
+
+
+    <div class="container">
+
+        <div class="row">
+            
+
+
+    <div class="blog-main">
+      <div class="blog-post">
+        <h2 class="blog-post-title"><a href="/post/2015/05/azure-web-apps-rename/">Azure Websites --&gt; Web Apps Rename</a></h2>
+        <p class="blog-post-meta">posted on 20 May 2015</p>
+        
+        <p>Recently <strong>Azure Websites</strong> were renamed to <strong>Azure Web Apps</strong>, I've applied (or at least tried to apply) this rename to my blog posts.</p>
+
+<p>One more concept that was renamed is <strong>Web Hosting Plan</strong> (also known as <em>Server Farm</em>) renamed to <strong>App Service Plan</strong>.</p>
+
+        <p><a class="btn" href="/post/2015/05/azure-web-apps-rename/">Read more...</a></p>
+      </div>
+      <div class="blog-post">
+        <h2 class="blog-post-title"><a href="/post/2014/11/azure-websites-slots/">Azure Web Apps (Websites) Deployment Slots - Explained</a></h2>
+        <p class="blog-post-meta">posted on 17 Nov 2014</p>
+        
+        <p>One of the premium features you get when using Azure Web Apps in a standard SKU is the <strong>deployment slots</strong> feature also known as <strong>staged deployment</strong> but it is actually more than that.</p>
+
+<p>In this post I will go over the <strong>deployment slots</strong> concept and what you can do with it.</p>
+
+<p><img src="/images/slots1.png" alt="Deployment slots" /></p>
+
+<h2>What are those deployment slots?</h2>
+
+<p>From a (standard) website you can create deployment slots which will actually be Azure Web App instances that are tied to that Website.</p>
+
+<p>A deployment slot will carry the name of the Azure Web App + the name of the slot, for example:</p>
+
+<p>If my Azure Web App is called <strong>mysite</strong> and I create a slot called <strong>staging</strong> then my slot will be an Azure Web App with the name <strong>mysite(staging)</strong> and its url will be <strong>http://mysite-staging.azurewebsites.net</strong>.</p>
+
+<p><img src="/images/slots2.png" alt="Add deployment slot" /></p>
+
+<blockquote>
+  <p>It's important to emphasize that the slot is in itself a regular Azure Web App, it will have its own app settings, connection string, any other configuration settings and even an scm site (<strong>https://mysite-staging.scm.azurewebsites.net</strong>).</p>
+  
+  <p>In fact by default each Azure Web App has a single deployment slot called <strong>production</strong> which is the Azure Web App itself.</p>
+</blockquote>
+
+<p>You can add more than one <strong>deployment slot</strong>.</p>
+
+<h2>Why do I need this?</h2>
+
+<p>The first feature of deployment slots is the <strong>Swap Slots</strong> and it's used for <strong>Staged Deployment</strong></p>
+
+<p><img src="/images/slots5.png" alt="Add deployment slot" /></p>
+
+<p>In short, the <strong>Swap</strong> operation will exchange the website's content between 2 deployment slots.</p>
+
+<blockquote>
+  <p>Later I'll explain what is swapped and what is not but note that swap is not about copying the content of the website but more about swapping DNS pointers.</p>
+</blockquote>
+
+<p>So in our scenario we have the <strong>Production</strong> site with <code>index.html</code> that starts with <code>Hello World</code> and our <strong>staging</strong> slot has the same <code>index.html</code> but it starts with <code>Yello World</code>.</p>
+
+<p>Before swap - <strong>http://mysite.azurewebsites.net/index.html</strong> will return <code>Hello World...</code></p>
+
+<p>After swap - <strong>http://mysite.azurewebsites.net/index.html</strong> will return <code>Yello World...</code></p>
+
+<p>Now to get this into a real life scenario.</p>
+
+<h3>Staged Deployment</h3>
+
+<p>Deploying your website in the traditional way, whether deploying via WebDeploy, FTP, git, CI or any other way, has weaknesses that may or may not concern you:</p>
+
+<ul>
+<li>After the deployment completes the website might restart and this results in a cold start for the website, the first request will be slower (can be significant depending on the website).</li>
+<li>Potentially you are deploying a "bad" version of your website and maybe you would want to test it (in production) before releasing it to your customers.</li>
+</ul>
+
+<p>This is where <strong>staged deployment</strong> comes into play. Instead of deploying directly to our production website we create a <strong>deployment slot</strong> used for <strong>staging</strong> and we deploy our new bits there.</p>
+
+<p>Then we "warm" our site (<strong>staging</strong> slot) by making requests to it and we can start testing our new bits verifying everything works as expected. Once we're ready we hit the Azure Portal's <strong>Swap</strong> button (or PowerShell/xplat cli command) and the slots will be swapped.</p>
+
+<p>Our customers will not hit the "cold start" delay and we have more confidence in our new bits.</p>
+
+<h3>Auto-Swap</h3>
+
+<p>Since we want to test our website before going into production we have this manual step where we hit the <strong>Swap</strong> button to swap.</p>
+
+<p>But if we only want to address the "cold start" delay we can configure the <strong>Auto Swap</strong> feature where the website automatically swaps a configured slot (in our case <strong>staging</strong>) with the <strong>Production</strong> slot after the deployment completes.</p>
+
+<blockquote>
+  <p>Currently <strong>auto-swap</strong> only works when deploying using WebDeploy (deploying through VS will usually use WebDeploy) and Continuous Integration (VSO, GitHub, Bitbucket).
+  FTP and <code>git push</code> will not cause an <strong>auto swap</strong>.</p>
+  
+  <p>Auto-swap can take a while to swap (1-2 minutes), until the swap completes any other attempts to deploy the website will fail.</p>
+</blockquote>
+
+<p>To set this up you'll need to use the <a href="http://azure.microsoft.com/en-us/documentation/articles/install-configure-powershell/">Azure PowerShell tool</a> (<a href="http://go.microsoft.com/fwlink/p/?linkid=320376&amp;clcid=0x409">download</a>)</p>
+
+<p>In PowerShell use the following command:</p>
+
+<pre><code>Set-AzureWebsite -Name mysite –Slot staging -AutoSwapSlotName production
+</code></pre>
+
+<p>This command will set Azure Web Apps to auto swap the <strong>staging</strong> slot into <strong>Production</strong> slot whenever <strong>staging</strong> is deployed.</p>
+
+<blockquote>
+  <p>You can use the operation logs in the (current) Azure portal to see the <strong>auto swap</strong> operation status.</p>
+</blockquote>
+
+<h3>Deployment Slot App Settings / Connection String / Configuration</h3>
+
+<p>One important concept to understand about <strong>deployment slots</strong> is how the configuration works.</p>
+
+<p>A deployment slot is a full Azure Web App and as one it has all the same configurations as any Azure Web App. When you swap deployment slots there are some settings you actually need to keep with the slot and not swap them.</p>
+
+<p>A setting that is not swapped is referred to as a setting that is <strong>sticky to the slot</strong>.</p>
+
+<p>Some of the default settings that are <strong>sticky to the slot</strong>:</p>
+
+<ul>
+<li>Most obvious one is the url - <strong>http://mysite-staging.azurewebsites.net/</strong> will always point to the <strong>staging</strong> slot.</li>
+<li><strong>WEBSITE_HOSTNAME</strong> environment variable for the <strong>staging</strong> slot will always be <strong>mysite-staging.azurewebsites.net</strong> and this is something we can use in our website code to find it's currently running in the <strong>Production</strong> slot or <strong>staging</strong> slot.</li>
+<li>Deployment settings - if you have the deployment profile for the <strong>staging</strong> slot, after a swap the profile would still point to the <strong>staging</strong> slot.
+<blockquote>
+  <p>This also includes continuous integration settings - if you hooked your <strong>staging</strong> slot with a GitHub repository after a swap the hook will still exist between GitHub and the <strong>staging</strong> slot.</li>
+  </ul>
+
+<p>App settings and connection strings are <strong>not</strong> sticky to the slot and will remain with the website when swapped but we can configure selected app settings and connection strings to become <strong>sticky to the slot</strong> using a PowerShell command (not yet supported by the Azure portal).</p>
+</blockquote></p>
+
+<p>Use this command in Azure PowerShell to set 2 app settings as <strong>sticky to the slot</strong></p>
+
+<pre><code>Set-AzureWebsite -Name mysite -SlotStickyAppSettingNames @("myslot", "myslot2")
+</code></pre>
+
+<p>And this command to set 2 connection strings as <strong>sticky to the slot</strong></p>
+
+<pre><code>Set-AzureWebsite -Name mysite -SlotStickyConnectionStringNames @("myconn", "myconn2")
+</code></pre>
+
+<blockquote>
+  <p><strong>Sticky to the slot</strong> configuration is website-wide configuration and affects all slots in that website.</p>
+</blockquote>
+
+<h3>Deployment Slots Traffic Routing</h3>
+
+<p>Another great feature for <strong>deployment slots</strong> is the <strong>traffic routing</strong> also known as <strong>testing in production</strong>.</p>
+
+<p>This feature will allow you to route traffic that is coming to your Azure Web App between your <strong>deployment slots</strong> based on percentage of the traffic.</p>
+
+<p>This feature exists only in the new <a href="https://portal.azure.com">Azure preview portal</a>.</p>
+
+<p>In the portal under your website there is a tile called <strong>Testing in production</strong>, click on it to get to the "Testing in production" <em>blade</em> where you can direct traffic coming to your website between all of your <strong>deployment slots</strong>.</p>
+
+<p><img src="/images/slots4.png" alt="Testing in production" /></p>
+
+<p>One usage scenario for this feature is <a href="http://en.wikipedia.org/wiki/A/B_testing">A/B testing</a>.</p>
+
+<p>By default 100% of the traffic will go to the <strong>Production</strong> slot but you can create a new <strong>deployment slot</strong> with a slightly different version of your website (differs by what you want to A/B test) and add it there with a 50% value so 50% of your visitors will actually be served from the new slot.</p>
+
+<p>Another scenario for this feature is having a <strong>dev</strong> slot that is a little less stable which gets 1% of the traffic so you can test feature currently being developed with real traffic.</p>
+
+<p><a href="http://blogs.msdn.com/b/tomholl/archive/2014/11/10/a-b-testing-with-azure-websites.aspx">For more information on this feature</a>.</p>
+
+<h2>Wrap Up</h2>
+
+<p>I hope that if the <strong>deployment slots</strong> were just a mysterious link/tile/concept before, you now know how to master them as they can bring lots of value to your production website.</p>
+
+        <p><a class="btn" href="/post/2014/11/azure-websites-slots/">Read more...</a></p>
+      </div>
+      <div class="blog-post">
+        <h2 class="blog-post-title"><a href="/post/2014/06/azure-website-logging/">Azure Web App (Website) Logging - Tips and Tools</a></h2>
+        <p class="blog-post-meta">posted on 24 Jun 2014</p>
+        
+        <p>Using Azure Web Apps includes many benefits that come just out of the box, you just need to know that they're there and how to use them properly. Logging is one of those benefits that integrate seamlessly to your Azure Web App.</p>
+
+<p><em>Reference to the official <a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/">Azure Web Apps Logging Document</a></em></p>
+
+<p><strong>In this post I'll show ways on maximizing the Azure Web Apps logging experience.</strong></p>
+
+<h2>Log Types</h2>
+
+<p>These are the different log types you can get for your Azure Web App:</p>
+
+<ul>
+<li><p><strong>Web Server Logging</strong> - Also known as http logs or iis logs, this will log all requests to your website in <a href="http://www.microsoft.com/technet/prodtechnol/WindowsServer2003/Library/IIS/676400bc-8969-4aa7-851a-9319490a9bbb.mspx?mfr=true">W3C Extended Log File Format</a>.</p></li>
+<li><p><strong>Detailed Error Messages</strong> - Detailed version of the html files produced when your website responds with an error message. This is good to enable for debugging some error responses in your website. It is stored in the website's file system.</p></li>
+<li><p><strong>Failed Request Tracing</strong> - Also known as FREB, here you can get lots of information from IIS through its different stacks for each failing request. Note that these log files are also stored in the website's file system.</p>
+
+<p>You can get some more information about FREB <a href="http://blogs.iis.net/webtopics/archive/2009/06/12/troubleshooting-a-simple-error-message-using-freb.aspx">here</a>.</p></li>
+<li><p><strong>Eventlog.xml</strong> - You may see this file sometimes under your LogFiles directory of your website (<code>d:\home\LogFiles</code>). This file contains ETW designated events, usually it is generated and populated with errors of some crash that occurred.</p></li>
+<li><p><strong>Kudu Traces</strong> - In your website's file system under <code>d:\home\LogFiles\kudu\trace</code> you can find the traces file for <a href="https://github.com/projectkudu/kudu/wiki">Kudu</a> which drives some of the developer experience features of Azure Web Apps like: git deployment and WebJobs.</p></li>
+<li><p><strong>Application Logs</strong> - See detailed information on application logs in the next section.</p></li>
+</ul>
+
+<blockquote>
+  <p>Log files stored in the website's file system will show up under <code>d:\home\LogFiles</code>.</p>
+</blockquote>
+
+<hr />
+
+<p><img src="/images/sitediagnostics.png" alt="Setting different logs in the Azure portal" /></p>
+
+<p><em>Setting different logs in the Azure portal</em></p>
+
+<hr />
+
+<h2>Application Logs</h2>
+
+<p>These are the logs coming from your Application/Service/Website/WebJob.</p>
+
+<h3>Application Logs for Websites</h3>
+
+<p>If you're using ASP.NET it's simple to write application logs, just use the <code>Trace</code> class, for example:</p>
+
+<pre><code>        Trace.WriteLine("Message"); // Write a verbose message
+        Trace.TraceInformation("Message"); // Write an information message
+        Trace.TraceWarning("Message");
+        Trace.TraceError("Message");
+</code></pre>
+
+<p>In the Azure portal you can direct different verbosity levels to different targets (at the same time). The targets are: file system, Azure table storage and Azure blob storage.</p>
+
+<p><strong>For example</strong> you can have all Information level (and up including Warning and Error) logs go to Azure table storage and all logs (including Verbose and up) go to blob storage.</p>
+
+<hr />
+
+<p><img src="/images/applicationdiagnostics.png" alt="Setting application logs in the Azure portal" /></p>
+
+<p><em>Setting application logs in the Azure portal</em></p>
+
+<hr />
+
+<p><strong>For node.js</strong> websites the way to write application logs is by writing to the console using <code>console.log('message')</code> and <code>console.error('message')</code> which goes to Information/Error level log entries. Currently the only supported target for the log files for node.js is the file system.</p>
+
+<p>Other web site types like php and python are not supported for the application logs feature.</p>
+
+<h3>Application Logs for WebJobs</h3>
+
+<p><strong>Triggered</strong> (Scheduled/On Demand)</p>
+
+<p>Whatever is written to console output and console error <strong>will go to a log file for the specific triggered webjob run</strong>. You can see it on the WebJobs dashboard but the file itself is located under <code>d:\home\data\jobs\triggered\{jobname}\{jobrunid}</code>.</p>
+
+<p><strong>Continuous</strong></p>
+
+<p>Whatever is written to console output and console error <strong>will go to the application logs</strong> as log entries with log level Information/Error. The first 100 log entries when the continuous WebJob starts will also show up in the continuous WebJob log file that is available on the WebJobs dashboard.</p>
+
+<p>The file itself is under  <code>d:\home\data\jobs\continuous\{jobname}</code>.</p>
+
+<p><strong>.NET WebJobs</strong></p>
+
+<p>If you're using .NET console application as your WebJob, you can follow the same guideline as for an ASP.NET website. Once you use the <code>Trace</code> class, your traces are handled as application logs (including triggered WebJobs).</p>
+
+<h3>Application Logs Fields</h3>
+
+<p>Here is the list of fields each application log entry consists of:</p>
+
+<ul>
+<li><strong>Application Name</strong> - The website name.</li>
+<li><strong>Date Time</strong></li>
+<li><strong>Level</strong> - Log level.</li>
+<li><strong>Event Id</strong></li>
+<li><strong>Instance Id</strong> - A unique id for the VM running the website where the log entry came from.</li>
+<li><strong>Process Id</strong></li>
+<li><strong>Thread Id</strong></li>
+<li><strong>Activity Id</strong> - The current (at the time of the log) activity id.</li>
+<li><strong>Message</strong></li>
+</ul>
+
+<blockquote>
+  <p>There are a couple a differences between logs stored in file system, table storage and blob storage:</p>
+  
+  <p><strong>Blob storage</strong> - Stored as a csv file with the following structure:
+  <code>Timestamp(DateTime), Level, ApplicationName, InstanceID, Timestamp(Ticks), EventID, ProcessID, ThreadID, Message, ActivityId</code></p>
+  
+  <p><strong>Table storage</strong> - Each log entry is stored as a table entity, with a <strong>Partition Key</strong> that is the log's date (formatted as "YYYYMMDDHH") and a <strong>Row Key</strong> which is an ordered GUID to help get the logs in the same order as they happened.</p>
+  
+  <p><strong>File system</strong> - Has a subset of the fields mentioned in the following format:
+  <code>{Date}  PID[{Process ID}] {Event Type} {Message}</code></p>
+</blockquote>
+
+<h2>Using the Activity Id</h2>
+
+<p>The activity id field can be very powerful. It can help you correlate all log entries which came from a single request.</p>
+
+<p>The easiest way to use it is to enable <strong>Failed Request Tracing</strong> on the Azure portal. This will have a side-effect of setting an activity id for each request your website receives where the activity id will propagate to all your application logs.</p>
+
+<blockquote>
+  <p>The actual proper way to set the activity id would have been using this code in the <code>global.asax.cs</code> file:</p>
+
+<pre><code>public class MvcApplication : System.Web.HttpApplication
+{
+    protected void Application_BeginRequest()
+    {
+        System.Diagnostics.Trace.CorrelationManager.ActivityId = Guid.NewGuid();
+    }
+}
+</code></pre>
+  
+  <p>But since ASP.NET is doing some funky things, the activity id <strong>may</strong> get lost (become empty) when using async operations.</p>
+</blockquote>
+
+<p><strong>Note</strong> that the same activity id concept would work for .NET WebJobs. For that you should use: <code>System.Diagnostics.Trace.CorrelationManager.ActivityId = Guid.NewGuid();</code> before an operation that requires an activity id.</p>
+
+<h2>Retention Policies</h2>
+
+<p><strong>File system</strong></p>
+
+<p>Log files will have some retention policy for each type:</p>
+
+<ul>
+<li>Web server logs have a maximum size per log file and per sum of all log files (which is configurable in the Azure portal).</li>
+<li>Similar for application logs, each log file can get up to 128 KB and the total size of all log files will go up to 1 MB after that old files are removed.</li>
+<li>Detailed error messages and FREB have a maximum amount of files (each file consists of a single error). </li>
+</ul>
+
+<p><strong>Blob storage</strong></p>
+
+<p>Web server logs and application logs stored in blob storage can be configured with a retention policy for deleting log files older than X days.</p>
+
+<h2>Log Browser Site Extension</h2>
+
+<p>One more cool feature that Azure Web Apps release recently is the <a href="http://azure.microsoft.com/blog/2014/06/20/azure-web-sites-extensions/">Azure Site Extensions</a>.</p>
+
+<p>Azure site extensions is basically a gallery of extensions to your Azure Web App that can originate from Microsoft or from the community. These site extensions can be useful utilities for your website administration.</p>
+
+<p>One of those site extensions is called <strong>Azure Website Log Browser</strong>.</p>
+
+<p>The <strong>Log Browser</strong> makes it super easy for you to access all of your Azure Web App logs described here.</p>
+
+<p><strong>Features</strong></p>
+
+<ul>
+<li>Provides first-class links to the different log directories that you have if you have them.</li>
+<li>Show logs stored in your website's file system.</li>
+<li>Show logs stored in your blob storage (based on the current configuration for http logs or application logs).</li>
+<li>View the log files in the browser (with word highlighting capability) or download them for offline viewing.</li>
+<li>For application logs stored in Azure table storage it has a nice UI for showing those too.</li>
+</ul>
+
+<p>The tool itself should be self-explanatory, just install and start using it.</p>
+
+<p>Here are some screen-shots:</p>
+
+<hr />
+
+<p><img src="/images/logbrowserazureportal.PNG" alt="Install the Log Browser from the new Azure Portal" /></p>
+
+<p><em>Install the Log Browser from the new Azure Portal</em></p>
+
+<hr />
+
+<p><img src="/images/logbrowsermain.PNG" alt="" /></p>
+
+<p><em>Main page</em></p>
+
+<hr />
+
+<p><img src="/images/logbrowserviewlog.PNG" alt="" /></p>
+
+<p><em>View a log file</em></p>
+
+<hr />
+
+<p><img src="/images/logbrowsertablestorage.PNG" alt="" /></p>
+
+<p><em>View log entries from table storage</em></p>
+
+<hr />
+
+<p>The <strong>Log Browser</strong> site extension is open source and is hosted on <a href="https://github.com/amitapl/ThatLogExtension">GitHub</a>. You can use this repository to help you get started on your own site extension idea or to contribute to the <strong>Log Browser</strong> site extension.</p>
+
+<h2>Final Thoughts</h2>
+
+<p>Azure Web Apps has a very nice and powerful logging experience, together with the <strong>Log Browser</strong> you get an online dashboard and log viewing experience for free and with minimal effort.</p>
+
+        <p><a class="btn" href="/post/2014/06/azure-website-logging/">Read more...</a></p>
+      </div>
+    </div>
+
+  <!-- Pagination links -->
+  <div id="post-pagination" class="pagination">
+
+   
+      <p class="previous">
+        <a href="/">Previous Page</a>
+      </p>
+
+
+    <p class="previous">
+      <a href="/page3">Next Page</a>
+    </p>
+
+  </div>
+
+
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>&copy; 2014 - Powered by <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a>.</p>
+        </footer>
+    </div> <!-- /container -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/prettify.js"></script>
+
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-34307246-1']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+    <script>
+        $('pre').addClass('prettyprint');
+        !function ($) {
+            $(function () {
+                window.prettyPrint && prettyPrint()
+            })
+        }(window.jQuery)
+    </script>
+</body>
+</html>

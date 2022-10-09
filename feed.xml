@@ -1,0 +1,2191 @@
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Blog.AmitApple</title><link>http://blog.amitapple.com/feed.xml</link><description>Blog.AmitApple</description><item><guid isPermaLink="true">http://blog.amitapple.com/post/2020/05/teams-role-based-messaging/</guid><link>http://blog.amitapple.com/post/2020/05/teams-role-based-messaging/</link><title>Role-Based Messaging in Microsoft Teams</title><description>&lt;h2&gt;What is Microsoft Teams?&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software"&gt;Microsoft Teams&lt;/a&gt; is a collaboration and communication platform for organizations and teams that includes messaging, meetings, calls, file storage, application integrations and more.&lt;/p&gt;
+
+&lt;h2&gt;What is Role-Based Messaging?&lt;/h2&gt;
+
+&lt;p&gt;Role-based messaging is contacting a person (or a group) based on their role instead of their name.&lt;/p&gt;
+
+&lt;p&gt;Some examples:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You want to send a message to the &lt;strong&gt;Assistant to the Regional Manager&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;You want to recommend a theme to the &lt;strong&gt;Party Planning Committee&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;You want to report a fire hazard to the &lt;strong&gt;Security Supervisor&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://i.makeagif.com/media/4-17-2015/F06bPD.gif" alt="Dwight Schrute Becomes Assistant Regional Manager // The Office US" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2&gt;Role-based messaging in Microsoft Teams&lt;/h2&gt;
+
+&lt;p&gt;The way to achieve role-based messaging in Microsoft Teams is using a feature called &lt;strong&gt;Tags&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Tags in Microsoft Teams let users communicate with a subset of people on a team. Tags can be added to one or multiple team members to easily connect with the right subset of people. Team owners and members (if the feature is enabled for them) can add one or more tags to a person. The tags can then be used in @mentions by anyone on the team in a channel post or to start a conversation with only those people who are assigned that tag.
+  (&lt;a href="https://docs.microsoft.com/en-us/microsoftteams/manage-tags"&gt;source&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;You can think of Tags as a way to add a role to a team member, for example add the &lt;strong&gt;Assistant to the Regional Manager&lt;/strong&gt; tag to Dwight.
+Or as a way to group members of a team, for example add the &lt;strong&gt;Party Planning Committee&lt;/strong&gt; tag to Pam, Phyllis, Angela and Ryan.&lt;/p&gt;
+
+&lt;p&gt;To manage tags in Microsoft Teams you need to click on the &lt;strong&gt;...&lt;/strong&gt; next to the team for which you want to manage tags. There, you should see the "Manage tags" menu item. Then click on the "Create tag" button and add the team members you want to that tag.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/managetags.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Note: You need to either be the team owner to manage tags for the team or the team owner can also configure all members of a team to be allowed to manage tags on the "Manage Team / Settings" screen.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;In the "Manage Tags" menu, you'll be able to see existing tags and edit them by renaming a tag or adding/removing team members from a tag. If you remove all members from a tag, the tag will be removed.&lt;/p&gt;
+
+&lt;p&gt;Another way to create a tag is on the "Manage team" screen where the view is team member centric instead of tag centric. There you can add 1 or more tags on a specific team member and see the different tags each team member has.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/managetags3.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you have your tags/roles you can start using them when writing a channel message to send a notification to the right person by mentioning the tag.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/mention1.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Or by starting a chat conversation with the person (or people) with that tag.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/chat1.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;While this post describes how to manage and use tags on desktop/web, you can also do it on the mobile app in a similar way.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/managetagsmobile1.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;You can find more information on using Tags &lt;a href="https://support.office.com/en-us/article/using-tags-in-teams-667bd56f-32b8-4118-9a0b-56807c96d91e"&gt;here&lt;/a&gt; and &lt;a href="https://docs.microsoft.com/en-us/microsoftteams/manage-tags"&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description><pubDate>Mon, 25 May 2020 00:00:00 Z</pubDate><a10:updated>2020-05-25T00:00:00Z</a10:updated><a10:content type="text">&lt;h2&gt;What is Microsoft Teams?&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software"&gt;Microsoft Teams&lt;/a&gt; is a collaboration and communication platform for organizations and teams that includes messaging, meetings, calls, file storage, application integrations and more.&lt;/p&gt;
+
+&lt;h2&gt;What is Role-Based Messaging?&lt;/h2&gt;
+
+&lt;p&gt;Role-based messaging is contacting a person (or a group) based on their role instead of their name.&lt;/p&gt;
+
+&lt;p&gt;Some examples:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You want to send a message to the &lt;strong&gt;Assistant to the Regional Manager&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;You want to recommend a theme to the &lt;strong&gt;Party Planning Committee&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;You want to report a fire hazard to the &lt;strong&gt;Security Supervisor&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://i.makeagif.com/media/4-17-2015/F06bPD.gif" alt="Dwight Schrute Becomes Assistant Regional Manager // The Office US" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2&gt;Role-based messaging in Microsoft Teams&lt;/h2&gt;
+
+&lt;p&gt;The way to achieve role-based messaging in Microsoft Teams is using a feature called &lt;strong&gt;Tags&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Tags in Microsoft Teams let users communicate with a subset of people on a team. Tags can be added to one or multiple team members to easily connect with the right subset of people. Team owners and members (if the feature is enabled for them) can add one or more tags to a person. The tags can then be used in @mentions by anyone on the team in a channel post or to start a conversation with only those people who are assigned that tag.
+  (&lt;a href="https://docs.microsoft.com/en-us/microsoftteams/manage-tags"&gt;source&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;You can think of Tags as a way to add a role to a team member, for example add the &lt;strong&gt;Assistant to the Regional Manager&lt;/strong&gt; tag to Dwight.
+Or as a way to group members of a team, for example add the &lt;strong&gt;Party Planning Committee&lt;/strong&gt; tag to Pam, Phyllis, Angela and Ryan.&lt;/p&gt;
+
+&lt;p&gt;To manage tags in Microsoft Teams you need to click on the &lt;strong&gt;...&lt;/strong&gt; next to the team for which you want to manage tags. There, you should see the "Manage tags" menu item. Then click on the "Create tag" button and add the team members you want to that tag.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/managetags.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Note: You need to either be the team owner to manage tags for the team or the team owner can also configure all members of a team to be allowed to manage tags on the "Manage Team / Settings" screen.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;In the "Manage Tags" menu, you'll be able to see existing tags and edit them by renaming a tag or adding/removing team members from a tag. If you remove all members from a tag, the tag will be removed.&lt;/p&gt;
+
+&lt;p&gt;Another way to create a tag is on the "Manage team" screen where the view is team member centric instead of tag centric. There you can add 1 or more tags on a specific team member and see the different tags each team member has.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/managetags3.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you have your tags/roles you can start using them when writing a channel message to send a notification to the right person by mentioning the tag.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/mention1.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Or by starting a chat conversation with the person (or people) with that tag.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/chat1.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;While this post describes how to manage and use tags on desktop/web, you can also do it on the mobile app in a similar way.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/managetagsmobile1.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;You can find more information on using Tags &lt;a href="https://support.office.com/en-us/article/using-tags-in-teams-667bd56f-32b8-4118-9a0b-56807c96d91e"&gt;here&lt;/a&gt; and &lt;a href="https://docs.microsoft.com/en-us/microsoftteams/manage-tags"&gt;here&lt;/a&gt;.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://blog.amitapple.com/post/2015/11/story-new-logging-approach/</guid><link>http://blog.amitapple.com/post/2015/11/story-new-logging-approach/</link><title>New approach to logging - Story</title><description>&lt;p&gt;Writing logs is usually pretty easy in a project, just select/add your favorite logging framework (Trace, NLog, Log4Net, ...), maybe configure it a bit, and start writing logs.&lt;/p&gt;
+
+&lt;p&gt;But then comes the time when you actually need to use these logs, maybe to debug an issue, this is when you realize the mess: here is an error log but wait what happened before that, who was the user, what was the action and how long did it take... someone please put me in context!&lt;/p&gt;
+
+&lt;p&gt;Well there are current solutions for that, kinda, you'll need to go back to the code and start adding correlation ids, and use some logging query magic with grouping and filtering on top of what might be a high amount of logs. Not so easy after all, especially after the fact as you have enormous amount of logs and most of them are just noise.&lt;/p&gt;
+
+&lt;p&gt;What you really want to do is remove all the noise, but still have full logs when you need them (error case for example).&lt;/p&gt;
+
+&lt;p&gt;In this blog post I wanted to show a new approach to logging using a new framework called: &lt;a href="https://github.com/narratr/story"&gt;Story&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;What is this story&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;Storytelling.Factory.StartNew("MyAction", () =&amp;gt;
+{
+    this.counter++;
+    Storytelling.Info("added 1 to counter");
+    Storytelling.Data["counter"] = this.counter;
+});
+
+// Output:
+// 11/21/2015 5:01:20 PM
+//   Story MyAction (a66feed7-112a-42fe-9a3f-329939151f23) on rule Trace
+//   counter - 1
+//
+//   +1.9999 ms Info added 1 to counter
+//
+//   - Story "MyAction" took 3 ms
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The story framework (currently only for .NET) is about collecting information (logs and any bits of data) about the currently running code and putting it inside a context and when this context ends using rules figure out what to do with this information collection (story).&lt;/p&gt;
+
+&lt;p&gt;Too abstract, lets use an example:&lt;/p&gt;
+
+&lt;p&gt;We have a web application for posting questions, in this approach every request will run under a new story context. This means that every log produced will be added to that story and every data will be added to it like the current user posting the question, the url of the request, the response and even the query we ran to insert the question to the database.&lt;/p&gt;
+
+&lt;p&gt;Then when the request ends and the story stops, a set of rules will decide what to do with it:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;If there was an error store the story.&lt;/li&gt;
+&lt;li&gt;If the operation ran too long increase a performance counter.&lt;/li&gt;
+&lt;li&gt;If the user is &lt;em&gt;someone you like&lt;/em&gt; alert the team.&lt;/li&gt;
+&lt;li&gt;If a new question was added send an analytics event to &lt;a href="https://keen.io"&gt;keen.io&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;If nothing special happened send to trace (or maybe do nothing with it).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This gives you full control on your logs/telemetry/analytics at coding time, and the story you get, if there was an error for example, will have all the information you need, and more importantly, information (stories) that you don't need (usually most of them) will not distract you.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How cool is that?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Well these rules can also be updated on the fly which opens awesome scenarios, for example - your user has an issue, just add a rule that sends all his stories to a new storage container and observe that container, no need to filter and you see everything that this user do immediately.&lt;/p&gt;
+
+&lt;h2&gt;Using Story&lt;/h2&gt;
+
+&lt;p&gt;To use the Story you need to create/start a new story and run your code within the context of that Story.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Storytelling.Factory.StartNew("MyAction", () =&amp;gt;
+{
+    // ... your code
+    // and adding logs and information to the story
+    Storytelling.Info("added 1 to i");  // log
+    Storytelling.Data["i"] = i;         // data
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The created story is added to the context (CallContext or HttpContext depending on where you run) so anything running within that context can just call &lt;code&gt;Storytelling&lt;/code&gt; and add logs/data to the story.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;We name the story ("MyAction" in this case) to help us later when we run rules on the stories.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;You can also create new stories, which will be added as children to the current story in context (and will become the current story in the context) giving us an execution graph later when we observe the story.&lt;/p&gt;
+
+&lt;p&gt;The second part is setting the rules which tells each story what to do when it ends (and begins), for example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// Create the ruleset
+var ruleset = new Ruleset&amp;lt;IStory, IStoryHandler&amp;gt;();
+
+// Add a new predicate rule, for any story run the console handler which prints the story to the console
+var consoleHandler = new ConsoleHandler("PrintToConsole", StoryFormatters.GetBasicStoryFormatter(LogSeverity.Debug));
+ruleset.Rules.Add(
+    new PredicateRule(
+        story =&amp;gt; true,
+        story =&amp;gt; consoleHandler));
+
+// Set a new basic factory that uses the ruleset as the default story factory
+Storytelling.Factory = new BasicStoryFactory(ruleset);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;You should initialize the factory once at the start of the app.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;Adding Story to Web Application&lt;/h2&gt;
+
+&lt;p&gt;To get a better real sample I'll show how to add stories to an asp.net owin web application.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;You can find the code demonstrated in this blog post in &lt;a href="https://github.com/amitapl/FooWebApplication"&gt;this github repository&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;We'll start with a barebone owin web application and add the &lt;a href="https://nuget.org/packages/Story"&gt;Story nuget package&lt;/a&gt; (&lt;code&gt;nuget install story&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Then add a middleware that puts requests in a Story context.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public class StoryMiddleware : OwinMiddleware
+{
+    public StoryMiddleware(OwinMiddleware next)
+        : base(next)
+    {
+    }
+
+    public override Task Invoke(IOwinContext context)
+    {
+        var request = context.Request;
+        return Storytelling.StartNewAsync("Request", async () =&amp;gt;
+        {
+            try
+            {
+                Storytelling.Data["RequestUrl"] = request.Uri.ToString();
+                Storytelling.Data["RequestMethod"] = request.Method;
+                Storytelling.Data["UserIp"] = request.RemoteIpAddress;
+                Storytelling.Data["UserAgent"] = request.Headers.Get("User-Agent");
+                Storytelling.Data["Referer"] = request.Headers.Get("Referer");
+
+                await Next.Invoke(context);
+
+                Storytelling.Data["Response"] = context.Response.StatusCode;
+            }
+            catch (Exception e)
+            {
+                var m = e.Message;
+                Storytelling.Error(m);
+                throw;
+            }
+        });
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To make sure all exceptions are handled properly (and not get lost in web api), we'll add an exception filter too.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public class ExceptionStoryFilterAttribute : ExceptionFilterAttribute
+{
+    public override void OnException(HttpActionExecutedContext context)
+    {
+        Storytelling.Warn("Internal error - " + context.Exception);
+        var message = context.Exception.Message;
+        var httpStatusCode = HttpStatusCode.InternalServerError;
+
+        Storytelling.Data["responseMessage"] = message;
+
+        var resp = new HttpResponseMessage()
+        {
+            Content = new StringContent(message)
+        };
+
+        resp.StatusCode = httpStatusCode;
+
+        context.Response = resp;
+
+        base.OnException(context);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Add them to owin and web api.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public void Configuration(IAppBuilder appBuilder)
+{
+    // ...
+    appBuilder.Use&amp;lt;StoryMiddleware&amp;gt;();
+    // ...
+    HttpConfiguration config = new HttpConfiguration();
+    config.Filters.Add(new ExceptionStoryFilterAttribute());
+    appBuilder.UseWebApi(config);
+    // ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, we can start using Story to collect information.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public Task&amp;lt;HttpResponseMessage&amp;gt; GetSomething()
+{
+    // We wrap a controller action with a (sub)story
+    return Storytelling.Factory.StartNewAsync("GetUser", async () =&amp;gt;
+    {
+        var name = await fooService.GetRandomName();
+
+        // Log to the story
+        Storytelling.Info("Prepare something object");
+        object something = new
+        {
+            Name = name
+        };
+
+        // Add data to story
+        Storytelling.Data["something"] = something;
+
+        return Request.CreateResponse(something);
+    });
+}
+
+// Output:
+// Selfhost.exe Information: 0 : 11/21/2015 5:42:42 PM
+//    Story Request (774743a8-768e-4820-a76c-09a32fab6794) on rule Trace
+//    RequestUrl - "http://localhost:2222/api/something"
+//    RequestMethod - "GET"
+//    UserIp - "::1"
+//    UserAgent - "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
+//    Referer - "http://localhost:2222/"
+//    Response - 200
+//    something - {"name":"Smelly Zebra"}
+
+//    +497.0671 ms Info Getting random name
+//    +508.0291 ms Info Prepare something object
+
+//    - Story "Request" took 815 ms
+//      - Story "GetSomething" took 44 ms
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We can also collect information in inner methods.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public async Task&amp;lt;string&amp;gt; GetRandomName()
+{
+    Storytelling.Info("Getting random name");
+    await Task.Delay(10);
+    return GetRandomItem(Adjectives) + " " + GetRandomItem(Animals);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finally we need to initialize the story factory, we will use &lt;code&gt;FileBasedStoryFactory&lt;/code&gt; which lets us update the ruleset on the fly. The ruleset itself is a class written in a file, to change it we change the code in that file and copy it over to the server.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The ruleset code file is stored in the project both as a source file (Compile) and as a content file (marked as "Copy Always") so it has the benefit of intellisense and used as an external file to the project.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;// Startup.cs
+public void Configuration(IAppBuilder appBuilder)
+{
+    Storytelling.Factory = new FileBasedStoryFactory(ConfigurationManager.AppSettings["StoryRulesetPath"]);
+    // ...
+}
+
+// StoryRuleset.cs
+public class StoryRuleset : Ruleset&amp;lt;IStory, IStoryHandler&amp;gt;
+{
+    public StoryRuleset()
+    {
+        IStoryHandler storyHandler =
+            StoryHandlers.DefaultTraceHandler.Compose(
+            new AzureTableStorageHandler("AzureTable", azureTableStorageConfiguration));
+
+        Rules.Add(
+            new PredicateRule(
+                story =&amp;gt; story.IsRoot(),
+                story =&amp;gt; storyHandler));
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You'll notice we've added both a story handler that sends stories to the Trace and one that sends stories to the azure table storage.
+To make the second one work you'll need to add a connection string for your azure storage account with the name "StoryTableStorage" (can be in the web/app.config or the azure portal settings if using azure).&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If you use the azure table storage story handler to persist your stories and also use Azure Web Apps to deploy your web application you can install the &lt;a href="https://www.siteextensions.net/packages/websitelogs/"&gt;Azure Websites Log Browser&lt;/a&gt; (&lt;a href="http://blog.amitapple.com/post/2014/06/azure-website-logging/"&gt;blog post here&lt;/a&gt;) which now supports viewing your stories in a readable way.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src="/images/viewstory.png" alt="Log Browser" /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can find the full sample app &lt;a href="https://github.com/amitapl/FooWebApplication"&gt;here on github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It also has a &lt;strong&gt;Deploy to Azure&lt;/strong&gt; button if you want to try it out on the cloud and try out the log browser site extension, just make sure to set the azure storage connection string (when asked). To access the log browser, go to: &lt;code&gt;https://{sitename}.scm.azurewebsites.net/websitelogs/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can find more information about the Story framework &lt;a href="https://github.com/narratr/story"&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description><pubDate>Sat, 21 Nov 2015 00:00:00 Z</pubDate><a10:updated>2015-11-21T00:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;Writing logs is usually pretty easy in a project, just select/add your favorite logging framework (Trace, NLog, Log4Net, ...), maybe configure it a bit, and start writing logs.&lt;/p&gt;
+
+&lt;p&gt;But then comes the time when you actually need to use these logs, maybe to debug an issue, this is when you realize the mess: here is an error log but wait what happened before that, who was the user, what was the action and how long did it take... someone please put me in context!&lt;/p&gt;
+
+&lt;p&gt;Well there are current solutions for that, kinda, you'll need to go back to the code and start adding correlation ids, and use some logging query magic with grouping and filtering on top of what might be a high amount of logs. Not so easy after all, especially after the fact as you have enormous amount of logs and most of them are just noise.&lt;/p&gt;
+
+&lt;p&gt;What you really want to do is remove all the noise, but still have full logs when you need them (error case for example).&lt;/p&gt;
+
+&lt;p&gt;In this blog post I wanted to show a new approach to logging using a new framework called: &lt;a href="https://github.com/narratr/story"&gt;Story&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;What is this story&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;Storytelling.Factory.StartNew("MyAction", () =&amp;gt;
+{
+    this.counter++;
+    Storytelling.Info("added 1 to counter");
+    Storytelling.Data["counter"] = this.counter;
+});
+
+// Output:
+// 11/21/2015 5:01:20 PM
+//   Story MyAction (a66feed7-112a-42fe-9a3f-329939151f23) on rule Trace
+//   counter - 1
+//
+//   +1.9999 ms Info added 1 to counter
+//
+//   - Story "MyAction" took 3 ms
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The story framework (currently only for .NET) is about collecting information (logs and any bits of data) about the currently running code and putting it inside a context and when this context ends using rules figure out what to do with this information collection (story).&lt;/p&gt;
+
+&lt;p&gt;Too abstract, lets use an example:&lt;/p&gt;
+
+&lt;p&gt;We have a web application for posting questions, in this approach every request will run under a new story context. This means that every log produced will be added to that story and every data will be added to it like the current user posting the question, the url of the request, the response and even the query we ran to insert the question to the database.&lt;/p&gt;
+
+&lt;p&gt;Then when the request ends and the story stops, a set of rules will decide what to do with it:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;If there was an error store the story.&lt;/li&gt;
+&lt;li&gt;If the operation ran too long increase a performance counter.&lt;/li&gt;
+&lt;li&gt;If the user is &lt;em&gt;someone you like&lt;/em&gt; alert the team.&lt;/li&gt;
+&lt;li&gt;If a new question was added send an analytics event to &lt;a href="https://keen.io"&gt;keen.io&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;If nothing special happened send to trace (or maybe do nothing with it).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This gives you full control on your logs/telemetry/analytics at coding time, and the story you get, if there was an error for example, will have all the information you need, and more importantly, information (stories) that you don't need (usually most of them) will not distract you.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How cool is that?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Well these rules can also be updated on the fly which opens awesome scenarios, for example - your user has an issue, just add a rule that sends all his stories to a new storage container and observe that container, no need to filter and you see everything that this user do immediately.&lt;/p&gt;
+
+&lt;h2&gt;Using Story&lt;/h2&gt;
+
+&lt;p&gt;To use the Story you need to create/start a new story and run your code within the context of that Story.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Storytelling.Factory.StartNew("MyAction", () =&amp;gt;
+{
+    // ... your code
+    // and adding logs and information to the story
+    Storytelling.Info("added 1 to i");  // log
+    Storytelling.Data["i"] = i;         // data
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The created story is added to the context (CallContext or HttpContext depending on where you run) so anything running within that context can just call &lt;code&gt;Storytelling&lt;/code&gt; and add logs/data to the story.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;We name the story ("MyAction" in this case) to help us later when we run rules on the stories.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;You can also create new stories, which will be added as children to the current story in context (and will become the current story in the context) giving us an execution graph later when we observe the story.&lt;/p&gt;
+
+&lt;p&gt;The second part is setting the rules which tells each story what to do when it ends (and begins), for example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// Create the ruleset
+var ruleset = new Ruleset&amp;lt;IStory, IStoryHandler&amp;gt;();
+
+// Add a new predicate rule, for any story run the console handler which prints the story to the console
+var consoleHandler = new ConsoleHandler("PrintToConsole", StoryFormatters.GetBasicStoryFormatter(LogSeverity.Debug));
+ruleset.Rules.Add(
+    new PredicateRule(
+        story =&amp;gt; true,
+        story =&amp;gt; consoleHandler));
+
+// Set a new basic factory that uses the ruleset as the default story factory
+Storytelling.Factory = new BasicStoryFactory(ruleset);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;You should initialize the factory once at the start of the app.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;Adding Story to Web Application&lt;/h2&gt;
+
+&lt;p&gt;To get a better real sample I'll show how to add stories to an asp.net owin web application.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;You can find the code demonstrated in this blog post in &lt;a href="https://github.com/amitapl/FooWebApplication"&gt;this github repository&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;We'll start with a barebone owin web application and add the &lt;a href="https://nuget.org/packages/Story"&gt;Story nuget package&lt;/a&gt; (&lt;code&gt;nuget install story&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Then add a middleware that puts requests in a Story context.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public class StoryMiddleware : OwinMiddleware
+{
+    public StoryMiddleware(OwinMiddleware next)
+        : base(next)
+    {
+    }
+
+    public override Task Invoke(IOwinContext context)
+    {
+        var request = context.Request;
+        return Storytelling.StartNewAsync("Request", async () =&amp;gt;
+        {
+            try
+            {
+                Storytelling.Data["RequestUrl"] = request.Uri.ToString();
+                Storytelling.Data["RequestMethod"] = request.Method;
+                Storytelling.Data["UserIp"] = request.RemoteIpAddress;
+                Storytelling.Data["UserAgent"] = request.Headers.Get("User-Agent");
+                Storytelling.Data["Referer"] = request.Headers.Get("Referer");
+
+                await Next.Invoke(context);
+
+                Storytelling.Data["Response"] = context.Response.StatusCode;
+            }
+            catch (Exception e)
+            {
+                var m = e.Message;
+                Storytelling.Error(m);
+                throw;
+            }
+        });
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To make sure all exceptions are handled properly (and not get lost in web api), we'll add an exception filter too.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public class ExceptionStoryFilterAttribute : ExceptionFilterAttribute
+{
+    public override void OnException(HttpActionExecutedContext context)
+    {
+        Storytelling.Warn("Internal error - " + context.Exception);
+        var message = context.Exception.Message;
+        var httpStatusCode = HttpStatusCode.InternalServerError;
+
+        Storytelling.Data["responseMessage"] = message;
+
+        var resp = new HttpResponseMessage()
+        {
+            Content = new StringContent(message)
+        };
+
+        resp.StatusCode = httpStatusCode;
+
+        context.Response = resp;
+
+        base.OnException(context);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Add them to owin and web api.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public void Configuration(IAppBuilder appBuilder)
+{
+    // ...
+    appBuilder.Use&amp;lt;StoryMiddleware&amp;gt;();
+    // ...
+    HttpConfiguration config = new HttpConfiguration();
+    config.Filters.Add(new ExceptionStoryFilterAttribute());
+    appBuilder.UseWebApi(config);
+    // ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, we can start using Story to collect information.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public Task&amp;lt;HttpResponseMessage&amp;gt; GetSomething()
+{
+    // We wrap a controller action with a (sub)story
+    return Storytelling.Factory.StartNewAsync("GetUser", async () =&amp;gt;
+    {
+        var name = await fooService.GetRandomName();
+
+        // Log to the story
+        Storytelling.Info("Prepare something object");
+        object something = new
+        {
+            Name = name
+        };
+
+        // Add data to story
+        Storytelling.Data["something"] = something;
+
+        return Request.CreateResponse(something);
+    });
+}
+
+// Output:
+// Selfhost.exe Information: 0 : 11/21/2015 5:42:42 PM
+//    Story Request (774743a8-768e-4820-a76c-09a32fab6794) on rule Trace
+//    RequestUrl - "http://localhost:2222/api/something"
+//    RequestMethod - "GET"
+//    UserIp - "::1"
+//    UserAgent - "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
+//    Referer - "http://localhost:2222/"
+//    Response - 200
+//    something - {"name":"Smelly Zebra"}
+
+//    +497.0671 ms Info Getting random name
+//    +508.0291 ms Info Prepare something object
+
+//    - Story "Request" took 815 ms
+//      - Story "GetSomething" took 44 ms
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We can also collect information in inner methods.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public async Task&amp;lt;string&amp;gt; GetRandomName()
+{
+    Storytelling.Info("Getting random name");
+    await Task.Delay(10);
+    return GetRandomItem(Adjectives) + " " + GetRandomItem(Animals);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finally we need to initialize the story factory, we will use &lt;code&gt;FileBasedStoryFactory&lt;/code&gt; which lets us update the ruleset on the fly. The ruleset itself is a class written in a file, to change it we change the code in that file and copy it over to the server.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The ruleset code file is stored in the project both as a source file (Compile) and as a content file (marked as "Copy Always") so it has the benefit of intellisense and used as an external file to the project.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;// Startup.cs
+public void Configuration(IAppBuilder appBuilder)
+{
+    Storytelling.Factory = new FileBasedStoryFactory(ConfigurationManager.AppSettings["StoryRulesetPath"]);
+    // ...
+}
+
+// StoryRuleset.cs
+public class StoryRuleset : Ruleset&amp;lt;IStory, IStoryHandler&amp;gt;
+{
+    public StoryRuleset()
+    {
+        IStoryHandler storyHandler =
+            StoryHandlers.DefaultTraceHandler.Compose(
+            new AzureTableStorageHandler("AzureTable", azureTableStorageConfiguration));
+
+        Rules.Add(
+            new PredicateRule(
+                story =&amp;gt; story.IsRoot(),
+                story =&amp;gt; storyHandler));
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You'll notice we've added both a story handler that sends stories to the Trace and one that sends stories to the azure table storage.
+To make the second one work you'll need to add a connection string for your azure storage account with the name "StoryTableStorage" (can be in the web/app.config or the azure portal settings if using azure).&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If you use the azure table storage story handler to persist your stories and also use Azure Web Apps to deploy your web application you can install the &lt;a href="https://www.siteextensions.net/packages/websitelogs/"&gt;Azure Websites Log Browser&lt;/a&gt; (&lt;a href="http://blog.amitapple.com/post/2014/06/azure-website-logging/"&gt;blog post here&lt;/a&gt;) which now supports viewing your stories in a readable way.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/viewstory.png" alt="Log Browser" /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can find the full sample app &lt;a href="https://github.com/amitapl/FooWebApplication"&gt;here on github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It also has a &lt;strong&gt;Deploy to Azure&lt;/strong&gt; button if you want to try it out on the cloud and try out the log browser site extension, just make sure to set the azure storage connection string (when asked). To access the log browser, go to: &lt;code&gt;https://{sitename}.scm.azurewebsites.net/websitelogs/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can find more information about the Story framework &lt;a href="https://github.com/narratr/story"&gt;here&lt;/a&gt;.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://blog.amitapple.com/post/2015/06/scheduling-azure-webjobs/</guid><link>http://blog.amitapple.com/post/2015/06/scheduling-azure-webjobs/</link><title>Scheduling Azure WebJobs with cron expressions</title><description>&lt;p&gt;Scheduled WebJobs have existed from the beginning of Azure WebJobs, they are a result of combining 2 different Azure resources: a triggered WebJob containing the script to run and an Azure Scheduler job containing the schedule to use.&lt;/p&gt;
+
+&lt;p&gt;The Azure Scheduler job would point to the triggered WebJob invoke url and would make a request to it on schedule.&lt;/p&gt;
+
+&lt;p&gt;There have been some difficulties with this approach mainly around the deployment part of the schedule which convinced us to build another scheduler implementation that is built into &lt;a href="https://github.com/projectkudu/kudu"&gt;kudu&lt;/a&gt; (the WebJobs host) which enables a scheduled WebJob to be deployed by simply adding a file with the WebJob binaries.&lt;/p&gt;
+
+&lt;h2&gt;How to add a schedule to a triggered WebJob&lt;/h2&gt;
+
+&lt;p&gt;The way to add a schedule to a triggered WebJob is by adding a file called &lt;code&gt;settings.job&lt;/code&gt; with the following json content: &lt;code&gt;{"schedule": "the schedule as a cron expression"}&lt;/code&gt;, this file should be at the root of the WebJob directory (next to the WebJob executable).&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If you already have this file with other settings simply add the &lt;code&gt;schedule&lt;/code&gt; property.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The schedule is configured using a &lt;a href="https://code.google.com/p/ncrontab/wiki/CrontabExpression"&gt;cron expression&lt;/a&gt; which is a common way to write schedules.&lt;/p&gt;
+
+&lt;h3&gt;CRON Expressions&lt;/h3&gt;
+
+&lt;p&gt;There are many pages that can teach you how to write a cron expression, I will describe the main format used for the scheduled WebJob.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The cron parsing is implemented by &lt;a href="http://www.nuget.org/packages/ncrontab/"&gt;NCrontab&lt;/a&gt; nuget package.&lt;/li&gt;
+&lt;li&gt;The cron expression is composed of 6 fields: &lt;code&gt;{second} {minute} {hour} {day} {month} {day of the week}&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The supported operators are: &lt;code&gt;,&lt;/code&gt; &lt;code&gt;-&lt;/code&gt; &lt;code&gt;*&lt;/code&gt; &lt;code&gt;/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Each field can have a specific value (1), a range (1-10), a set of values (1,2,3), all values (), an interval value (/2 == 0,2,4,6,...) or a mix of these (1,5-10).&lt;/li&gt;
+&lt;li&gt;Each value represents a point in time, for example: "5 * * * * *" - means on the 5th second of every minutes --&gt; 00:00:05, 00:01:05, 00:02:05, ... (and not every 5 seconds).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Samples&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;0 0 13 * * *&lt;/code&gt; - 1pm every day.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 15 9 * * *&lt;/code&gt; - 9:15am every day.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 0/5 16 * * *&lt;/code&gt; - Every 5 minutes starting at 4pm and ending at 4:55pm, every day.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 11 11 11 11 *&lt;/code&gt; - Every November 11th at 11:11am.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can find some more cron expression samples &lt;a href="https://code.google.com/p/ncrontab/wiki/CrontabExamples"&gt;here&lt;/a&gt; but note that they have 5 fields, to use them you should add a &lt;code&gt;0&lt;/code&gt; as the first field (for the seconds).&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Important&lt;/strong&gt; - To use this way of scheduling WebJobs you'll have to configure the website as &lt;strong&gt;Always On&lt;/strong&gt; (just as you would with continuous WebJobs) otherwise the &lt;strong&gt;scm&lt;/strong&gt; website will go down and the scheduling will stop until it is brought up again.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Debugging a schedule&lt;/h3&gt;
+
+&lt;p&gt;To see the scheduler logs for a scheduled WebJob you need to use the get triggered WebJob api, go to the url: https://{sitename}.scm.azurewebsites.net/api/triggeredwebjobs/{jobname} (remove the job name to see all triggered WebJobs).&lt;/p&gt;
+
+&lt;p&gt;You will receive the following json result:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+    name: "jobName",
+    runCommand: "...\run.cmd",
+    type: "triggered",
+    url: "http://.../triggeredwebjobs/jobName",
+    history_url: "http://.../triggeredwebjobs/jobName/history",
+    extra_info_url: "http://.../",
+    scheduler_logs_url: "https://.../vfs/data/jobs/triggered/jobName/job_scheduler.log",
+    settings: { },
+    using_sdk: false,
+    latest_run:
+      {
+        id: "20131103120400",
+        status: "Success",
+        start_time: "2013-11-08T02:56:00.000000Z",
+        end_time: "2013-11-08T02:57:00.000000Z",
+        duration: "00:01:00",
+        output_url: "http://.../vfs/data/jobs/triggered/jobName/20131103120400/output_20131103120400.log",
+        error_url: "http://.../vfs/data/jobs/triggered/jobName/20131103120400/error_20131103120400.log",
+        url: "http://.../triggeredwebjobs/jobName/history/20131103120400",
+        trigger: "Schedule - 0 0 0 * * *"
+      }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;scheduler_logs_url&lt;/code&gt; property has a url that will get you the scheduler log, that log will tell you some verbose information on the scheduling and invocation of the triggered WebJob.&lt;/p&gt;
+
+&lt;p&gt;There is also a &lt;code&gt;trigger&lt;/code&gt; property for a triggered WebJob run that tells you which schedule (or external user agent) invoked the specific run.&lt;/p&gt;
+
+&lt;p&gt;More information about &lt;a href="https://github.com/projectkudu/kudu/wiki/WebJobs-API"&gt;WebJobs API&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Adding a schedule for an on demand WebJob in Visual Studio&lt;/h3&gt;
+
+&lt;p&gt;If you have a Visual Studio Azure WebJob project, the way to add a schedule is by authoring the &lt;code&gt;settings.job&lt;/code&gt; file described above and adding it to the project.
+In the solution explorer you'll need to change the properties of that &lt;code&gt;settings.job&lt;/code&gt; file and set the &lt;strong&gt;Copy to output directory&lt;/strong&gt; to &lt;strong&gt;Copy always&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;This will make sure the file is in the root directory of the WebJob.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Changing (or setting/removing) a schedule of a triggered WebJob is all about updating the &lt;code&gt;schedule&lt;/code&gt; property of the &lt;code&gt;settings.job&lt;/code&gt; file in the WebJob's directory (&lt;code&gt;d:\home\site\wwwroot\App_Data\jobs\triggered\{jobname}&lt;/code&gt;), whenever the file is updated the change is picked up and the schedule will change according.&lt;/p&gt;
+  
+  &lt;p&gt;This means you can deploy the schedule in any way you wish including by updating the file on your git repository.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;Differences between the two scheduled WebJobs&lt;/h2&gt;
+
+&lt;p&gt;There are pros and cons to each way of scheduling a WebJob, review them and choose which way to go.&lt;/p&gt;
+
+&lt;h3&gt;Azure Scheduler&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Pros&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Doesn't require the website to be configured as &lt;strong&gt;Always On&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Supported by Visual Studio tooling and the current Azure portal.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Cons&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Doesn't support continuous integration - to schedule a job or reschedule a job you'll need access to your Azure account.&lt;/li&gt;
+&lt;li&gt;Loosely tied to the triggered WebJob, you cannot always tell that a WebJob has an Azure Scheduler job behind it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Internal WebJob Scheduler&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Pros&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Supports continuous integration and any deployment mechanism available for Azure Web Apps as it is file based.&lt;/li&gt;
+&lt;li&gt;Supports the common cron expressions.&lt;/li&gt;
+&lt;li&gt;Can tell a WebJob is scheduled with a simple api call.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Cons&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Requires &lt;strong&gt;Always On&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Not yet supported by tooling and portal (hopefully that will change).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;To summarize, we've introduced a new way to schedule WebJobs that is continuous deployment friendly, in some cases it won't be the right one to choose but if the cons doesn't bother you it is a simpler and way for you to schedule triggered WebJobs.&lt;/p&gt;
+
+&lt;p&gt;Please let us know how it works for you in the comments or better yet on &lt;a href="https://github.com/projectkudu/kudu/issues"&gt;kudu project issues&lt;/a&gt;.&lt;/p&gt;
+</description><pubDate>Wed, 17 Jun 2015 00:00:00 Z</pubDate><a10:updated>2015-06-17T00:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;Scheduled WebJobs have existed from the beginning of Azure WebJobs, they are a result of combining 2 different Azure resources: a triggered WebJob containing the script to run and an Azure Scheduler job containing the schedule to use.&lt;/p&gt;
+
+&lt;p&gt;The Azure Scheduler job would point to the triggered WebJob invoke url and would make a request to it on schedule.&lt;/p&gt;
+
+&lt;p&gt;There have been some difficulties with this approach mainly around the deployment part of the schedule which convinced us to build another scheduler implementation that is built into &lt;a href="https://github.com/projectkudu/kudu"&gt;kudu&lt;/a&gt; (the WebJobs host) which enables a scheduled WebJob to be deployed by simply adding a file with the WebJob binaries.&lt;/p&gt;
+
+&lt;h2&gt;How to add a schedule to a triggered WebJob&lt;/h2&gt;
+
+&lt;p&gt;The way to add a schedule to a triggered WebJob is by adding a file called &lt;code&gt;settings.job&lt;/code&gt; with the following json content: &lt;code&gt;{"schedule": "the schedule as a cron expression"}&lt;/code&gt;, this file should be at the root of the WebJob directory (next to the WebJob executable).&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If you already have this file with other settings simply add the &lt;code&gt;schedule&lt;/code&gt; property.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The schedule is configured using a &lt;a href="https://code.google.com/p/ncrontab/wiki/CrontabExpression"&gt;cron expression&lt;/a&gt; which is a common way to write schedules.&lt;/p&gt;
+
+&lt;h3&gt;CRON Expressions&lt;/h3&gt;
+
+&lt;p&gt;There are many pages that can teach you how to write a cron expression, I will describe the main format used for the scheduled WebJob.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The cron parsing is implemented by &lt;a href="http://www.nuget.org/packages/ncrontab/"&gt;NCrontab&lt;/a&gt; nuget package.&lt;/li&gt;
+&lt;li&gt;The cron expression is composed of 6 fields: &lt;code&gt;{second} {minute} {hour} {day} {month} {day of the week}&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The supported operators are: &lt;code&gt;,&lt;/code&gt; &lt;code&gt;-&lt;/code&gt; &lt;code&gt;*&lt;/code&gt; &lt;code&gt;/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Each field can have a specific value (1), a range (1-10), a set of values (1,2,3), all values (), an interval value (/2 == 0,2,4,6,...) or a mix of these (1,5-10).&lt;/li&gt;
+&lt;li&gt;Each value represents a point in time, for example: "5 * * * * *" - means on the 5th second of every minutes --&gt; 00:00:05, 00:01:05, 00:02:05, ... (and not every 5 seconds).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Samples&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;0 0 13 * * *&lt;/code&gt; - 1pm every day.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 15 9 * * *&lt;/code&gt; - 9:15am every day.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 0/5 16 * * *&lt;/code&gt; - Every 5 minutes starting at 4pm and ending at 4:55pm, every day.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0 11 11 11 11 *&lt;/code&gt; - Every November 11th at 11:11am.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can find some more cron expression samples &lt;a href="https://code.google.com/p/ncrontab/wiki/CrontabExamples"&gt;here&lt;/a&gt; but note that they have 5 fields, to use them you should add a &lt;code&gt;0&lt;/code&gt; as the first field (for the seconds).&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Important&lt;/strong&gt; - To use this way of scheduling WebJobs you'll have to configure the website as &lt;strong&gt;Always On&lt;/strong&gt; (just as you would with continuous WebJobs) otherwise the &lt;strong&gt;scm&lt;/strong&gt; website will go down and the scheduling will stop until it is brought up again.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Debugging a schedule&lt;/h3&gt;
+
+&lt;p&gt;To see the scheduler logs for a scheduled WebJob you need to use the get triggered WebJob api, go to the url: https://{sitename}.scm.azurewebsites.net/api/triggeredwebjobs/{jobname} (remove the job name to see all triggered WebJobs).&lt;/p&gt;
+
+&lt;p&gt;You will receive the following json result:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+    name: "jobName",
+    runCommand: "...\run.cmd",
+    type: "triggered",
+    url: "http://.../triggeredwebjobs/jobName",
+    history_url: "http://.../triggeredwebjobs/jobName/history",
+    extra_info_url: "http://.../",
+    scheduler_logs_url: "https://.../vfs/data/jobs/triggered/jobName/job_scheduler.log",
+    settings: { },
+    using_sdk: false,
+    latest_run:
+      {
+        id: "20131103120400",
+        status: "Success",
+        start_time: "2013-11-08T02:56:00.000000Z",
+        end_time: "2013-11-08T02:57:00.000000Z",
+        duration: "00:01:00",
+        output_url: "http://.../vfs/data/jobs/triggered/jobName/20131103120400/output_20131103120400.log",
+        error_url: "http://.../vfs/data/jobs/triggered/jobName/20131103120400/error_20131103120400.log",
+        url: "http://.../triggeredwebjobs/jobName/history/20131103120400",
+        trigger: "Schedule - 0 0 0 * * *"
+      }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;scheduler_logs_url&lt;/code&gt; property has a url that will get you the scheduler log, that log will tell you some verbose information on the scheduling and invocation of the triggered WebJob.&lt;/p&gt;
+
+&lt;p&gt;There is also a &lt;code&gt;trigger&lt;/code&gt; property for a triggered WebJob run that tells you which schedule (or external user agent) invoked the specific run.&lt;/p&gt;
+
+&lt;p&gt;More information about &lt;a href="https://github.com/projectkudu/kudu/wiki/WebJobs-API"&gt;WebJobs API&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Adding a schedule for an on demand WebJob in Visual Studio&lt;/h3&gt;
+
+&lt;p&gt;If you have a Visual Studio Azure WebJob project, the way to add a schedule is by authoring the &lt;code&gt;settings.job&lt;/code&gt; file described above and adding it to the project.
+In the solution explorer you'll need to change the properties of that &lt;code&gt;settings.job&lt;/code&gt; file and set the &lt;strong&gt;Copy to output directory&lt;/strong&gt; to &lt;strong&gt;Copy always&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;This will make sure the file is in the root directory of the WebJob.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Changing (or setting/removing) a schedule of a triggered WebJob is all about updating the &lt;code&gt;schedule&lt;/code&gt; property of the &lt;code&gt;settings.job&lt;/code&gt; file in the WebJob's directory (&lt;code&gt;d:\home\site\wwwroot\App_Data\jobs\triggered\{jobname}&lt;/code&gt;), whenever the file is updated the change is picked up and the schedule will change according.&lt;/p&gt;
+  
+  &lt;p&gt;This means you can deploy the schedule in any way you wish including by updating the file on your git repository.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;Differences between the two scheduled WebJobs&lt;/h2&gt;
+
+&lt;p&gt;There are pros and cons to each way of scheduling a WebJob, review them and choose which way to go.&lt;/p&gt;
+
+&lt;h3&gt;Azure Scheduler&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Pros&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Doesn't require the website to be configured as &lt;strong&gt;Always On&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Supported by Visual Studio tooling and the current Azure portal.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Cons&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Doesn't support continuous integration - to schedule a job or reschedule a job you'll need access to your Azure account.&lt;/li&gt;
+&lt;li&gt;Loosely tied to the triggered WebJob, you cannot always tell that a WebJob has an Azure Scheduler job behind it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Internal WebJob Scheduler&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Pros&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Supports continuous integration and any deployment mechanism available for Azure Web Apps as it is file based.&lt;/li&gt;
+&lt;li&gt;Supports the common cron expressions.&lt;/li&gt;
+&lt;li&gt;Can tell a WebJob is scheduled with a simple api call.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Cons&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Requires &lt;strong&gt;Always On&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Not yet supported by tooling and portal (hopefully that will change).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;To summarize, we've introduced a new way to schedule WebJobs that is continuous deployment friendly, in some cases it won't be the right one to choose but if the cons doesn't bother you it is a simpler and way for you to schedule triggered WebJobs.&lt;/p&gt;
+
+&lt;p&gt;Please let us know how it works for you in the comments or better yet on &lt;a href="https://github.com/projectkudu/kudu/issues"&gt;kudu project issues&lt;/a&gt;.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://blog.amitapple.com/post/2015/05/azure-web-apps-rename/</guid><link>http://blog.amitapple.com/post/2015/05/azure-web-apps-rename/</link><title>Azure Websites --&gt; Web Apps Rename</title><description>&lt;p&gt;Recently &lt;strong&gt;Azure Websites&lt;/strong&gt; were renamed to &lt;strong&gt;Azure Web Apps&lt;/strong&gt;, I've applied (or at least tried to apply) this rename to my blog posts.&lt;/p&gt;
+
+&lt;p&gt;One more concept that was renamed is &lt;strong&gt;Web Hosting Plan&lt;/strong&gt; (also known as &lt;em&gt;Server Farm&lt;/em&gt;) renamed to &lt;strong&gt;App Service Plan&lt;/strong&gt;.&lt;/p&gt;
+</description><pubDate>Wed, 20 May 2015 00:00:00 Z</pubDate><a10:updated>2015-05-20T00:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;Recently &lt;strong&gt;Azure Websites&lt;/strong&gt; were renamed to &lt;strong&gt;Azure Web Apps&lt;/strong&gt;, I've applied (or at least tried to apply) this rename to my blog posts.&lt;/p&gt;
+
+&lt;p&gt;One more concept that was renamed is &lt;strong&gt;Web Hosting Plan&lt;/strong&gt; (also known as &lt;em&gt;Server Farm&lt;/em&gt;) renamed to &lt;strong&gt;App Service Plan&lt;/strong&gt;.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://blog.amitapple.com/post/2014/11/azure-websites-slots/</guid><link>http://blog.amitapple.com/post/2014/11/azure-websites-slots/</link><title>Azure Web Apps (Websites) Deployment Slots - Explained</title><description>&lt;p&gt;One of the premium features you get when using Azure Web Apps in a standard SKU is the &lt;strong&gt;deployment slots&lt;/strong&gt; feature also known as &lt;strong&gt;staged deployment&lt;/strong&gt; but it is actually more than that.&lt;/p&gt;
+
+&lt;p&gt;In this post I will go over the &lt;strong&gt;deployment slots&lt;/strong&gt; concept and what you can do with it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/slots1.png" alt="Deployment slots" /&gt;&lt;/p&gt;
+
+&lt;h2&gt;What are those deployment slots?&lt;/h2&gt;
+
+&lt;p&gt;From a (standard) website you can create deployment slots which will actually be Azure Web App instances that are tied to that Website.&lt;/p&gt;
+
+&lt;p&gt;A deployment slot will carry the name of the Azure Web App + the name of the slot, for example:&lt;/p&gt;
+
+&lt;p&gt;If my Azure Web App is called &lt;strong&gt;mysite&lt;/strong&gt; and I create a slot called &lt;strong&gt;staging&lt;/strong&gt; then my slot will be an Azure Web App with the name &lt;strong&gt;mysite(staging)&lt;/strong&gt; and its url will be &lt;strong&gt;http://mysite-staging.azurewebsites.net&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/slots2.png" alt="Add deployment slot" /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;It's important to emphasize that the slot is in itself a regular Azure Web App, it will have its own app settings, connection string, any other configuration settings and even an scm site (&lt;strong&gt;https://mysite-staging.scm.azurewebsites.net&lt;/strong&gt;).&lt;/p&gt;
+  
+  &lt;p&gt;In fact by default each Azure Web App has a single deployment slot called &lt;strong&gt;production&lt;/strong&gt; which is the Azure Web App itself.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;You can add more than one &lt;strong&gt;deployment slot&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Why do I need this?&lt;/h2&gt;
+
+&lt;p&gt;The first feature of deployment slots is the &lt;strong&gt;Swap Slots&lt;/strong&gt; and it's used for &lt;strong&gt;Staged Deployment&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/slots5.png" alt="Add deployment slot" /&gt;&lt;/p&gt;
+
+&lt;p&gt;In short, the &lt;strong&gt;Swap&lt;/strong&gt; operation will exchange the website's content between 2 deployment slots.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Later I'll explain what is swapped and what is not but note that swap is not about copying the content of the website but more about swapping DNS pointers.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So in our scenario we have the &lt;strong&gt;Production&lt;/strong&gt; site with &lt;code&gt;index.html&lt;/code&gt; that starts with &lt;code&gt;Hello World&lt;/code&gt; and our &lt;strong&gt;staging&lt;/strong&gt; slot has the same &lt;code&gt;index.html&lt;/code&gt; but it starts with &lt;code&gt;Yello World&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Before swap - &lt;strong&gt;http://mysite.azurewebsites.net/index.html&lt;/strong&gt; will return &lt;code&gt;Hello World...&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;After swap - &lt;strong&gt;http://mysite.azurewebsites.net/index.html&lt;/strong&gt; will return &lt;code&gt;Yello World...&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Now to get this into a real life scenario.&lt;/p&gt;
+
+&lt;h3&gt;Staged Deployment&lt;/h3&gt;
+
+&lt;p&gt;Deploying your website in the traditional way, whether deploying via WebDeploy, FTP, git, CI or any other way, has weaknesses that may or may not concern you:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;After the deployment completes the website might restart and this results in a cold start for the website, the first request will be slower (can be significant depending on the website).&lt;/li&gt;
+&lt;li&gt;Potentially you are deploying a "bad" version of your website and maybe you would want to test it (in production) before releasing it to your customers.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This is where &lt;strong&gt;staged deployment&lt;/strong&gt; comes into play. Instead of deploying directly to our production website we create a &lt;strong&gt;deployment slot&lt;/strong&gt; used for &lt;strong&gt;staging&lt;/strong&gt; and we deploy our new bits there.&lt;/p&gt;
+
+&lt;p&gt;Then we "warm" our site (&lt;strong&gt;staging&lt;/strong&gt; slot) by making requests to it and we can start testing our new bits verifying everything works as expected. Once we're ready we hit the Azure Portal's &lt;strong&gt;Swap&lt;/strong&gt; button (or PowerShell/xplat cli command) and the slots will be swapped.&lt;/p&gt;
+
+&lt;p&gt;Our customers will not hit the "cold start" delay and we have more confidence in our new bits.&lt;/p&gt;
+
+&lt;h3&gt;Auto-Swap&lt;/h3&gt;
+
+&lt;p&gt;Since we want to test our website before going into production we have this manual step where we hit the &lt;strong&gt;Swap&lt;/strong&gt; button to swap.&lt;/p&gt;
+
+&lt;p&gt;But if we only want to address the "cold start" delay we can configure the &lt;strong&gt;Auto Swap&lt;/strong&gt; feature where the website automatically swaps a configured slot (in our case &lt;strong&gt;staging&lt;/strong&gt;) with the &lt;strong&gt;Production&lt;/strong&gt; slot after the deployment completes.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Currently &lt;strong&gt;auto-swap&lt;/strong&gt; only works when deploying using WebDeploy (deploying through VS will usually use WebDeploy) and Continuous Integration (VSO, GitHub, Bitbucket).
+  FTP and &lt;code&gt;git push&lt;/code&gt; will not cause an &lt;strong&gt;auto swap&lt;/strong&gt;.&lt;/p&gt;
+  
+  &lt;p&gt;Auto-swap can take a while to swap (1-2 minutes), until the swap completes any other attempts to deploy the website will fail.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;To set this up you'll need to use the &lt;a href="http://azure.microsoft.com/en-us/documentation/articles/install-configure-powershell/"&gt;Azure PowerShell tool&lt;/a&gt; (&lt;a href="http://go.microsoft.com/fwlink/p/?linkid=320376&amp;amp;clcid=0x409"&gt;download&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;In PowerShell use the following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Set-AzureWebsite -Name mysite –Slot staging -AutoSwapSlotName production
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This command will set Azure Web Apps to auto swap the &lt;strong&gt;staging&lt;/strong&gt; slot into &lt;strong&gt;Production&lt;/strong&gt; slot whenever &lt;strong&gt;staging&lt;/strong&gt; is deployed.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;You can use the operation logs in the (current) Azure portal to see the &lt;strong&gt;auto swap&lt;/strong&gt; operation status.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Deployment Slot App Settings / Connection String / Configuration&lt;/h3&gt;
+
+&lt;p&gt;One important concept to understand about &lt;strong&gt;deployment slots&lt;/strong&gt; is how the configuration works.&lt;/p&gt;
+
+&lt;p&gt;A deployment slot is a full Azure Web App and as one it has all the same configurations as any Azure Web App. When you swap deployment slots there are some settings you actually need to keep with the slot and not swap them.&lt;/p&gt;
+
+&lt;p&gt;A setting that is not swapped is referred to as a setting that is &lt;strong&gt;sticky to the slot&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Some of the default settings that are &lt;strong&gt;sticky to the slot&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Most obvious one is the url - &lt;strong&gt;http://mysite-staging.azurewebsites.net/&lt;/strong&gt; will always point to the &lt;strong&gt;staging&lt;/strong&gt; slot.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;WEBSITE_HOSTNAME&lt;/strong&gt; environment variable for the &lt;strong&gt;staging&lt;/strong&gt; slot will always be &lt;strong&gt;mysite-staging.azurewebsites.net&lt;/strong&gt; and this is something we can use in our website code to find it's currently running in the &lt;strong&gt;Production&lt;/strong&gt; slot or &lt;strong&gt;staging&lt;/strong&gt; slot.&lt;/li&gt;
+&lt;li&gt;Deployment settings - if you have the deployment profile for the &lt;strong&gt;staging&lt;/strong&gt; slot, after a swap the profile would still point to the &lt;strong&gt;staging&lt;/strong&gt; slot.
+&lt;blockquote&gt;
+  &lt;p&gt;This also includes continuous integration settings - if you hooked your &lt;strong&gt;staging&lt;/strong&gt; slot with a GitHub repository after a swap the hook will still exist between GitHub and the &lt;strong&gt;staging&lt;/strong&gt; slot.&lt;/li&gt;
+  &lt;/ul&gt;
+
+&lt;p&gt;App settings and connection strings are &lt;strong&gt;not&lt;/strong&gt; sticky to the slot and will remain with the website when swapped but we can configure selected app settings and connection strings to become &lt;strong&gt;sticky to the slot&lt;/strong&gt; using a PowerShell command (not yet supported by the Azure portal).&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;Use this command in Azure PowerShell to set 2 app settings as &lt;strong&gt;sticky to the slot&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Set-AzureWebsite -Name mysite -SlotStickyAppSettingNames @("myslot", "myslot2")
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And this command to set 2 connection strings as &lt;strong&gt;sticky to the slot&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Set-AzureWebsite -Name mysite -SlotStickyConnectionStringNames @("myconn", "myconn2")
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Sticky to the slot&lt;/strong&gt; configuration is website-wide configuration and affects all slots in that website.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Deployment Slots Traffic Routing&lt;/h3&gt;
+
+&lt;p&gt;Another great feature for &lt;strong&gt;deployment slots&lt;/strong&gt; is the &lt;strong&gt;traffic routing&lt;/strong&gt; also known as &lt;strong&gt;testing in production&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;This feature will allow you to route traffic that is coming to your Azure Web App between your &lt;strong&gt;deployment slots&lt;/strong&gt; based on percentage of the traffic.&lt;/p&gt;
+
+&lt;p&gt;This feature exists only in the new &lt;a href="https://portal.azure.com"&gt;Azure preview portal&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In the portal under your website there is a tile called &lt;strong&gt;Testing in production&lt;/strong&gt;, click on it to get to the "Testing in production" &lt;em&gt;blade&lt;/em&gt; where you can direct traffic coming to your website between all of your &lt;strong&gt;deployment slots&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/slots4.png" alt="Testing in production" /&gt;&lt;/p&gt;
+
+&lt;p&gt;One usage scenario for this feature is &lt;a href="http://en.wikipedia.org/wiki/A/B_testing"&gt;A/B testing&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;By default 100% of the traffic will go to the &lt;strong&gt;Production&lt;/strong&gt; slot but you can create a new &lt;strong&gt;deployment slot&lt;/strong&gt; with a slightly different version of your website (differs by what you want to A/B test) and add it there with a 50% value so 50% of your visitors will actually be served from the new slot.&lt;/p&gt;
+
+&lt;p&gt;Another scenario for this feature is having a &lt;strong&gt;dev&lt;/strong&gt; slot that is a little less stable which gets 1% of the traffic so you can test feature currently being developed with real traffic.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://blogs.msdn.com/b/tomholl/archive/2014/11/10/a-b-testing-with-azure-websites.aspx"&gt;For more information on this feature&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Wrap Up&lt;/h2&gt;
+
+&lt;p&gt;I hope that if the &lt;strong&gt;deployment slots&lt;/strong&gt; were just a mysterious link/tile/concept before, you now know how to master them as they can bring lots of value to your production website.&lt;/p&gt;
+</description><pubDate>Mon, 17 Nov 2014 00:00:00 Z</pubDate><a10:updated>2014-11-17T00:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;One of the premium features you get when using Azure Web Apps in a standard SKU is the &lt;strong&gt;deployment slots&lt;/strong&gt; feature also known as &lt;strong&gt;staged deployment&lt;/strong&gt; but it is actually more than that.&lt;/p&gt;
+
+&lt;p&gt;In this post I will go over the &lt;strong&gt;deployment slots&lt;/strong&gt; concept and what you can do with it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/slots1.png" alt="Deployment slots" /&gt;&lt;/p&gt;
+
+&lt;h2&gt;What are those deployment slots?&lt;/h2&gt;
+
+&lt;p&gt;From a (standard) website you can create deployment slots which will actually be Azure Web App instances that are tied to that Website.&lt;/p&gt;
+
+&lt;p&gt;A deployment slot will carry the name of the Azure Web App + the name of the slot, for example:&lt;/p&gt;
+
+&lt;p&gt;If my Azure Web App is called &lt;strong&gt;mysite&lt;/strong&gt; and I create a slot called &lt;strong&gt;staging&lt;/strong&gt; then my slot will be an Azure Web App with the name &lt;strong&gt;mysite(staging)&lt;/strong&gt; and its url will be &lt;strong&gt;http://mysite-staging.azurewebsites.net&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/slots2.png" alt="Add deployment slot" /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;It's important to emphasize that the slot is in itself a regular Azure Web App, it will have its own app settings, connection string, any other configuration settings and even an scm site (&lt;strong&gt;https://mysite-staging.scm.azurewebsites.net&lt;/strong&gt;).&lt;/p&gt;
+  
+  &lt;p&gt;In fact by default each Azure Web App has a single deployment slot called &lt;strong&gt;production&lt;/strong&gt; which is the Azure Web App itself.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;You can add more than one &lt;strong&gt;deployment slot&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Why do I need this?&lt;/h2&gt;
+
+&lt;p&gt;The first feature of deployment slots is the &lt;strong&gt;Swap Slots&lt;/strong&gt; and it's used for &lt;strong&gt;Staged Deployment&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/slots5.png" alt="Add deployment slot" /&gt;&lt;/p&gt;
+
+&lt;p&gt;In short, the &lt;strong&gt;Swap&lt;/strong&gt; operation will exchange the website's content between 2 deployment slots.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Later I'll explain what is swapped and what is not but note that swap is not about copying the content of the website but more about swapping DNS pointers.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So in our scenario we have the &lt;strong&gt;Production&lt;/strong&gt; site with &lt;code&gt;index.html&lt;/code&gt; that starts with &lt;code&gt;Hello World&lt;/code&gt; and our &lt;strong&gt;staging&lt;/strong&gt; slot has the same &lt;code&gt;index.html&lt;/code&gt; but it starts with &lt;code&gt;Yello World&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Before swap - &lt;strong&gt;http://mysite.azurewebsites.net/index.html&lt;/strong&gt; will return &lt;code&gt;Hello World...&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;After swap - &lt;strong&gt;http://mysite.azurewebsites.net/index.html&lt;/strong&gt; will return &lt;code&gt;Yello World...&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Now to get this into a real life scenario.&lt;/p&gt;
+
+&lt;h3&gt;Staged Deployment&lt;/h3&gt;
+
+&lt;p&gt;Deploying your website in the traditional way, whether deploying via WebDeploy, FTP, git, CI or any other way, has weaknesses that may or may not concern you:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;After the deployment completes the website might restart and this results in a cold start for the website, the first request will be slower (can be significant depending on the website).&lt;/li&gt;
+&lt;li&gt;Potentially you are deploying a "bad" version of your website and maybe you would want to test it (in production) before releasing it to your customers.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This is where &lt;strong&gt;staged deployment&lt;/strong&gt; comes into play. Instead of deploying directly to our production website we create a &lt;strong&gt;deployment slot&lt;/strong&gt; used for &lt;strong&gt;staging&lt;/strong&gt; and we deploy our new bits there.&lt;/p&gt;
+
+&lt;p&gt;Then we "warm" our site (&lt;strong&gt;staging&lt;/strong&gt; slot) by making requests to it and we can start testing our new bits verifying everything works as expected. Once we're ready we hit the Azure Portal's &lt;strong&gt;Swap&lt;/strong&gt; button (or PowerShell/xplat cli command) and the slots will be swapped.&lt;/p&gt;
+
+&lt;p&gt;Our customers will not hit the "cold start" delay and we have more confidence in our new bits.&lt;/p&gt;
+
+&lt;h3&gt;Auto-Swap&lt;/h3&gt;
+
+&lt;p&gt;Since we want to test our website before going into production we have this manual step where we hit the &lt;strong&gt;Swap&lt;/strong&gt; button to swap.&lt;/p&gt;
+
+&lt;p&gt;But if we only want to address the "cold start" delay we can configure the &lt;strong&gt;Auto Swap&lt;/strong&gt; feature where the website automatically swaps a configured slot (in our case &lt;strong&gt;staging&lt;/strong&gt;) with the &lt;strong&gt;Production&lt;/strong&gt; slot after the deployment completes.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Currently &lt;strong&gt;auto-swap&lt;/strong&gt; only works when deploying using WebDeploy (deploying through VS will usually use WebDeploy) and Continuous Integration (VSO, GitHub, Bitbucket).
+  FTP and &lt;code&gt;git push&lt;/code&gt; will not cause an &lt;strong&gt;auto swap&lt;/strong&gt;.&lt;/p&gt;
+  
+  &lt;p&gt;Auto-swap can take a while to swap (1-2 minutes), until the swap completes any other attempts to deploy the website will fail.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;To set this up you'll need to use the &lt;a href="http://azure.microsoft.com/en-us/documentation/articles/install-configure-powershell/"&gt;Azure PowerShell tool&lt;/a&gt; (&lt;a href="http://go.microsoft.com/fwlink/p/?linkid=320376&amp;amp;clcid=0x409"&gt;download&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;In PowerShell use the following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Set-AzureWebsite -Name mysite –Slot staging -AutoSwapSlotName production
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This command will set Azure Web Apps to auto swap the &lt;strong&gt;staging&lt;/strong&gt; slot into &lt;strong&gt;Production&lt;/strong&gt; slot whenever &lt;strong&gt;staging&lt;/strong&gt; is deployed.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;You can use the operation logs in the (current) Azure portal to see the &lt;strong&gt;auto swap&lt;/strong&gt; operation status.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Deployment Slot App Settings / Connection String / Configuration&lt;/h3&gt;
+
+&lt;p&gt;One important concept to understand about &lt;strong&gt;deployment slots&lt;/strong&gt; is how the configuration works.&lt;/p&gt;
+
+&lt;p&gt;A deployment slot is a full Azure Web App and as one it has all the same configurations as any Azure Web App. When you swap deployment slots there are some settings you actually need to keep with the slot and not swap them.&lt;/p&gt;
+
+&lt;p&gt;A setting that is not swapped is referred to as a setting that is &lt;strong&gt;sticky to the slot&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Some of the default settings that are &lt;strong&gt;sticky to the slot&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Most obvious one is the url - &lt;strong&gt;http://mysite-staging.azurewebsites.net/&lt;/strong&gt; will always point to the &lt;strong&gt;staging&lt;/strong&gt; slot.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;WEBSITE_HOSTNAME&lt;/strong&gt; environment variable for the &lt;strong&gt;staging&lt;/strong&gt; slot will always be &lt;strong&gt;mysite-staging.azurewebsites.net&lt;/strong&gt; and this is something we can use in our website code to find it's currently running in the &lt;strong&gt;Production&lt;/strong&gt; slot or &lt;strong&gt;staging&lt;/strong&gt; slot.&lt;/li&gt;
+&lt;li&gt;Deployment settings - if you have the deployment profile for the &lt;strong&gt;staging&lt;/strong&gt; slot, after a swap the profile would still point to the &lt;strong&gt;staging&lt;/strong&gt; slot.
+&lt;blockquote&gt;
+  &lt;p&gt;This also includes continuous integration settings - if you hooked your &lt;strong&gt;staging&lt;/strong&gt; slot with a GitHub repository after a swap the hook will still exist between GitHub and the &lt;strong&gt;staging&lt;/strong&gt; slot.&lt;/li&gt;
+  &lt;/ul&gt;
+
+&lt;p&gt;App settings and connection strings are &lt;strong&gt;not&lt;/strong&gt; sticky to the slot and will remain with the website when swapped but we can configure selected app settings and connection strings to become &lt;strong&gt;sticky to the slot&lt;/strong&gt; using a PowerShell command (not yet supported by the Azure portal).&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;Use this command in Azure PowerShell to set 2 app settings as &lt;strong&gt;sticky to the slot&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Set-AzureWebsite -Name mysite -SlotStickyAppSettingNames @("myslot", "myslot2")
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And this command to set 2 connection strings as &lt;strong&gt;sticky to the slot&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Set-AzureWebsite -Name mysite -SlotStickyConnectionStringNames @("myconn", "myconn2")
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Sticky to the slot&lt;/strong&gt; configuration is website-wide configuration and affects all slots in that website.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Deployment Slots Traffic Routing&lt;/h3&gt;
+
+&lt;p&gt;Another great feature for &lt;strong&gt;deployment slots&lt;/strong&gt; is the &lt;strong&gt;traffic routing&lt;/strong&gt; also known as &lt;strong&gt;testing in production&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;This feature will allow you to route traffic that is coming to your Azure Web App between your &lt;strong&gt;deployment slots&lt;/strong&gt; based on percentage of the traffic.&lt;/p&gt;
+
+&lt;p&gt;This feature exists only in the new &lt;a href="https://portal.azure.com"&gt;Azure preview portal&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In the portal under your website there is a tile called &lt;strong&gt;Testing in production&lt;/strong&gt;, click on it to get to the "Testing in production" &lt;em&gt;blade&lt;/em&gt; where you can direct traffic coming to your website between all of your &lt;strong&gt;deployment slots&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/slots4.png" alt="Testing in production" /&gt;&lt;/p&gt;
+
+&lt;p&gt;One usage scenario for this feature is &lt;a href="http://en.wikipedia.org/wiki/A/B_testing"&gt;A/B testing&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;By default 100% of the traffic will go to the &lt;strong&gt;Production&lt;/strong&gt; slot but you can create a new &lt;strong&gt;deployment slot&lt;/strong&gt; with a slightly different version of your website (differs by what you want to A/B test) and add it there with a 50% value so 50% of your visitors will actually be served from the new slot.&lt;/p&gt;
+
+&lt;p&gt;Another scenario for this feature is having a &lt;strong&gt;dev&lt;/strong&gt; slot that is a little less stable which gets 1% of the traffic so you can test feature currently being developed with real traffic.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://blogs.msdn.com/b/tomholl/archive/2014/11/10/a-b-testing-with-azure-websites.aspx"&gt;For more information on this feature&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Wrap Up&lt;/h2&gt;
+
+&lt;p&gt;I hope that if the &lt;strong&gt;deployment slots&lt;/strong&gt; were just a mysterious link/tile/concept before, you now know how to master them as they can bring lots of value to your production website.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://blog.amitapple.com/post/2014/06/azure-website-logging/</guid><link>http://blog.amitapple.com/post/2014/06/azure-website-logging/</link><title>Azure Web App (Website) Logging - Tips and Tools</title><description>&lt;p&gt;Using Azure Web Apps includes many benefits that come just out of the box, you just need to know that they're there and how to use them properly. Logging is one of those benefits that integrate seamlessly to your Azure Web App.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Reference to the official &lt;a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/"&gt;Azure Web Apps Logging Document&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;In this post I'll show ways on maximizing the Azure Web Apps logging experience.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2&gt;Log Types&lt;/h2&gt;
+
+&lt;p&gt;These are the different log types you can get for your Azure Web App:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Web Server Logging&lt;/strong&gt; - Also known as http logs or iis logs, this will log all requests to your website in &lt;a href="http://www.microsoft.com/technet/prodtechnol/WindowsServer2003/Library/IIS/676400bc-8969-4aa7-851a-9319490a9bbb.mspx?mfr=true"&gt;W3C Extended Log File Format&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Detailed Error Messages&lt;/strong&gt; - Detailed version of the html files produced when your website responds with an error message. This is good to enable for debugging some error responses in your website. It is stored in the website's file system.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Failed Request Tracing&lt;/strong&gt; - Also known as FREB, here you can get lots of information from IIS through its different stacks for each failing request. Note that these log files are also stored in the website's file system.&lt;/p&gt;
+
+&lt;p&gt;You can get some more information about FREB &lt;a href="http://blogs.iis.net/webtopics/archive/2009/06/12/troubleshooting-a-simple-error-message-using-freb.aspx"&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Eventlog.xml&lt;/strong&gt; - You may see this file sometimes under your LogFiles directory of your website (&lt;code&gt;d:\home\LogFiles&lt;/code&gt;). This file contains ETW designated events, usually it is generated and populated with errors of some crash that occurred.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Kudu Traces&lt;/strong&gt; - In your website's file system under &lt;code&gt;d:\home\LogFiles\kudu\trace&lt;/code&gt; you can find the traces file for &lt;a href="https://github.com/projectkudu/kudu/wiki"&gt;Kudu&lt;/a&gt; which drives some of the developer experience features of Azure Web Apps like: git deployment and WebJobs.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Application Logs&lt;/strong&gt; - See detailed information on application logs in the next section.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Log files stored in the website's file system will show up under &lt;code&gt;d:\home\LogFiles&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src="/images/sitediagnostics.png" alt="Setting different logs in the Azure portal" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Setting different logs in the Azure portal&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2&gt;Application Logs&lt;/h2&gt;
+
+&lt;p&gt;These are the logs coming from your Application/Service/Website/WebJob.&lt;/p&gt;
+
+&lt;h3&gt;Application Logs for Websites&lt;/h3&gt;
+
+&lt;p&gt;If you're using ASP.NET it's simple to write application logs, just use the &lt;code&gt;Trace&lt;/code&gt; class, for example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;        Trace.WriteLine("Message"); // Write a verbose message
+        Trace.TraceInformation("Message"); // Write an information message
+        Trace.TraceWarning("Message");
+        Trace.TraceError("Message");
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In the Azure portal you can direct different verbosity levels to different targets (at the same time). The targets are: file system, Azure table storage and Azure blob storage.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;For example&lt;/strong&gt; you can have all Information level (and up including Warning and Error) logs go to Azure table storage and all logs (including Verbose and up) go to blob storage.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src="/images/applicationdiagnostics.png" alt="Setting application logs in the Azure portal" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Setting application logs in the Azure portal&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;For node.js&lt;/strong&gt; websites the way to write application logs is by writing to the console using &lt;code&gt;console.log('message')&lt;/code&gt; and &lt;code&gt;console.error('message')&lt;/code&gt; which goes to Information/Error level log entries. Currently the only supported target for the log files for node.js is the file system.&lt;/p&gt;
+
+&lt;p&gt;Other web site types like php and python are not supported for the application logs feature.&lt;/p&gt;
+
+&lt;h3&gt;Application Logs for WebJobs&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Triggered&lt;/strong&gt; (Scheduled/On Demand)&lt;/p&gt;
+
+&lt;p&gt;Whatever is written to console output and console error &lt;strong&gt;will go to a log file for the specific triggered webjob run&lt;/strong&gt;. You can see it on the WebJobs dashboard but the file itself is located under &lt;code&gt;d:\home\data\jobs\triggered\{jobname}\{jobrunid}&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Continuous&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Whatever is written to console output and console error &lt;strong&gt;will go to the application logs&lt;/strong&gt; as log entries with log level Information/Error. The first 100 log entries when the continuous WebJob starts will also show up in the continuous WebJob log file that is available on the WebJobs dashboard.&lt;/p&gt;
+
+&lt;p&gt;The file itself is under  &lt;code&gt;d:\home\data\jobs\continuous\{jobname}&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;.NET WebJobs&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;If you're using .NET console application as your WebJob, you can follow the same guideline as for an ASP.NET website. Once you use the &lt;code&gt;Trace&lt;/code&gt; class, your traces are handled as application logs (including triggered WebJobs).&lt;/p&gt;
+
+&lt;h3&gt;Application Logs Fields&lt;/h3&gt;
+
+&lt;p&gt;Here is the list of fields each application log entry consists of:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Application Name&lt;/strong&gt; - The website name.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Date Time&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Level&lt;/strong&gt; - Log level.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Event Id&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Instance Id&lt;/strong&gt; - A unique id for the VM running the website where the log entry came from.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Process Id&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Thread Id&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Activity Id&lt;/strong&gt; - The current (at the time of the log) activity id.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Message&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;There are a couple a differences between logs stored in file system, table storage and blob storage:&lt;/p&gt;
+  
+  &lt;p&gt;&lt;strong&gt;Blob storage&lt;/strong&gt; - Stored as a csv file with the following structure:
+  &lt;code&gt;Timestamp(DateTime), Level, ApplicationName, InstanceID, Timestamp(Ticks), EventID, ProcessID, ThreadID, Message, ActivityId&lt;/code&gt;&lt;/p&gt;
+  
+  &lt;p&gt;&lt;strong&gt;Table storage&lt;/strong&gt; - Each log entry is stored as a table entity, with a &lt;strong&gt;Partition Key&lt;/strong&gt; that is the log's date (formatted as "YYYYMMDDHH") and a &lt;strong&gt;Row Key&lt;/strong&gt; which is an ordered GUID to help get the logs in the same order as they happened.&lt;/p&gt;
+  
+  &lt;p&gt;&lt;strong&gt;File system&lt;/strong&gt; - Has a subset of the fields mentioned in the following format:
+  &lt;code&gt;{Date}  PID[{Process ID}] {Event Type} {Message}&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;Using the Activity Id&lt;/h2&gt;
+
+&lt;p&gt;The activity id field can be very powerful. It can help you correlate all log entries which came from a single request.&lt;/p&gt;
+
+&lt;p&gt;The easiest way to use it is to enable &lt;strong&gt;Failed Request Tracing&lt;/strong&gt; on the Azure portal. This will have a side-effect of setting an activity id for each request your website receives where the activity id will propagate to all your application logs.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The actual proper way to set the activity id would have been using this code in the &lt;code&gt;global.asax.cs&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public class MvcApplication : System.Web.HttpApplication
+{
+    protected void Application_BeginRequest()
+    {
+        System.Diagnostics.Trace.CorrelationManager.ActivityId = Guid.NewGuid();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+  
+  &lt;p&gt;But since ASP.NET is doing some funky things, the activity id &lt;strong&gt;may&lt;/strong&gt; get lost (become empty) when using async operations.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; that the same activity id concept would work for .NET WebJobs. For that you should use: &lt;code&gt;System.Diagnostics.Trace.CorrelationManager.ActivityId = Guid.NewGuid();&lt;/code&gt; before an operation that requires an activity id.&lt;/p&gt;
+
+&lt;h2&gt;Retention Policies&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;File system&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Log files will have some retention policy for each type:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Web server logs have a maximum size per log file and per sum of all log files (which is configurable in the Azure portal).&lt;/li&gt;
+&lt;li&gt;Similar for application logs, each log file can get up to 128 KB and the total size of all log files will go up to 1 MB after that old files are removed.&lt;/li&gt;
+&lt;li&gt;Detailed error messages and FREB have a maximum amount of files (each file consists of a single error). &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Blob storage&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Web server logs and application logs stored in blob storage can be configured with a retention policy for deleting log files older than X days.&lt;/p&gt;
+
+&lt;h2&gt;Log Browser Site Extension&lt;/h2&gt;
+
+&lt;p&gt;One more cool feature that Azure Web Apps release recently is the &lt;a href="http://azure.microsoft.com/blog/2014/06/20/azure-web-sites-extensions/"&gt;Azure Site Extensions&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Azure site extensions is basically a gallery of extensions to your Azure Web App that can originate from Microsoft or from the community. These site extensions can be useful utilities for your website administration.&lt;/p&gt;
+
+&lt;p&gt;One of those site extensions is called &lt;strong&gt;Azure Website Log Browser&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;Log Browser&lt;/strong&gt; makes it super easy for you to access all of your Azure Web App logs described here.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Provides first-class links to the different log directories that you have if you have them.&lt;/li&gt;
+&lt;li&gt;Show logs stored in your website's file system.&lt;/li&gt;
+&lt;li&gt;Show logs stored in your blob storage (based on the current configuration for http logs or application logs).&lt;/li&gt;
+&lt;li&gt;View the log files in the browser (with word highlighting capability) or download them for offline viewing.&lt;/li&gt;
+&lt;li&gt;For application logs stored in Azure table storage it has a nice UI for showing those too.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The tool itself should be self-explanatory, just install and start using it.&lt;/p&gt;
+
+&lt;p&gt;Here are some screen-shots:&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src="/images/logbrowserazureportal.PNG" alt="Install the Log Browser from the new Azure Portal" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Install the Log Browser from the new Azure Portal&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src="/images/logbrowsermain.PNG" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Main page&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src="/images/logbrowserviewlog.PNG" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;View a log file&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src="/images/logbrowsertablestorage.PNG" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;View log entries from table storage&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The &lt;strong&gt;Log Browser&lt;/strong&gt; site extension is open source and is hosted on &lt;a href="https://github.com/amitapl/ThatLogExtension"&gt;GitHub&lt;/a&gt;. You can use this repository to help you get started on your own site extension idea or to contribute to the &lt;strong&gt;Log Browser&lt;/strong&gt; site extension.&lt;/p&gt;
+
+&lt;h2&gt;Final Thoughts&lt;/h2&gt;
+
+&lt;p&gt;Azure Web Apps has a very nice and powerful logging experience, together with the &lt;strong&gt;Log Browser&lt;/strong&gt; you get an online dashboard and log viewing experience for free and with minimal effort.&lt;/p&gt;
+</description><pubDate>Tue, 24 Jun 2014 00:00:00 Z</pubDate><a10:updated>2014-06-24T00:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;Using Azure Web Apps includes many benefits that come just out of the box, you just need to know that they're there and how to use them properly. Logging is one of those benefits that integrate seamlessly to your Azure Web App.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Reference to the official &lt;a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/"&gt;Azure Web Apps Logging Document&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;In this post I'll show ways on maximizing the Azure Web Apps logging experience.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2&gt;Log Types&lt;/h2&gt;
+
+&lt;p&gt;These are the different log types you can get for your Azure Web App:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Web Server Logging&lt;/strong&gt; - Also known as http logs or iis logs, this will log all requests to your website in &lt;a href="http://www.microsoft.com/technet/prodtechnol/WindowsServer2003/Library/IIS/676400bc-8969-4aa7-851a-9319490a9bbb.mspx?mfr=true"&gt;W3C Extended Log File Format&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Detailed Error Messages&lt;/strong&gt; - Detailed version of the html files produced when your website responds with an error message. This is good to enable for debugging some error responses in your website. It is stored in the website's file system.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Failed Request Tracing&lt;/strong&gt; - Also known as FREB, here you can get lots of information from IIS through its different stacks for each failing request. Note that these log files are also stored in the website's file system.&lt;/p&gt;
+
+&lt;p&gt;You can get some more information about FREB &lt;a href="http://blogs.iis.net/webtopics/archive/2009/06/12/troubleshooting-a-simple-error-message-using-freb.aspx"&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Eventlog.xml&lt;/strong&gt; - You may see this file sometimes under your LogFiles directory of your website (&lt;code&gt;d:\home\LogFiles&lt;/code&gt;). This file contains ETW designated events, usually it is generated and populated with errors of some crash that occurred.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Kudu Traces&lt;/strong&gt; - In your website's file system under &lt;code&gt;d:\home\LogFiles\kudu\trace&lt;/code&gt; you can find the traces file for &lt;a href="https://github.com/projectkudu/kudu/wiki"&gt;Kudu&lt;/a&gt; which drives some of the developer experience features of Azure Web Apps like: git deployment and WebJobs.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Application Logs&lt;/strong&gt; - See detailed information on application logs in the next section.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Log files stored in the website's file system will show up under &lt;code&gt;d:\home\LogFiles&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/sitediagnostics.png" alt="Setting different logs in the Azure portal" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Setting different logs in the Azure portal&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2&gt;Application Logs&lt;/h2&gt;
+
+&lt;p&gt;These are the logs coming from your Application/Service/Website/WebJob.&lt;/p&gt;
+
+&lt;h3&gt;Application Logs for Websites&lt;/h3&gt;
+
+&lt;p&gt;If you're using ASP.NET it's simple to write application logs, just use the &lt;code&gt;Trace&lt;/code&gt; class, for example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;        Trace.WriteLine("Message"); // Write a verbose message
+        Trace.TraceInformation("Message"); // Write an information message
+        Trace.TraceWarning("Message");
+        Trace.TraceError("Message");
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In the Azure portal you can direct different verbosity levels to different targets (at the same time). The targets are: file system, Azure table storage and Azure blob storage.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;For example&lt;/strong&gt; you can have all Information level (and up including Warning and Error) logs go to Azure table storage and all logs (including Verbose and up) go to blob storage.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/applicationdiagnostics.png" alt="Setting application logs in the Azure portal" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Setting application logs in the Azure portal&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;For node.js&lt;/strong&gt; websites the way to write application logs is by writing to the console using &lt;code&gt;console.log('message')&lt;/code&gt; and &lt;code&gt;console.error('message')&lt;/code&gt; which goes to Information/Error level log entries. Currently the only supported target for the log files for node.js is the file system.&lt;/p&gt;
+
+&lt;p&gt;Other web site types like php and python are not supported for the application logs feature.&lt;/p&gt;
+
+&lt;h3&gt;Application Logs for WebJobs&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Triggered&lt;/strong&gt; (Scheduled/On Demand)&lt;/p&gt;
+
+&lt;p&gt;Whatever is written to console output and console error &lt;strong&gt;will go to a log file for the specific triggered webjob run&lt;/strong&gt;. You can see it on the WebJobs dashboard but the file itself is located under &lt;code&gt;d:\home\data\jobs\triggered\{jobname}\{jobrunid}&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Continuous&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Whatever is written to console output and console error &lt;strong&gt;will go to the application logs&lt;/strong&gt; as log entries with log level Information/Error. The first 100 log entries when the continuous WebJob starts will also show up in the continuous WebJob log file that is available on the WebJobs dashboard.&lt;/p&gt;
+
+&lt;p&gt;The file itself is under  &lt;code&gt;d:\home\data\jobs\continuous\{jobname}&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;.NET WebJobs&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;If you're using .NET console application as your WebJob, you can follow the same guideline as for an ASP.NET website. Once you use the &lt;code&gt;Trace&lt;/code&gt; class, your traces are handled as application logs (including triggered WebJobs).&lt;/p&gt;
+
+&lt;h3&gt;Application Logs Fields&lt;/h3&gt;
+
+&lt;p&gt;Here is the list of fields each application log entry consists of:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Application Name&lt;/strong&gt; - The website name.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Date Time&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Level&lt;/strong&gt; - Log level.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Event Id&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Instance Id&lt;/strong&gt; - A unique id for the VM running the website where the log entry came from.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Process Id&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Thread Id&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Activity Id&lt;/strong&gt; - The current (at the time of the log) activity id.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Message&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;There are a couple a differences between logs stored in file system, table storage and blob storage:&lt;/p&gt;
+  
+  &lt;p&gt;&lt;strong&gt;Blob storage&lt;/strong&gt; - Stored as a csv file with the following structure:
+  &lt;code&gt;Timestamp(DateTime), Level, ApplicationName, InstanceID, Timestamp(Ticks), EventID, ProcessID, ThreadID, Message, ActivityId&lt;/code&gt;&lt;/p&gt;
+  
+  &lt;p&gt;&lt;strong&gt;Table storage&lt;/strong&gt; - Each log entry is stored as a table entity, with a &lt;strong&gt;Partition Key&lt;/strong&gt; that is the log's date (formatted as "YYYYMMDDHH") and a &lt;strong&gt;Row Key&lt;/strong&gt; which is an ordered GUID to help get the logs in the same order as they happened.&lt;/p&gt;
+  
+  &lt;p&gt;&lt;strong&gt;File system&lt;/strong&gt; - Has a subset of the fields mentioned in the following format:
+  &lt;code&gt;{Date}  PID[{Process ID}] {Event Type} {Message}&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;Using the Activity Id&lt;/h2&gt;
+
+&lt;p&gt;The activity id field can be very powerful. It can help you correlate all log entries which came from a single request.&lt;/p&gt;
+
+&lt;p&gt;The easiest way to use it is to enable &lt;strong&gt;Failed Request Tracing&lt;/strong&gt; on the Azure portal. This will have a side-effect of setting an activity id for each request your website receives where the activity id will propagate to all your application logs.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The actual proper way to set the activity id would have been using this code in the &lt;code&gt;global.asax.cs&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public class MvcApplication : System.Web.HttpApplication
+{
+    protected void Application_BeginRequest()
+    {
+        System.Diagnostics.Trace.CorrelationManager.ActivityId = Guid.NewGuid();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+  
+  &lt;p&gt;But since ASP.NET is doing some funky things, the activity id &lt;strong&gt;may&lt;/strong&gt; get lost (become empty) when using async operations.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; that the same activity id concept would work for .NET WebJobs. For that you should use: &lt;code&gt;System.Diagnostics.Trace.CorrelationManager.ActivityId = Guid.NewGuid();&lt;/code&gt; before an operation that requires an activity id.&lt;/p&gt;
+
+&lt;h2&gt;Retention Policies&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;File system&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Log files will have some retention policy for each type:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Web server logs have a maximum size per log file and per sum of all log files (which is configurable in the Azure portal).&lt;/li&gt;
+&lt;li&gt;Similar for application logs, each log file can get up to 128 KB and the total size of all log files will go up to 1 MB after that old files are removed.&lt;/li&gt;
+&lt;li&gt;Detailed error messages and FREB have a maximum amount of files (each file consists of a single error). &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Blob storage&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Web server logs and application logs stored in blob storage can be configured with a retention policy for deleting log files older than X days.&lt;/p&gt;
+
+&lt;h2&gt;Log Browser Site Extension&lt;/h2&gt;
+
+&lt;p&gt;One more cool feature that Azure Web Apps release recently is the &lt;a href="http://azure.microsoft.com/blog/2014/06/20/azure-web-sites-extensions/"&gt;Azure Site Extensions&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Azure site extensions is basically a gallery of extensions to your Azure Web App that can originate from Microsoft or from the community. These site extensions can be useful utilities for your website administration.&lt;/p&gt;
+
+&lt;p&gt;One of those site extensions is called &lt;strong&gt;Azure Website Log Browser&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;Log Browser&lt;/strong&gt; makes it super easy for you to access all of your Azure Web App logs described here.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Provides first-class links to the different log directories that you have if you have them.&lt;/li&gt;
+&lt;li&gt;Show logs stored in your website's file system.&lt;/li&gt;
+&lt;li&gt;Show logs stored in your blob storage (based on the current configuration for http logs or application logs).&lt;/li&gt;
+&lt;li&gt;View the log files in the browser (with word highlighting capability) or download them for offline viewing.&lt;/li&gt;
+&lt;li&gt;For application logs stored in Azure table storage it has a nice UI for showing those too.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The tool itself should be self-explanatory, just install and start using it.&lt;/p&gt;
+
+&lt;p&gt;Here are some screen-shots:&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/logbrowserazureportal.PNG" alt="Install the Log Browser from the new Azure Portal" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Install the Log Browser from the new Azure Portal&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/logbrowsermain.PNG" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Main page&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/logbrowserviewlog.PNG" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;View a log file&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/logbrowsertablestorage.PNG" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;View log entries from table storage&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The &lt;strong&gt;Log Browser&lt;/strong&gt; site extension is open source and is hosted on &lt;a href="https://github.com/amitapl/ThatLogExtension"&gt;GitHub&lt;/a&gt;. You can use this repository to help you get started on your own site extension idea or to contribute to the &lt;strong&gt;Log Browser&lt;/strong&gt; site extension.&lt;/p&gt;
+
+&lt;h2&gt;Final Thoughts&lt;/h2&gt;
+
+&lt;p&gt;Azure Web Apps has a very nice and powerful logging experience, together with the &lt;strong&gt;Log Browser&lt;/strong&gt; you get an online dashboard and log viewing experience for free and with minimal effort.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://blog.amitapple.com/post/2014/05/webjobs-graceful-shutdown/</guid><link>http://blog.amitapple.com/post/2014/05/webjobs-graceful-shutdown/</link><title>WebJobs Graceful Shutdown</title><description>&lt;p&gt;&lt;strong&gt;Azure WebJobs&lt;/strong&gt; are doing work and running some process you expect not to be interrupted but as in life not everything is as expected and sometimes there are interruptions which can stop your WebJob abruptly without notice aborting your process and maybe leaving your work in some bad state.&lt;/p&gt;
+
+&lt;p&gt;These interruptions could be due to: stopping your site, restarting your site, some configuration change to your site which causes your site to restart, Azure maintenance (version update for example) or even the VM simply crashing for some reason.&lt;/p&gt;
+
+&lt;p&gt;For these kind of interruptions (minus VM crash) there is a concept of a more "graceful" shutdown process for a WebJob which can help you cleanup before your WebJob is forcefully stopped.&lt;/p&gt;
+
+&lt;p&gt;As usual with WebJobs this concept is a bit different for continuous and triggered WebJobs, let's discuss on both.&lt;/p&gt;
+
+&lt;h3&gt;Graceful Shutdown for Continuous WebJobs&lt;/h3&gt;
+
+&lt;p&gt;For continuous WebJobs Azure will notify the WebJob running process when it is about to stop it, then it'll wait a configurable amount of time (which is 5 seconds by default) after which if the process did not exit quietly it will close it.&lt;/p&gt;
+
+&lt;p&gt;The way Azure notifies the process it's about to be stopped is by placing (creating) a file at a path that is passed as an environment variable called &lt;code&gt;WEBJOBS_SHUTDOWN_FILE&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Any WebJob that wants to listen on the shutdown notification will actually have to check for the presence of the file (using simple &lt;code&gt;File.Exists&lt;/code&gt; function or using a &lt;code&gt;FileSystemWatcher&lt;/code&gt; in whatever script language you use), when it shows up the WebJob will need to start cleaning up and break it's current loop where preferably it'll exit properly and Azure will continue the shutdown (of the site) process.&lt;/p&gt;
+
+&lt;h4&gt;Here's an example using C#:&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;public class Program
+{
+    private static bool _running = true;
+    private static string _shutdownFile;
+
+    private static void Main(string[] args)
+    {
+        // Get the shutdown file path from the environment
+        _shutdownFile = Environment.GetEnvironmentVariable("WEBJOBS_SHUTDOWN_FILE");
+
+        // Setup a file system watcher on that file's directory to know when the file is created
+        var fileSystemWatcher = new FileSystemWatcher(Path.GetDirectoryName(_shutdownFile));
+        fileSystemWatcher.Created += OnChanged;
+        fileSystemWatcher.Changed += OnChanged;
+        fileSystemWatcher.NotifyFilter = NotifyFilters.CreationTime | NotifyFilters.FileName | NotifyFilters.LastWrite;
+        fileSystemWatcher.IncludeSubdirectories = false;
+        fileSystemWatcher.EnableRaisingEvents = true;
+
+        // Run as long as we didn't get a shutdown notification
+        while (_running)
+        {
+            // Here is my actual work
+            Console.WriteLine("Running and waiting " + DateTime.UtcNow);
+            Thread.Sleep(1000);
+        }
+
+        Console.WriteLine("Stopped " + DateTime.UtcNow);
+    }
+
+    private static void OnChanged(object sender, FileSystemEventArgs e)
+    {
+        if (e.FullPath.IndexOf(Path.GetFileName(_shutdownFile), StringComparison.OrdinalIgnoreCase) &amp;gt;= 0)
+        {
+            // Found the file mark this WebJob as finished
+            _running = false;
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Graceful Shutdown for Triggered WebJobs&lt;/h3&gt;
+
+&lt;p&gt;For triggered WebJobs there is no shutdown notification but there is a graceful period (30 seconds by default) where the WebJob will not be forcefully shutdown immediately, the graceful period is configurable.&lt;/p&gt;
+
+&lt;h3&gt;Updating the graceful period&lt;/h3&gt;
+
+&lt;p&gt;The graceful period can be updated for any WebJob, the way to do it is to create a file called &lt;code&gt;settings.job&lt;/code&gt;  with the following content: &lt;code&gt;{ "stopping_wait_time": 60 }&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;The time is specified in seconds&lt;/em&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This file is representing a json object of your WebJob's setting, for now the only meaningful settings are &lt;code&gt;stopping_wait_time&lt;/code&gt; and &lt;code&gt;is_singleton&lt;/code&gt; (for continuous WebJobs to set them to run only on a single instance).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;If you have any questions on this topic feel free to leave comments.&lt;/p&gt;
+</description><pubDate>Mon, 12 May 2014 00:00:00 Z</pubDate><a10:updated>2014-05-12T00:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;&lt;strong&gt;Azure WebJobs&lt;/strong&gt; are doing work and running some process you expect not to be interrupted but as in life not everything is as expected and sometimes there are interruptions which can stop your WebJob abruptly without notice aborting your process and maybe leaving your work in some bad state.&lt;/p&gt;
+
+&lt;p&gt;These interruptions could be due to: stopping your site, restarting your site, some configuration change to your site which causes your site to restart, Azure maintenance (version update for example) or even the VM simply crashing for some reason.&lt;/p&gt;
+
+&lt;p&gt;For these kind of interruptions (minus VM crash) there is a concept of a more "graceful" shutdown process for a WebJob which can help you cleanup before your WebJob is forcefully stopped.&lt;/p&gt;
+
+&lt;p&gt;As usual with WebJobs this concept is a bit different for continuous and triggered WebJobs, let's discuss on both.&lt;/p&gt;
+
+&lt;h3&gt;Graceful Shutdown for Continuous WebJobs&lt;/h3&gt;
+
+&lt;p&gt;For continuous WebJobs Azure will notify the WebJob running process when it is about to stop it, then it'll wait a configurable amount of time (which is 5 seconds by default) after which if the process did not exit quietly it will close it.&lt;/p&gt;
+
+&lt;p&gt;The way Azure notifies the process it's about to be stopped is by placing (creating) a file at a path that is passed as an environment variable called &lt;code&gt;WEBJOBS_SHUTDOWN_FILE&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Any WebJob that wants to listen on the shutdown notification will actually have to check for the presence of the file (using simple &lt;code&gt;File.Exists&lt;/code&gt; function or using a &lt;code&gt;FileSystemWatcher&lt;/code&gt; in whatever script language you use), when it shows up the WebJob will need to start cleaning up and break it's current loop where preferably it'll exit properly and Azure will continue the shutdown (of the site) process.&lt;/p&gt;
+
+&lt;h4&gt;Here's an example using C#:&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;public class Program
+{
+    private static bool _running = true;
+    private static string _shutdownFile;
+
+    private static void Main(string[] args)
+    {
+        // Get the shutdown file path from the environment
+        _shutdownFile = Environment.GetEnvironmentVariable("WEBJOBS_SHUTDOWN_FILE");
+
+        // Setup a file system watcher on that file's directory to know when the file is created
+        var fileSystemWatcher = new FileSystemWatcher(Path.GetDirectoryName(_shutdownFile));
+        fileSystemWatcher.Created += OnChanged;
+        fileSystemWatcher.Changed += OnChanged;
+        fileSystemWatcher.NotifyFilter = NotifyFilters.CreationTime | NotifyFilters.FileName | NotifyFilters.LastWrite;
+        fileSystemWatcher.IncludeSubdirectories = false;
+        fileSystemWatcher.EnableRaisingEvents = true;
+
+        // Run as long as we didn't get a shutdown notification
+        while (_running)
+        {
+            // Here is my actual work
+            Console.WriteLine("Running and waiting " + DateTime.UtcNow);
+            Thread.Sleep(1000);
+        }
+
+        Console.WriteLine("Stopped " + DateTime.UtcNow);
+    }
+
+    private static void OnChanged(object sender, FileSystemEventArgs e)
+    {
+        if (e.FullPath.IndexOf(Path.GetFileName(_shutdownFile), StringComparison.OrdinalIgnoreCase) &amp;gt;= 0)
+        {
+            // Found the file mark this WebJob as finished
+            _running = false;
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Graceful Shutdown for Triggered WebJobs&lt;/h3&gt;
+
+&lt;p&gt;For triggered WebJobs there is no shutdown notification but there is a graceful period (30 seconds by default) where the WebJob will not be forcefully shutdown immediately, the graceful period is configurable.&lt;/p&gt;
+
+&lt;h3&gt;Updating the graceful period&lt;/h3&gt;
+
+&lt;p&gt;The graceful period can be updated for any WebJob, the way to do it is to create a file called &lt;code&gt;settings.job&lt;/code&gt;  with the following content: &lt;code&gt;{ "stopping_wait_time": 60 }&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;The time is specified in seconds&lt;/em&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This file is representing a json object of your WebJob's setting, for now the only meaningful settings are &lt;code&gt;stopping_wait_time&lt;/code&gt; and &lt;code&gt;is_singleton&lt;/code&gt; (for continuous WebJobs to set them to run only on a single instance).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;If you have any questions on this topic feel free to leave comments.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://blog.amitapple.com/post/2014/03/webjobs-notification/</guid><link>http://blog.amitapple.com/post/2014/03/webjobs-notification/</link><title>Getting notified when your Azure triggered WebJobs completes</title><description>&lt;p&gt;&lt;strong&gt;Microsoft Azure WebJobs&lt;/strong&gt; are awesome, and now a little bit more... I'm going to show you how you can setup a notification whenever your triggered (on-demand or scheduled) WebJobs completes.&lt;/p&gt;
+
+&lt;p&gt;The notification part is done by integration between Azure and Zapier which provides many different notification types such as: email, phone call, SMS, Facebook post and more, for this post I'll use a phone call but it is very easy to use any of them.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;NOTE: In a previous &lt;a href="http://blog.amitapple.com/post/56390805814/deployment-email/"&gt;post&lt;/a&gt; I explained about &lt;a href="http://zapier.com"&gt;Zapier&lt;/a&gt; and how you can have a notification when your Azure Web App deployment completes, this is very similar only with a triggered WebJob.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Let's do it:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3&gt;Prerequisites&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;An Azure Web App with at least 1 triggered (on-demand or scheduled) WebJob (although you can add it later).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Sign up to &lt;a href="https://zapier.com/app/signup"&gt;Zapier&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Have both the Zapier and Azure portal open&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Steps&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Go to Zapier and create a new zap (&lt;em&gt;Make a Zap!&lt;/em&gt;).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;For the trigger service select &lt;strong&gt;Azure Web Sites&lt;/strong&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;For the trigger select &lt;strong&gt;New Triggered WebJob Run&lt;/strong&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;For the action, we'll select &lt;strong&gt;Phone&lt;/strong&gt; and &lt;strong&gt;Call Phone&lt;/strong&gt; for this sample but any can be selected.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/webjobs_phone1.png" alt="" /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Click Continue&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;We need to connect to our Azure Web Site hosting our triggered WebJob, for this we need one piece of information from the Azure portal.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;This is the tricky part:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;If your website has continuous deployment setup --&gt; in the Azure portal go to your website, click on the &lt;strong&gt;CONFIGURE&lt;/strong&gt; tab and under the &lt;strong&gt;git&lt;/strong&gt; section copy the url which is under the &lt;strong&gt;DEPLOYMENT TRIGGER URL&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/2013-09-06-deployment-email.md3.png" alt="" /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If you don't have continuous deployment, you can author this url yourself, it is: &lt;code&gt;https://{userName}:{password}@{siteName}.scm.azurewebsites.net/deploy&lt;/code&gt; where you get the &lt;code&gt;{userName}&lt;/code&gt; and &lt;code&gt;{password}&lt;/code&gt; from your site's publishing profile.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/webjobs_phone3.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/webjobs_phone4.png" alt="" /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Go back to the Zapier site and paste this url to the &lt;strong&gt;Deployment URL&lt;/strong&gt; textbox, enter a name for this website account and click continue.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/webjobs_phone2.png" alt="" /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Now create your phone account by providing the phone number and verifying it.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;At this point you can filter when you actually want to initiate the action, for example only when the WebJob run fails or only for a specific WebJob (by name), for now we keep this empty as we want to be notified on all WebJobs runs, click continue.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Next you specify the content of the message, it can be static and dynamic using the WebJob run result.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;For example we'll use: &lt;code&gt;Hello the WebJob named {{job_name}} has completed with status {{status}} and took {{duration}}&lt;/code&gt;, on the right you can use the "Insert fields" button to add other interesting dynamic fields.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;You can even choose the voice of the caller (Man/Woman), I'll let you pick this one.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/images/webjobs_phone5.png" alt="" /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Continue&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Test this Zap&lt;/strong&gt; lets you test your zap by getting previous WebJob runs and doing the selected action on them, click the button and then you can skip the step or test your Zap.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Name and turn this Zap on&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Now go to your Azure portal, run your WebJob, wait for it to complete and wait for the call :)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Get more help about &lt;a href="https://zapier.com/help/windows-azure-web-sites/"&gt;Windows Azure Web Sites on Zapier&lt;/a&gt;.&lt;/p&gt;
+</description><pubDate>Mon, 31 Mar 2014 00:00:00 Z</pubDate><a10:updated>2014-03-31T00:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;&lt;strong&gt;Microsoft Azure WebJobs&lt;/strong&gt; are awesome, and now a little bit more... I'm going to show you how you can setup a notification whenever your triggered (on-demand or scheduled) WebJobs completes.&lt;/p&gt;
+
+&lt;p&gt;The notification part is done by integration between Azure and Zapier which provides many different notification types such as: email, phone call, SMS, Facebook post and more, for this post I'll use a phone call but it is very easy to use any of them.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;NOTE: In a previous &lt;a href="http://blog.amitapple.com/post/56390805814/deployment-email/"&gt;post&lt;/a&gt; I explained about &lt;a href="http://zapier.com"&gt;Zapier&lt;/a&gt; and how you can have a notification when your Azure Web App deployment completes, this is very similar only with a triggered WebJob.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Let's do it:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3&gt;Prerequisites&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;An Azure Web App with at least 1 triggered (on-demand or scheduled) WebJob (although you can add it later).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Sign up to &lt;a href="https://zapier.com/app/signup"&gt;Zapier&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Have both the Zapier and Azure portal open&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Steps&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Go to Zapier and create a new zap (&lt;em&gt;Make a Zap!&lt;/em&gt;).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;For the trigger service select &lt;strong&gt;Azure Web Sites&lt;/strong&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;For the trigger select &lt;strong&gt;New Triggered WebJob Run&lt;/strong&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;For the action, we'll select &lt;strong&gt;Phone&lt;/strong&gt; and &lt;strong&gt;Call Phone&lt;/strong&gt; for this sample but any can be selected.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/webjobs_phone1.png" alt="" /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Click Continue&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;We need to connect to our Azure Web Site hosting our triggered WebJob, for this we need one piece of information from the Azure portal.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;This is the tricky part:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;If your website has continuous deployment setup --&gt; in the Azure portal go to your website, click on the &lt;strong&gt;CONFIGURE&lt;/strong&gt; tab and under the &lt;strong&gt;git&lt;/strong&gt; section copy the url which is under the &lt;strong&gt;DEPLOYMENT TRIGGER URL&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/2013-09-06-deployment-email.md3.png" alt="" /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If you don't have continuous deployment, you can author this url yourself, it is: &lt;code&gt;https://{userName}:{password}@{siteName}.scm.azurewebsites.net/deploy&lt;/code&gt; where you get the &lt;code&gt;{userName}&lt;/code&gt; and &lt;code&gt;{password}&lt;/code&gt; from your site's publishing profile.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/webjobs_phone3.png" alt="" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/webjobs_phone4.png" alt="" /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Go back to the Zapier site and paste this url to the &lt;strong&gt;Deployment URL&lt;/strong&gt; textbox, enter a name for this website account and click continue.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/webjobs_phone2.png" alt="" /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Now create your phone account by providing the phone number and verifying it.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;At this point you can filter when you actually want to initiate the action, for example only when the WebJob run fails or only for a specific WebJob (by name), for now we keep this empty as we want to be notified on all WebJobs runs, click continue.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Next you specify the content of the message, it can be static and dynamic using the WebJob run result.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;For example we'll use: &lt;code&gt;Hello the WebJob named {{job_name}} has completed with status {{status}} and took {{duration}}&lt;/code&gt;, on the right you can use the "Insert fields" button to add other interesting dynamic fields.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;You can even choose the voice of the caller (Man/Woman), I'll let you pick this one.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://blog.amitapple.com/images/webjobs_phone5.png" alt="" /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Continue&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Test this Zap&lt;/strong&gt; lets you test your zap by getting previous WebJob runs and doing the selected action on them, click the button and then you can skip the step or test your Zap.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Name and turn this Zap on&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Now go to your Azure portal, run your WebJob, wait for it to complete and wait for the call :)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Get more help about &lt;a href="https://zapier.com/help/windows-azure-web-sites/"&gt;Windows Azure Web Sites on Zapier&lt;/a&gt;.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://blog.amitapple.com/post/2014/03/access-specific-instance/</guid><link>http://blog.amitapple.com/post/2014/03/access-specific-instance/</link><title>Request for a specific Azure Web App instance</title><description>&lt;p&gt;In Microsoft Azure Web Apps you have the ability to scale your site by adding more instances to it where each instance is running on a different VM.&lt;/p&gt;
+
+&lt;p&gt;When you have more than one instance a request made to your site can go to any of them using a load-balancer that will decide which instance to route the request to based on how busy each instance is at the time.&lt;/p&gt;
+
+&lt;p&gt;One feature of this load-balancer is that once a request from your browser is made to the site, it will add a "cookie" to it (with the response) containing the specific instance id that will make the next request from this browser go to the same instance.&lt;/p&gt;
+
+&lt;p&gt;We can use this feature to send a request to a specific instance of our site.&lt;/p&gt;
+
+&lt;p&gt;The name of the cookie we're going to use is: &lt;strong&gt;ARRAffinity&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3&gt;Code&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;    private static async Task&amp;lt;HttpResponseMessage&amp;gt; GetFromInstance(Uri url, string instanceId)
+    {
+        var cookieContainer = new CookieContainer();
+        using (var handler = new HttpClientHandler() { CookieContainer = cookieContainer })
+        {
+            using (var httpClient = new HttpClient(handler))
+            {
+                cookieContainer.Add(url, new Cookie("ARRAffinity", instanceId));
+                return await httpClient.GetAsync(url);
+            }
+        }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The problem that we have now is getting this instance id, in the update below I'll show how, but a specific site can find out it's own instance id by looking at the environment variable called: &lt;strong&gt;WEBSITE_INSTANCE_ID&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;So one application for this is that we can create a WebJob that is able to call the Website it is hosted on.&lt;/p&gt;
+
+&lt;h3&gt;WebJob Code&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;    private static void Main(string[] args)
+    {
+        string instanceId = Environment.GetEnvironmentVariable("WEBSITE_INSTANCE_ID");
+        string siteName = Environment.GetEnvironmentVariable("WEBSITE_SITE_NAME");
+        var url = new Uri("http://" + siteName + ".azurewebsites.net/");
+        var response = GetFromInstance(url, instanceId).Result;
+        Console.WriteLine(response.Content.ReadAsStringAsync().Result);
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Update&lt;/h2&gt;
+
+&lt;p&gt;Azure Web Sites now provides an API to get all instances (IDs) for your website, you can either do it programmatically or using the Azure CLI tools.&lt;/p&gt;
+
+&lt;h3&gt;Get instance IDs for a web site - sample code&lt;/h3&gt;
+
+&lt;p&gt;First thing to do is install the Azure Web Apps Management Library from &lt;a href="http://www.nuget.org/packages/Microsoft.WindowsAzure.Management.WebSites/" title="nuget"&gt;nuget&lt;/a&gt;, this is the SDK for managing your Azure Web Site from code.&lt;/p&gt;
+
+&lt;p&gt;Now all you need is this code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;internal class Program
+{
+    private static void Main(string[] args)
+    {
+        var cert = new X509Certificate2();
+        cert.Import(Convert.FromBase64String("MIIJ/...=="));
+        var client = new WebSiteManagementClient(new CertificateCloudCredentials("subscription_id_guid", cert));
+
+        var instanceIds = client.WebSites.GetInstanceIds("westuswebspace" /*webspace name*/, "somesite" /*web site name*/);
+        Console.WriteLine(String.Join(", ", instanceIds));
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Azure CLI tools&lt;/h3&gt;
+
+&lt;p&gt;Azure has CLI tools for both PowerShell (for windows users) and xplat using node.js under the cover (for all users including mac, unix and windows).&lt;/p&gt;
+
+&lt;p&gt;To get these tools you can go to this &lt;a href="http://azure.microsoft.com/en-us/downloads/"&gt;link&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To install the xplat tool you can simply write the following command: &lt;code&gt;npm install azure-cli -g&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For more information on using the CLI tools you can go to these links:
+&lt;a href="http://www.hanselman.com/blog/ManagingTheCloudFromTheCommandLine.aspx"&gt;Managing the Cloud from the Command Line&lt;/a&gt; and &lt;a href="http://msdn.microsoft.com/en-us/library/azure/jj156055.aspx"&gt;Azure PowerShell - MSDN&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Tip for PowerShell - Start by using the following command: &lt;code&gt;Add-AzureAccount&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In both tools you get the website's instance ids by getting/showing the website.&lt;/p&gt;
+
+&lt;h4&gt;PowerShell&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;Get-AzureWebsite sitename
+
+Instances                   : {6d016e86bc41ff8e2fcf5d66da0116e929b41609a8cace17b40b6c5e4eb15b44}
+NumberOfWorkers             : 1
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4&gt;xPlat&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; azure site show sitename
+
+info:    Executing command site show
+info:    Showing details for site
++ Getting site information
++ Getting site config information
++ Getting repository settings
++ Getting diagnostic settings
++ Getting site instances information
++ Getting locations
+data:
+data:    Web Site Name:  sitename
+data:    Site Mode:      Standard
+data:    Enabled:        true
+data:    Availability:   Normal
+data:    Last Modified:  Mon Jun 16 2014 18:46:58 GMT-0700 (Pacific Daylight Time)
+data:    Location:       West US
+data:
+data:    Host Name
+data:    ------------------------
+data:    sitename.azurewebsites.net
+data:
+data:    Instance Id
+data:    ----------------------------------------------------------------
+data:    6d016e86bc41ff8e2fcf5d66da0116e929b41609a8cace17b40b6c5e4eb15b44
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hope this helps.&lt;/p&gt;
+</description><pubDate>Tue, 18 Mar 2014 00:00:00 Z</pubDate><a10:updated>2014-03-18T00:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;In Microsoft Azure Web Apps you have the ability to scale your site by adding more instances to it where each instance is running on a different VM.&lt;/p&gt;
+
+&lt;p&gt;When you have more than one instance a request made to your site can go to any of them using a load-balancer that will decide which instance to route the request to based on how busy each instance is at the time.&lt;/p&gt;
+
+&lt;p&gt;One feature of this load-balancer is that once a request from your browser is made to the site, it will add a "cookie" to it (with the response) containing the specific instance id that will make the next request from this browser go to the same instance.&lt;/p&gt;
+
+&lt;p&gt;We can use this feature to send a request to a specific instance of our site.&lt;/p&gt;
+
+&lt;p&gt;The name of the cookie we're going to use is: &lt;strong&gt;ARRAffinity&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3&gt;Code&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;    private static async Task&amp;lt;HttpResponseMessage&amp;gt; GetFromInstance(Uri url, string instanceId)
+    {
+        var cookieContainer = new CookieContainer();
+        using (var handler = new HttpClientHandler() { CookieContainer = cookieContainer })
+        {
+            using (var httpClient = new HttpClient(handler))
+            {
+                cookieContainer.Add(url, new Cookie("ARRAffinity", instanceId));
+                return await httpClient.GetAsync(url);
+            }
+        }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The problem that we have now is getting this instance id, in the update below I'll show how, but a specific site can find out it's own instance id by looking at the environment variable called: &lt;strong&gt;WEBSITE_INSTANCE_ID&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;So one application for this is that we can create a WebJob that is able to call the Website it is hosted on.&lt;/p&gt;
+
+&lt;h3&gt;WebJob Code&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;    private static void Main(string[] args)
+    {
+        string instanceId = Environment.GetEnvironmentVariable("WEBSITE_INSTANCE_ID");
+        string siteName = Environment.GetEnvironmentVariable("WEBSITE_SITE_NAME");
+        var url = new Uri("http://" + siteName + ".azurewebsites.net/");
+        var response = GetFromInstance(url, instanceId).Result;
+        Console.WriteLine(response.Content.ReadAsStringAsync().Result);
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Update&lt;/h2&gt;
+
+&lt;p&gt;Azure Web Sites now provides an API to get all instances (IDs) for your website, you can either do it programmatically or using the Azure CLI tools.&lt;/p&gt;
+
+&lt;h3&gt;Get instance IDs for a web site - sample code&lt;/h3&gt;
+
+&lt;p&gt;First thing to do is install the Azure Web Apps Management Library from &lt;a href="http://www.nuget.org/packages/Microsoft.WindowsAzure.Management.WebSites/" title="nuget"&gt;nuget&lt;/a&gt;, this is the SDK for managing your Azure Web Site from code.&lt;/p&gt;
+
+&lt;p&gt;Now all you need is this code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;internal class Program
+{
+    private static void Main(string[] args)
+    {
+        var cert = new X509Certificate2();
+        cert.Import(Convert.FromBase64String("MIIJ/...=="));
+        var client = new WebSiteManagementClient(new CertificateCloudCredentials("subscription_id_guid", cert));
+
+        var instanceIds = client.WebSites.GetInstanceIds("westuswebspace" /*webspace name*/, "somesite" /*web site name*/);
+        Console.WriteLine(String.Join(", ", instanceIds));
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Azure CLI tools&lt;/h3&gt;
+
+&lt;p&gt;Azure has CLI tools for both PowerShell (for windows users) and xplat using node.js under the cover (for all users including mac, unix and windows).&lt;/p&gt;
+
+&lt;p&gt;To get these tools you can go to this &lt;a href="http://azure.microsoft.com/en-us/downloads/"&gt;link&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To install the xplat tool you can simply write the following command: &lt;code&gt;npm install azure-cli -g&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For more information on using the CLI tools you can go to these links:
+&lt;a href="http://www.hanselman.com/blog/ManagingTheCloudFromTheCommandLine.aspx"&gt;Managing the Cloud from the Command Line&lt;/a&gt; and &lt;a href="http://msdn.microsoft.com/en-us/library/azure/jj156055.aspx"&gt;Azure PowerShell - MSDN&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Tip for PowerShell - Start by using the following command: &lt;code&gt;Add-AzureAccount&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In both tools you get the website's instance ids by getting/showing the website.&lt;/p&gt;
+
+&lt;h4&gt;PowerShell&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;Get-AzureWebsite sitename
+
+Instances                   : {6d016e86bc41ff8e2fcf5d66da0116e929b41609a8cace17b40b6c5e4eb15b44}
+NumberOfWorkers             : 1
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4&gt;xPlat&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; azure site show sitename
+
+info:    Executing command site show
+info:    Showing details for site
++ Getting site information
++ Getting site config information
++ Getting repository settings
++ Getting diagnostic settings
++ Getting site instances information
++ Getting locations
+data:
+data:    Web Site Name:  sitename
+data:    Site Mode:      Standard
+data:    Enabled:        true
+data:    Availability:   Normal
+data:    Last Modified:  Mon Jun 16 2014 18:46:58 GMT-0700 (Pacific Daylight Time)
+data:    Location:       West US
+data:
+data:    Host Name
+data:    ------------------------
+data:    sitename.azurewebsites.net
+data:
+data:    Instance Id
+data:    ----------------------------------------------------------------
+data:    6d016e86bc41ff8e2fcf5d66da0116e929b41609a8cace17b40b6c5e4eb15b44
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hope this helps.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://blog.amitapple.com/post/2014/01/sandra-snow/</guid><link>http://blog.amitapple.com/post/2014/01/sandra-snow/</link><title>Blog.Amit Apple now powered by Sandra.Snow</title><description>&lt;p&gt;I've been wanting to self-host my blog on my own Microsoft Azure Web App for some time now and I've found the perfect solution (for me) to do that in &lt;a href="https://github.com/Sandra/Sandra.Snow"&gt;Sandra.Snow&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Sandra.Snow is a Jekyll inspired static site generation tool that can be run locally, as a CAAS(Compiler as a Service) or setup with Azure to build your site when your repository changes. It is built on top of NancyFX.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;It allows me to store all my posts as markdown files on a git repository on GitHub, and having my Website hooked up to that repository so whenever I push a new change/post my site is automatically redeployed and updated.&lt;/p&gt;
+</description><pubDate>Fri, 24 Jan 2014 00:00:00 Z</pubDate><a10:updated>2014-01-24T00:00:00Z</a10:updated><a10:content type="text">&lt;p&gt;I've been wanting to self-host my blog on my own Microsoft Azure Web App for some time now and I've found the perfect solution (for me) to do that in &lt;a href="https://github.com/Sandra/Sandra.Snow"&gt;Sandra.Snow&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Sandra.Snow is a Jekyll inspired static site generation tool that can be run locally, as a CAAS(Compiler as a Service) or setup with Azure to build your site when your repository changes. It is built on top of NancyFX.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;It allows me to store all my posts as markdown files on a git repository on GitHub, and having my Website hooked up to that repository so whenever I push a new change/post my site is automatically redeployed and updated.&lt;/p&gt;
+</a10:content></item></channel></rss>

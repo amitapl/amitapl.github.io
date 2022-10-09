@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="last-modified" content="2020-05-28T20:51:05.6982304+00:00" />
+    <meta name="keywords" content="Analytics,Azure Mobile Services,Azure Site Extensions,Azure Web Apps,Azure WebJobs,Azure Websites,Deployment Slots,Logging,Messaging,Microsoft Teams,Sandra.Snow,Tags,Telecommunication,Telemetry,Web Applications,Windows 8" />
+    <title>Blog.Amit Apple</title>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="/stylesheets/prettify.css">
+    <link href="/stylesheets/styles.css" rel="stylesheet" media="screen">
+
+    <script type="text/javascript">
+        window.appInsights={queue:[],applicationInsightsId:null,accountId:null,appUserId:null,configUrl:null,start:function(n){function u(n){t[n]=function(){var i=arguments;t.queue.push(function(){t[n].apply(t,i)})}}function f(n,t){if(n){var u=r.createElement(i);u.type="text/javascript";u.src=n;u.async=!0;u.onload=t;u.onerror=t;r.getElementsByTagName(i)[0].parentNode.appendChild(u)}else t()}var r=document,t=this,i;t.applicationInsightsId=n;u("logEvent");u("logPageView");i="script";f(t.configUrl,function(){f("//az416426.vo.msecnd.net/scripts/a/ai.0.7.js")});t.start=function(){}}};
+        
+        appInsights.start("21e48bf6-b6c7-4526-99b0-8afef5a10e20");
+        appInsights.logPageView();
+    </script>
+
+    <link rel="canonical" href="http://blog.amitapple.com/page4/" />
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img class="img img-circle" src="http://www.gravatar.com/avatar/39b6f2748dea9f8eef5323c14e7be79d.jpg?s=80" /></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a style="font-weight: bold" href="/">Blog.Amit Apple</a></li>
+            </ul>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/category">Categories</a></li>
+                    <li><a href="/archive">Archive</a></li>
+                    <li><a href="/feed.xml">RSS</a></li>
+                </ul>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </div>
+
+    
+    <div class="blog-header">
+        <h1 class="blog-title">Blog.Amit Apple</h1>
+        <p class="lead blog-description">Blog by Amit Apple</p>
+    </div>
+
+
+    <div class="container">
+
+        <div class="row">
+            
+
+
+    <div class="blog-main">
+      <div class="blog-post">
+        <h2 class="blog-post-title"><a href="/post/2014/01/sandra-snow/">Blog.Amit Apple now powered by Sandra.Snow</a></h2>
+        <p class="blog-post-meta">posted on 24 Jan 2014</p>
+        
+        <p>I've been wanting to self-host my blog on my own Microsoft Azure Web App for some time now and I've found the perfect solution (for me) to do that in <a href="https://github.com/Sandra/Sandra.Snow">Sandra.Snow</a>.</p>
+
+<blockquote>
+  <p>Sandra.Snow is a Jekyll inspired static site generation tool that can be run locally, as a CAAS(Compiler as a Service) or setup with Azure to build your site when your repository changes. It is built on top of NancyFX.</p>
+</blockquote>
+
+<p>It allows me to store all my posts as markdown files on a git repository on GitHub, and having my Website hooked up to that repository so whenever I push a new change/post my site is automatically redeployed and updated.</p>
+
+        <p><a class="btn" href="/post/2014/01/sandra-snow/">Read more...</a></p>
+      </div>
+      <div class="blog-post">
+        <h2 class="blog-post-title"><a href="/post/74215124623/deploy-azure-webjobs">How to deploy Azure WebJobs</a></h2>
+        <p class="blog-post-meta">posted on 22 Jan 2014</p>
+        
+        <p><strong>Microsoft Azure WebJobs</strong> is a new feature coming from Microsoft Azure Web Apps, you can read all about it <a href="http://www.windowsazure.com/en-us/documentation/articles/web-sites-create-web-jobs/">here</a>.</p>
+
+<p>While you can easily add a new WebJob using the Windows Azure portal, you may want to deploy your WebJob in other ways (ftp / web deploy / git), In this post I'll explain how these WebJobs are stored on your Azure Web App and how you can deploy a new WebJob.</p>
+
+<h2>Where is your WebJobs stored?</h2>
+
+<p>A WebJob is stored under the following directory in your site:</p>
+
+<p><code>site\wwwroot\App_Data\jobs\{job type}\{job name}</code></p>
+
+<p>Where {job type} can be either <strong>continuous</strong> for a job that is always running or <strong>triggered</strong> for a job that starts from an external trigger (on demand / scheduler).</p>
+
+<p>And {job name} is your WebJob's name.</p>
+
+<p>So a continuous WebJob called myjob will be located at:</p>
+
+<p><code>site\wwwroot\App_Data\jobs\continuous\myjob</code></p>
+
+<h2>What should be inside a WebJob directory?</h2>
+
+<p>The WebJob directory can contain 1 to as much as you'd like files but at the least it should contain the script that starts the WebJob's process, this script can currently be: batch (.exe/.cmd/.bat), bash (.sh), javascript (.js as node.js), php (.php) or python (.py).</p>
+
+<p>The script to be run is automatically detected using the following logic:</p>
+
+<ul>
+<li>First look for a file called run.{supported extension} (first one found wins).</li>
+<li>If not found look for any file with a supported extension.</li>
+<li>If not found, this is not a runnable WebJob</li>
+</ul>
+
+<blockquote>
+  <p><strong>NOTE:</strong> If you have some other type of execution engine you wish to use and is currently not supported, you can always create a run.cmd file and create your executor command there (<code>powershell -Command run.ps</code>).</p>
+</blockquote>
+
+<h2>Deploy my WebJob</h2>
+
+<p>So with this information we know that in order to create a new continuous job called myjob all you have to do is get your job's binaries to that folder.</p>
+
+<p>One way to do this is to connect to your site via ftp, create the right directory and copy the binaries there (should include at least one supported script file).</p>
+
+<p>That's it, the WebJob will be auto-detected and immediately start running.</p>
+
+<h2>Deploy Website + WebJobs</h2>
+
+<p>To deploy a website with WebJobs, all you'll need to do is to make sure you deploy your WebJobs are in the right place, take a look at the following structure as an example for a node.js site with a web job:</p>
+
+<pre><code>./server.js
+./App_Data/jobs/continuous/myjob/run.cmd
+</code></pre>
+
+<p>While this project contains only 2 files, it actually is a website with a continuous WebJob, and you can use whatever deployment preference you have to deploy this (ftp / web deploy / git / ...).</p>
+
+<h2>Re-deployment</h2>
+
+<p><strong>Continuous</strong> - After you redeploy a WebJob, the currently running process will abort and restart with the new binaries.</p>
+
+<p><strong>Triggered</strong> - Redeployment will not affect a currently running WebJob but the next run will be using the new WebJob's binaries.</p>
+
+<blockquote>
+  <p><strong>NOTE:</strong> Before a WebJob starts to run, the binaries for it are copied to a temporary directory, this way you can always re-deploy a WebJob safely without worrying that the files are locked.</p>
+</blockquote>
+
+<h2>Triggered WebJob caveat</h2>
+
+<p>One issue we encounter with this method is that when you deploy a triggered WebJob, the result is a WebJob that is only <strong>on demand</strong> meaning you need to press the <strong>RUN ONCE</strong> button in the portal in order to initiate it and (for now) there is no way to easily add a schedule to it.</p>
+
+<p>A workaround would be to create a dummy schedule WebJob with the name you are about to deploy and the deployment will just replace the binaries but keep current schedule.</p>
+
+        <p><a class="btn" href="/post/74215124623/deploy-azure-webjobs">Read more...</a></p>
+      </div>
+      <div class="blog-post">
+        <h2 class="blog-post-title"><a href="/post/73574681678/git-deploy-console-app">Git deploying a .NET console app to Azure using WebJobs</a></h2>
+        <p class="blog-post-meta">posted on 17 Jan 2014</p>
+        
+        <p>There's a new concept coming from Microsoft Azure Web Apps called <strong>WebJobs</strong> where you can have scripts running on a schedule, continuously or simply by invoking them manually.</p>
+
+<p>In this article I'll talk about a simple way of deploying a .NET console application to Microsoft Azure Web Apps which will be deployed as a <strong>continuous job</strong>.</p>
+
+<p>In short, a continuous job is treated similar to a windows service, as long as it's started/enabled, Azure will make sure it's up, it'll start the process (on all of your instances) and whenever the process goes down it'll simply bring it back up (after a 60 seconds delay).</p>
+
+<p>The executable that is deployed as a continuous job should have some kind of an infinite loop (<code>while (true)</code>).</p>
+
+<blockquote>
+  <p><strong>Note:</strong> While you can experiment with continuous jobs in free or shared websites, it'll only work properly in a standard website that has the "always on" setting set, this is since in free/shared sites the jobs process will be brought down after about 20 minutes of no requests to it (a request to the jobs process can be to check the status of current jobs).</p>
+</blockquote>
+
+<p>Enough chit-chat, now to the main event, we have .NET code which we want to (continuously) run on Azure, here are the steps:</p>
+
+<ul>
+<li><strong>Write</strong> your .NET code as a .NET console application, here is a sample:</li>
+</ul>
+
+<script src="https://gist.github.com/amitapl/8467381.js"></script>
+
+<ul>
+<li><p><strong>Add</strong> your code to a git repo.</p>
+
+<p><code>git init</code></p>
+
+<p><code>git add .</code></p>
+
+<p><code>git commit -am Coding</code></p></li>
+<li><p><strong>Create</strong> a new web site with source control.</p></li>
+</ul>
+
+<p><img src="/images/2014-01-17-git-deploy-console-app.md1.png" alt="" /></p>
+
+<ul>
+<li><strong>Get</strong> the url to your site's git repository</li>
+</ul>
+
+<p><img src="/images/2014-01-17-git-deploy-console-app.md2.png" alt="" /></p>
+
+<ul>
+<li><p><strong>Push</strong> the repository to your site.</p>
+
+<p><code>git push http://.../.git master</code></p></li>
+<li><p>That's it, you now have your .NET console application running on Microsoft Azure Web Apps, just go to the WEBJOBS tab and take a look.</p></li>
+</ul>
+
+<p><img src="/images/2014-01-17-git-deploy-console-app.md3.png" alt="" /></p>
+
+<blockquote>
+  <p><strong>Note:</strong> Don't forget to enable the <strong>Always On</strong> feature if you're on standard to make sure this job will never stop running.</p>
+</blockquote>
+
+<p>Now to see the continuous job logs click on the "logs" link (you'll need to enter your publishing user name and password, if you're on chrome even better - it just works), there you would see all the system logs (when the job started, stopped, etc...).</p>
+
+<p>To see the logs produced by the application (console output and error) you need to enable application logging under the CONFIGURATION tab, your logs can go to your file system/azure storage table or blob.</p>
+
+<blockquote>
+  <p><strong>Note:</strong> You can also use app settings/connection strings which would come from the site's configuration, same as you would do for your ASP.NET website.</p>
+</blockquote>
+
+<p>There are more awesome things to say about webjobs, but that's in next posts.</p>
+
+<p>You can use my repo to try it: <a href="https://github.com/amitapl/ContinuousHelloWorld"></a></p>
+
+        <p><a class="btn" href="/post/73574681678/git-deploy-console-app">Read more...</a></p>
+      </div>
+    </div>
+
+  <!-- Pagination links -->
+  <div id="post-pagination" class="pagination">
+
+   
+      <p class="previous">
+        <a href="/page3">Previous Page</a>
+        </p>
+
+
+    <p class="previous">
+      <a href="/page5">Next Page</a>
+    </p>
+
+  </div>
+
+
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>&copy; 2014 - Powered by <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a>.</p>
+        </footer>
+    </div> <!-- /container -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/prettify.js"></script>
+
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-34307246-1']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+    <script>
+        $('pre').addClass('prettyprint');
+        !function ($) {
+            $(function () {
+                window.prettyPrint && prettyPrint()
+            })
+        }(window.jQuery)
+    </script>
+</body>
+</html>

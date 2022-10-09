@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="last-modified" content="2020-05-28T20:51:05.6982304+00:00" />
+    <meta name="keywords" content="Azure Websites,Azure Web Apps" />
+    <title>Blog.Amit Apple</title>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="/stylesheets/prettify.css">
+    <link href="/stylesheets/styles.css" rel="stylesheet" media="screen">
+
+    <script type="text/javascript">
+        window.appInsights={queue:[],applicationInsightsId:null,accountId:null,appUserId:null,configUrl:null,start:function(n){function u(n){t[n]=function(){var i=arguments;t.queue.push(function(){t[n].apply(t,i)})}}function f(n,t){if(n){var u=r.createElement(i);u.type="text/javascript";u.src=n;u.async=!0;u.onload=t;u.onerror=t;r.getElementsByTagName(i)[0].parentNode.appendChild(u)}else t()}var r=document,t=this,i;t.applicationInsightsId=n;u("logEvent");u("logPageView");i="script";f(t.configUrl,function(){f("//az416426.vo.msecnd.net/scripts/a/ai.0.7.js")});t.start=function(){}}};
+        
+        appInsights.start("21e48bf6-b6c7-4526-99b0-8afef5a10e20");
+        appInsights.logPageView();
+    </script>
+
+    <link rel="canonical" href="http://blog.amitapple.com/post/56390805814/deployment-email" />
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img class="img img-circle" src="http://www.gravatar.com/avatar/39b6f2748dea9f8eef5323c14e7be79d.jpg?s=80" /></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a style="font-weight: bold" href="/">Blog.Amit Apple</a></li>
+            </ul>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/category">Categories</a></li>
+                    <li><a href="/archive">Archive</a></li>
+                    <li><a href="/feed.xml">RSS</a></li>
+                </ul>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </div>
+
+    
+
+    <div class="container">
+
+        <div class="row">
+            
+
+<div class="blog-main" id="post">
+    <h1 class="blog-post-title">Sending an email when your Azure web app (website) deployment completes</h1>
+
+    <div class="blog-post-meta">
+        posted on 06 Sep 2013
+            | <a class="label label-info" href="/category/azure-websites">Azure Websites</a>
+            | <a class="label label-info" href="/category/azure-web-apps">Azure Web Apps</a>
+    </div>
+
+    <div class="row">
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style row pull-right" style="margin:10px">
+            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+            <a class="addthis_button_tweet"></a>
+        </div>
+        <script type="text/javascript">var addthis_config = { "data_track_addressbar": true };</script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-537248a1187b7a5c"></script>
+    </div>
+    <div class="blog-post">
+        <!-- AddThis Button END -->
+        
+
+        <p>Windows Azure Web Sites have a new support for web hooks, currently the only event that is directly being invoked is called <strong>PostDeployment</strong> and it will be invoked whenever a deployment is complete with the result of that deployment.</p>
+
+<p>You can find more information on the API for this feature <a href="https://github.com/projectkudu/kudu/wiki/Web-hooks" title="Kudu Web Hooks">here</a>.</p>
+
+<h3>Cool Stuff with Web Hooks</h3>
+
+<p>Having this new API allowed us to collaborate with <a href="http://zapier.com">zapier.com</a> and allow developers to get this post deployment information in many ways like: email, phone call or sms or even tweet about it.</p>
+
+<h3>About Zapier</h3>
+
+<p><a href="http://zapier.com">zapier</a> is a service that is all about the integration of other different services through the concept of <strong>triggers</strong> and <strong>actions</strong>.</p>
+
+<p>A trigger could be a new github issue was opened or a new email was sent to your gmail account and an action could be tweeting a new tweet to tweeter or create a new note in your Evernote account.</p>
+
+<p>In our case we've created a new trigger on Zapier for a deployment to a website that is complete and using Zapier you can connect this trigger to any of actions that are available.</p>
+
+<p>More on <a href="https://zapier.com/zapbook/windows-azure-web-sites/">Windows Azure Web Sites - Zapier Service</a></p>
+
+<p><strong>Let's see how:</strong></p>
+
+<h3>Prerequisites</h3>
+
+<ul>
+<li><p>A Microsoft Azure Web App that is deployed using source control (git, mercurial or dropbox).</p></li>
+<li><p>Sign up to <a href="https://zapier.com/app/signup">Zapier</a></p></li>
+<li><p>Have both the Zapier and Azure portal open</p></li>
+</ul>
+
+<h3>Steps</h3>
+
+<ul>
+<li><p>Go to Zapier and create a new zap.</p>
+
+<p><img src="/images/2013-09-06-deployment-email.md1.png" alt="" /></p></li>
+<li><p>For the trigger service select <strong>Microsoft Azure Web Apps</strong></p></li>
+<li><p>For the trigger select <strong>New Website Deployment</strong></p></li>
+<li><p>For the action, we'll select <strong>email</strong> and <strong>send outbound email</strong> for this sample but any can be selected</p>
+
+<p><img src="/images/2013-09-06-deployment-email.md2.png" alt="" /></p></li>
+<li><p>Click Continue</p></li>
+<li><p>We need to connect to our Azure Web App, for this we need one piece of information from the Azure portal</p></li>
+<li><p>In the Azure portal go to your website, click on the <strong>CONFIGURE</strong> tab and under the <strong>git</strong> section copy the url which is under the <strong>DEPLOYMENT TRIGGER URL</strong></p>
+
+<p><img src="/images/2013-09-06-deployment-email.md3.png" alt="" /></p></li>
+<li><p>Go back to the Zapier site and paste this url to the <strong>Deployment URL</strong> textbox, enter a name for this website account and click continue.</p>
+
+<p><img src="/images/2013-09-06-deployment-email.md4.png" alt="" /></p></li>
+<li><p>Since the email action doesn't require any special account, just click continue again.</p></li>
+<li><p>At this point you can filter what kind of post deployment event will actually trigger this action (for example only failed deployments), for now we keep this empty, click continue</p></li>
+<li><p><strong>Create your Outbound Email</strong> lets you customize the email, the content can be static and dynamic (coming from the post deployment result)</p></li>
+<li><p>On the <strong>To</strong> textbox enter your email</p></li>
+<li><p>On the <strong>Subject</strong> textbox enter: <strong>Deployment complete with status: {{status}}</strong></p></li>
+<li><p>On the right side of each textbox there is an icon you can click to get the different dynamic fields that will be available from the deployment result, so in the <strong>Body</strong> textbox just experiment with the different fields.</p>
+
+<p><img src="/images/2013-09-06-deployment-email.md5.png" alt="" /></p></li>
+<li><p>Continue</p></li>
+<li><p><strong>Try out your Zap</strong> lets you test your zap by getting previous deployment results and doing the selected action on them, you can use it if you have existing deployments on your site otherwise click <strong>skip this</strong>.</p></li>
+<li><p><strong>Name your zap</strong> and make it live.</p></li>
+<li><p>Last step is to deploy your site and see the magic (action) happens.</p></li>
+</ul>
+
+<p>Get more help about <a href="https://zapier.com/help/windows-azure-web-sites/">Windows Azure Web Sites on Zapier</a>.</p>
+
+    </div>
+
+    <div id="disqus_thread"></div>
+<script>
+    var reset_disqus = function(){
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                //this.page.identifier = '';
+                this.page.url = 'http://blog.amitapple.com/post/56390805814/deployment-email';
+                //this.page.title = '';
+            }
+        });
+    };
+
+    var disqus_shortname = 'blogamitapple';
+    var disqus_url = 'http://blog.amitapple.com/post/56390805814/deployment-email';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    window.addEventListener('orientationchange', reset_disqus);
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>&copy; 2014 - Powered by <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a>.</p>
+        </footer>
+    </div> <!-- /container -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/prettify.js"></script>
+
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-34307246-1']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+    <script>
+        $('pre').addClass('prettyprint');
+        !function ($) {
+            $(function () {
+                window.prettyPrint && prettyPrint()
+            })
+        }(window.jQuery)
+    </script>
+</body>
+</html>

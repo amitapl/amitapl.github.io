@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="last-modified" content="2020-05-28T20:51:05.6982304+00:00" />
+    <meta name="keywords" content="Azure Websites,Azure Web Apps" />
+    <title>Blog.Amit Apple</title>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="/stylesheets/prettify.css">
+    <link href="/stylesheets/styles.css" rel="stylesheet" media="screen">
+
+    <script type="text/javascript">
+        window.appInsights={queue:[],applicationInsightsId:null,accountId:null,appUserId:null,configUrl:null,start:function(n){function u(n){t[n]=function(){var i=arguments;t.queue.push(function(){t[n].apply(t,i)})}}function f(n,t){if(n){var u=r.createElement(i);u.type="text/javascript";u.src=n;u.async=!0;u.onload=t;u.onerror=t;r.getElementsByTagName(i)[0].parentNode.appendChild(u)}else t()}var r=document,t=this,i;t.applicationInsightsId=n;u("logEvent");u("logPageView");i="script";f(t.configUrl,function(){f("//az416426.vo.msecnd.net/scripts/a/ai.0.7.js")});t.start=function(){}}};
+        
+        appInsights.start("21e48bf6-b6c7-4526-99b0-8afef5a10e20");
+        appInsights.logPageView();
+    </script>
+
+    <link rel="canonical" href="http://blog.amitapple.com/post/2014/03/access-specific-instance/" />
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img class="img img-circle" src="http://www.gravatar.com/avatar/39b6f2748dea9f8eef5323c14e7be79d.jpg?s=80" /></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a style="font-weight: bold" href="/">Blog.Amit Apple</a></li>
+            </ul>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/category">Categories</a></li>
+                    <li><a href="/archive">Archive</a></li>
+                    <li><a href="/feed.xml">RSS</a></li>
+                </ul>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </div>
+
+    
+
+    <div class="container">
+
+        <div class="row">
+            
+
+<div class="blog-main" id="post">
+    <h1 class="blog-post-title">Request for a specific Azure Web App instance</h1>
+
+    <div class="blog-post-meta">
+        posted on 18 Mar 2014
+            | <a class="label label-info" href="/category/azure-websites">Azure Websites</a>
+            | <a class="label label-info" href="/category/azure-web-apps">Azure Web Apps</a>
+    </div>
+
+    <div class="row">
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style row pull-right" style="margin:10px">
+            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+            <a class="addthis_button_tweet"></a>
+        </div>
+        <script type="text/javascript">var addthis_config = { "data_track_addressbar": true };</script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-537248a1187b7a5c"></script>
+    </div>
+    <div class="blog-post">
+        <!-- AddThis Button END -->
+        
+
+        <p>In Microsoft Azure Web Apps you have the ability to scale your site by adding more instances to it where each instance is running on a different VM.</p>
+
+<p>When you have more than one instance a request made to your site can go to any of them using a load-balancer that will decide which instance to route the request to based on how busy each instance is at the time.</p>
+
+<p>One feature of this load-balancer is that once a request from your browser is made to the site, it will add a "cookie" to it (with the response) containing the specific instance id that will make the next request from this browser go to the same instance.</p>
+
+<p>We can use this feature to send a request to a specific instance of our site.</p>
+
+<p>The name of the cookie we're going to use is: <strong>ARRAffinity</strong></p>
+
+<h3>Code</h3>
+
+<pre><code>    private static async Task&lt;HttpResponseMessage&gt; GetFromInstance(Uri url, string instanceId)
+    {
+        var cookieContainer = new CookieContainer();
+        using (var handler = new HttpClientHandler() { CookieContainer = cookieContainer })
+        {
+            using (var httpClient = new HttpClient(handler))
+            {
+                cookieContainer.Add(url, new Cookie("ARRAffinity", instanceId));
+                return await httpClient.GetAsync(url);
+            }
+        }
+    }
+</code></pre>
+
+<p>The problem that we have now is getting this instance id, in the update below I'll show how, but a specific site can find out it's own instance id by looking at the environment variable called: <strong>WEBSITE_INSTANCE_ID</strong>.</p>
+
+<p>So one application for this is that we can create a WebJob that is able to call the Website it is hosted on.</p>
+
+<h3>WebJob Code</h3>
+
+<pre><code>    private static void Main(string[] args)
+    {
+        string instanceId = Environment.GetEnvironmentVariable("WEBSITE_INSTANCE_ID");
+        string siteName = Environment.GetEnvironmentVariable("WEBSITE_SITE_NAME");
+        var url = new Uri("http://" + siteName + ".azurewebsites.net/");
+        var response = GetFromInstance(url, instanceId).Result;
+        Console.WriteLine(response.Content.ReadAsStringAsync().Result);
+    }
+</code></pre>
+
+<h2>Update</h2>
+
+<p>Azure Web Sites now provides an API to get all instances (IDs) for your website, you can either do it programmatically or using the Azure CLI tools.</p>
+
+<h3>Get instance IDs for a web site - sample code</h3>
+
+<p>First thing to do is install the Azure Web Apps Management Library from <a href="http://www.nuget.org/packages/Microsoft.WindowsAzure.Management.WebSites/" title="nuget">nuget</a>, this is the SDK for managing your Azure Web Site from code.</p>
+
+<p>Now all you need is this code:</p>
+
+<pre><code>internal class Program
+{
+    private static void Main(string[] args)
+    {
+        var cert = new X509Certificate2();
+        cert.Import(Convert.FromBase64String("MIIJ/...=="));
+        var client = new WebSiteManagementClient(new CertificateCloudCredentials("subscription_id_guid", cert));
+
+        var instanceIds = client.WebSites.GetInstanceIds("westuswebspace" /*webspace name*/, "somesite" /*web site name*/);
+        Console.WriteLine(String.Join(", ", instanceIds));
+    }
+}
+</code></pre>
+
+<h3>Azure CLI tools</h3>
+
+<p>Azure has CLI tools for both PowerShell (for windows users) and xplat using node.js under the cover (for all users including mac, unix and windows).</p>
+
+<p>To get these tools you can go to this <a href="http://azure.microsoft.com/en-us/downloads/">link</a>.</p>
+
+<p>To install the xplat tool you can simply write the following command: <code>npm install azure-cli -g</code></p>
+
+<p>For more information on using the CLI tools you can go to these links:
+<a href="http://www.hanselman.com/blog/ManagingTheCloudFromTheCommandLine.aspx">Managing the Cloud from the Command Line</a> and <a href="http://msdn.microsoft.com/en-us/library/azure/jj156055.aspx">Azure PowerShell - MSDN</a></p>
+
+<blockquote>
+  <p>Tip for PowerShell - Start by using the following command: <code>Add-AzureAccount</code>.</p>
+</blockquote>
+
+<p>In both tools you get the website's instance ids by getting/showing the website.</p>
+
+<h4>PowerShell</h4>
+
+<pre><code>Get-AzureWebsite sitename
+
+Instances                   : {6d016e86bc41ff8e2fcf5d66da0116e929b41609a8cace17b40b6c5e4eb15b44}
+NumberOfWorkers             : 1
+...
+</code></pre>
+
+<h4>xPlat</h4>
+
+<pre><code>&gt; azure site show sitename
+
+info:    Executing command site show
+info:    Showing details for site
++ Getting site information
++ Getting site config information
++ Getting repository settings
++ Getting diagnostic settings
++ Getting site instances information
++ Getting locations
+data:
+data:    Web Site Name:  sitename
+data:    Site Mode:      Standard
+data:    Enabled:        true
+data:    Availability:   Normal
+data:    Last Modified:  Mon Jun 16 2014 18:46:58 GMT-0700 (Pacific Daylight Time)
+data:    Location:       West US
+data:
+data:    Host Name
+data:    ------------------------
+data:    sitename.azurewebsites.net
+data:
+data:    Instance Id
+data:    ----------------------------------------------------------------
+data:    6d016e86bc41ff8e2fcf5d66da0116e929b41609a8cace17b40b6c5e4eb15b44
+...
+</code></pre>
+
+<p>Hope this helps.</p>
+
+    </div>
+
+    <div id="disqus_thread"></div>
+<script>
+    var reset_disqus = function(){
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                //this.page.identifier = '';
+                this.page.url = 'http://blog.amitapple.com/post/2014/03/access-specific-instance/';
+                //this.page.title = '';
+            }
+        });
+    };
+
+    var disqus_shortname = 'blogamitapple';
+    var disqus_url = 'http://blog.amitapple.com/post/2014/03/access-specific-instance/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    window.addEventListener('orientationchange', reset_disqus);
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>&copy; 2014 - Powered by <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a>.</p>
+        </footer>
+    </div> <!-- /container -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/prettify.js"></script>
+
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-34307246-1']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+    <script>
+        $('pre').addClass('prettyprint');
+        !function ($) {
+            $(function () {
+                window.prettyPrint && prettyPrint()
+            })
+        }(window.jQuery)
+    </script>
+</body>
+</html>

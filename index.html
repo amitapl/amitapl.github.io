@@ -1,0 +1,625 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="last-modified" content="2020-05-28T20:51:05.6982304+00:00" />
+    <meta name="keywords" content="Analytics,Azure Mobile Services,Azure Site Extensions,Azure Web Apps,Azure WebJobs,Azure Websites,Deployment Slots,Logging,Messaging,Microsoft Teams,Sandra.Snow,Tags,Telecommunication,Telemetry,Web Applications,Windows 8" />
+    <title>Blog.Amit Apple</title>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="/stylesheets/prettify.css">
+    <link href="/stylesheets/styles.css" rel="stylesheet" media="screen">
+
+    <script type="text/javascript">
+        window.appInsights={queue:[],applicationInsightsId:null,accountId:null,appUserId:null,configUrl:null,start:function(n){function u(n){t[n]=function(){var i=arguments;t.queue.push(function(){t[n].apply(t,i)})}}function f(n,t){if(n){var u=r.createElement(i);u.type="text/javascript";u.src=n;u.async=!0;u.onload=t;u.onerror=t;r.getElementsByTagName(i)[0].parentNode.appendChild(u)}else t()}var r=document,t=this,i;t.applicationInsightsId=n;u("logEvent");u("logPageView");i="script";f(t.configUrl,function(){f("//az416426.vo.msecnd.net/scripts/a/ai.0.7.js")});t.start=function(){}}};
+        
+        appInsights.start("21e48bf6-b6c7-4526-99b0-8afef5a10e20");
+        appInsights.logPageView();
+    </script>
+
+    <link rel="canonical" href="http://blog.amitapple.com/" />
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img class="img img-circle" src="http://www.gravatar.com/avatar/39b6f2748dea9f8eef5323c14e7be79d.jpg?s=80" /></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a style="font-weight: bold" href="/">Blog.Amit Apple</a></li>
+            </ul>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/category">Categories</a></li>
+                    <li><a href="/archive">Archive</a></li>
+                    <li><a href="/feed.xml">RSS</a></li>
+                </ul>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </div>
+
+    
+    <div class="blog-header">
+        <h1 class="blog-title">Blog.Amit Apple</h1>
+        <p class="lead blog-description">Blog by Amit Apple</p>
+    </div>
+
+
+    <div class="container">
+
+        <div class="row">
+            
+
+
+    <div class="blog-main">
+      <div class="blog-post">
+        <h2 class="blog-post-title"><a href="/post/2020/05/teams-role-based-messaging/">Role-Based Messaging in Microsoft Teams</a></h2>
+        <p class="blog-post-meta">posted on 25 May 2020</p>
+        
+        <h2>What is Microsoft Teams?</h2>
+
+<p><a href="https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software">Microsoft Teams</a> is a collaboration and communication platform for organizations and teams that includes messaging, meetings, calls, file storage, application integrations and more.</p>
+
+<h2>What is Role-Based Messaging?</h2>
+
+<p>Role-based messaging is contacting a person (or a group) based on their role instead of their name.</p>
+
+<p>Some examples:</p>
+
+<ul>
+<li>You want to send a message to the <strong>Assistant to the Regional Manager</strong>.</li>
+<li>You want to recommend a theme to the <strong>Party Planning Committee</strong>.</li>
+<li>You want to report a fire hazard to the <strong>Security Supervisor</strong>.</li>
+</ul>
+
+<p><br></p>
+
+<p><img src="https://i.makeagif.com/media/4-17-2015/F06bPD.gif" alt="Dwight Schrute Becomes Assistant Regional Manager // The Office US" /></p>
+
+<p><br></p>
+
+<h2>Role-based messaging in Microsoft Teams</h2>
+
+<p>The way to achieve role-based messaging in Microsoft Teams is using a feature called <strong>Tags</strong>.</p>
+
+<blockquote>
+  <p>Tags in Microsoft Teams let users communicate with a subset of people on a team. Tags can be added to one or multiple team members to easily connect with the right subset of people. Team owners and members (if the feature is enabled for them) can add one or more tags to a person. The tags can then be used in @mentions by anyone on the team in a channel post or to start a conversation with only those people who are assigned that tag.
+  (<a href="https://docs.microsoft.com/en-us/microsoftteams/manage-tags">source</a>)</p>
+</blockquote>
+
+<p>You can think of Tags as a way to add a role to a team member, for example add the <strong>Assistant to the Regional Manager</strong> tag to Dwight.
+Or as a way to group members of a team, for example add the <strong>Party Planning Committee</strong> tag to Pam, Phyllis, Angela and Ryan.</p>
+
+<p>To manage tags in Microsoft Teams you need to click on the <strong>...</strong> next to the team for which you want to manage tags. There, you should see the "Manage tags" menu item. Then click on the "Create tag" button and add the team members you want to that tag.</p>
+
+<p><br></p>
+
+<p><img src="/images/managetags.png" alt="" /></p>
+
+<p><br></p>
+
+<blockquote>
+  <p>Note: You need to either be the team owner to manage tags for the team or the team owner can also configure all members of a team to be allowed to manage tags on the "Manage Team / Settings" screen.</p>
+</blockquote>
+
+<p><br></p>
+
+<p>In the "Manage Tags" menu, you'll be able to see existing tags and edit them by renaming a tag or adding/removing team members from a tag. If you remove all members from a tag, the tag will be removed.</p>
+
+<p>Another way to create a tag is on the "Manage team" screen where the view is team member centric instead of tag centric. There you can add 1 or more tags on a specific team member and see the different tags each team member has.</p>
+
+<p><br></p>
+
+<p><img src="/images/managetags3.png" alt="" /></p>
+
+<p><br></p>
+
+<p>Once you have your tags/roles you can start using them when writing a channel message to send a notification to the right person by mentioning the tag.</p>
+
+<p><img src="/images/mention1.png" alt="" /></p>
+
+<p><br></p>
+
+<p>Or by starting a chat conversation with the person (or people) with that tag.</p>
+
+<p><img src="/images/chat1.png" alt="" /></p>
+
+<p><br></p>
+
+<p>While this post describes how to manage and use tags on desktop/web, you can also do it on the mobile app in a similar way.</p>
+
+<p><img src="/images/managetagsmobile1.png" alt="" /></p>
+
+<p><br></p>
+
+<p>You can find more information on using Tags <a href="https://support.office.com/en-us/article/using-tags-in-teams-667bd56f-32b8-4118-9a0b-56807c96d91e">here</a> and <a href="https://docs.microsoft.com/en-us/microsoftteams/manage-tags">here</a>.</p>
+
+        <p><a class="btn" href="/post/2020/05/teams-role-based-messaging/">Read more...</a></p>
+      </div>
+      <div class="blog-post">
+        <h2 class="blog-post-title"><a href="/post/2015/11/story-new-logging-approach/">New approach to logging - Story</a></h2>
+        <p class="blog-post-meta">posted on 21 Nov 2015</p>
+        
+        <p>Writing logs is usually pretty easy in a project, just select/add your favorite logging framework (Trace, NLog, Log4Net, ...), maybe configure it a bit, and start writing logs.</p>
+
+<p>But then comes the time when you actually need to use these logs, maybe to debug an issue, this is when you realize the mess: here is an error log but wait what happened before that, who was the user, what was the action and how long did it take... someone please put me in context!</p>
+
+<p>Well there are current solutions for that, kinda, you'll need to go back to the code and start adding correlation ids, and use some logging query magic with grouping and filtering on top of what might be a high amount of logs. Not so easy after all, especially after the fact as you have enormous amount of logs and most of them are just noise.</p>
+
+<p>What you really want to do is remove all the noise, but still have full logs when you need them (error case for example).</p>
+
+<p>In this blog post I wanted to show a new approach to logging using a new framework called: <a href="https://github.com/narratr/story">Story</a>.</p>
+
+<h2>What is this story</h2>
+
+<pre><code>Storytelling.Factory.StartNew("MyAction", () =&gt;
+{
+    this.counter++;
+    Storytelling.Info("added 1 to counter");
+    Storytelling.Data["counter"] = this.counter;
+});
+
+// Output:
+// 11/21/2015 5:01:20 PM
+//   Story MyAction (a66feed7-112a-42fe-9a3f-329939151f23) on rule Trace
+//   counter - 1
+//
+//   +1.9999 ms Info added 1 to counter
+//
+//   - Story "MyAction" took 3 ms
+</code></pre>
+
+<p>The story framework (currently only for .NET) is about collecting information (logs and any bits of data) about the currently running code and putting it inside a context and when this context ends using rules figure out what to do with this information collection (story).</p>
+
+<p>Too abstract, lets use an example:</p>
+
+<p>We have a web application for posting questions, in this approach every request will run under a new story context. This means that every log produced will be added to that story and every data will be added to it like the current user posting the question, the url of the request, the response and even the query we ran to insert the question to the database.</p>
+
+<p>Then when the request ends and the story stops, a set of rules will decide what to do with it:</p>
+
+<ul>
+<li>If there was an error store the story.</li>
+<li>If the operation ran too long increase a performance counter.</li>
+<li>If the user is <em>someone you like</em> alert the team.</li>
+<li>If a new question was added send an analytics event to <a href="https://keen.io">keen.io</a>.</li>
+<li>If nothing special happened send to trace (or maybe do nothing with it).</li>
+</ul>
+
+<p>This gives you full control on your logs/telemetry/analytics at coding time, and the story you get, if there was an error for example, will have all the information you need, and more importantly, information (stories) that you don't need (usually most of them) will not distract you.</p>
+
+<p><strong>How cool is that?</strong></p>
+
+<p>Well these rules can also be updated on the fly which opens awesome scenarios, for example - your user has an issue, just add a rule that sends all his stories to a new storage container and observe that container, no need to filter and you see everything that this user do immediately.</p>
+
+<h2>Using Story</h2>
+
+<p>To use the Story you need to create/start a new story and run your code within the context of that Story.</p>
+
+<pre><code>Storytelling.Factory.StartNew("MyAction", () =&gt;
+{
+    // ... your code
+    // and adding logs and information to the story
+    Storytelling.Info("added 1 to i");  // log
+    Storytelling.Data["i"] = i;         // data
+});
+</code></pre>
+
+<p>The created story is added to the context (CallContext or HttpContext depending on where you run) so anything running within that context can just call <code>Storytelling</code> and add logs/data to the story.</p>
+
+<blockquote>
+  <p>We name the story ("MyAction" in this case) to help us later when we run rules on the stories.</p>
+</blockquote>
+
+<p>You can also create new stories, which will be added as children to the current story in context (and will become the current story in the context) giving us an execution graph later when we observe the story.</p>
+
+<p>The second part is setting the rules which tells each story what to do when it ends (and begins), for example:</p>
+
+<pre><code>// Create the ruleset
+var ruleset = new Ruleset&lt;IStory, IStoryHandler&gt;();
+
+// Add a new predicate rule, for any story run the console handler which prints the story to the console
+var consoleHandler = new ConsoleHandler("PrintToConsole", StoryFormatters.GetBasicStoryFormatter(LogSeverity.Debug));
+ruleset.Rules.Add(
+    new PredicateRule(
+        story =&gt; true,
+        story =&gt; consoleHandler));
+
+// Set a new basic factory that uses the ruleset as the default story factory
+Storytelling.Factory = new BasicStoryFactory(ruleset);
+</code></pre>
+
+<blockquote>
+  <p>You should initialize the factory once at the start of the app.</p>
+</blockquote>
+
+<h2>Adding Story to Web Application</h2>
+
+<p>To get a better real sample I'll show how to add stories to an asp.net owin web application.</p>
+
+<blockquote>
+  <p>You can find the code demonstrated in this blog post in <a href="https://github.com/amitapl/FooWebApplication">this github repository</a>.</p>
+</blockquote>
+
+<p>We'll start with a barebone owin web application and add the <a href="https://nuget.org/packages/Story">Story nuget package</a> (<code>nuget install story</code>).</p>
+
+<p>Then add a middleware that puts requests in a Story context.</p>
+
+<pre><code>public class StoryMiddleware : OwinMiddleware
+{
+    public StoryMiddleware(OwinMiddleware next)
+        : base(next)
+    {
+    }
+
+    public override Task Invoke(IOwinContext context)
+    {
+        var request = context.Request;
+        return Storytelling.StartNewAsync("Request", async () =&gt;
+        {
+            try
+            {
+                Storytelling.Data["RequestUrl"] = request.Uri.ToString();
+                Storytelling.Data["RequestMethod"] = request.Method;
+                Storytelling.Data["UserIp"] = request.RemoteIpAddress;
+                Storytelling.Data["UserAgent"] = request.Headers.Get("User-Agent");
+                Storytelling.Data["Referer"] = request.Headers.Get("Referer");
+
+                await Next.Invoke(context);
+
+                Storytelling.Data["Response"] = context.Response.StatusCode;
+            }
+            catch (Exception e)
+            {
+                var m = e.Message;
+                Storytelling.Error(m);
+                throw;
+            }
+        });
+    }
+}
+</code></pre>
+
+<p>To make sure all exceptions are handled properly (and not get lost in web api), we'll add an exception filter too.</p>
+
+<pre><code>public class ExceptionStoryFilterAttribute : ExceptionFilterAttribute
+{
+    public override void OnException(HttpActionExecutedContext context)
+    {
+        Storytelling.Warn("Internal error - " + context.Exception);
+        var message = context.Exception.Message;
+        var httpStatusCode = HttpStatusCode.InternalServerError;
+
+        Storytelling.Data["responseMessage"] = message;
+
+        var resp = new HttpResponseMessage()
+        {
+            Content = new StringContent(message)
+        };
+
+        resp.StatusCode = httpStatusCode;
+
+        context.Response = resp;
+
+        base.OnException(context);
+    }
+}
+</code></pre>
+
+<p>Add them to owin and web api.</p>
+
+<pre><code>public void Configuration(IAppBuilder appBuilder)
+{
+    // ...
+    appBuilder.Use&lt;StoryMiddleware&gt;();
+    // ...
+    HttpConfiguration config = new HttpConfiguration();
+    config.Filters.Add(new ExceptionStoryFilterAttribute());
+    appBuilder.UseWebApi(config);
+    // ...
+}
+</code></pre>
+
+<p>Now, we can start using Story to collect information.</p>
+
+<pre><code>public Task&lt;HttpResponseMessage&gt; GetSomething()
+{
+    // We wrap a controller action with a (sub)story
+    return Storytelling.Factory.StartNewAsync("GetUser", async () =&gt;
+    {
+        var name = await fooService.GetRandomName();
+
+        // Log to the story
+        Storytelling.Info("Prepare something object");
+        object something = new
+        {
+            Name = name
+        };
+
+        // Add data to story
+        Storytelling.Data["something"] = something;
+
+        return Request.CreateResponse(something);
+    });
+}
+
+// Output:
+// Selfhost.exe Information: 0 : 11/21/2015 5:42:42 PM
+//    Story Request (774743a8-768e-4820-a76c-09a32fab6794) on rule Trace
+//    RequestUrl - "http://localhost:2222/api/something"
+//    RequestMethod - "GET"
+//    UserIp - "::1"
+//    UserAgent - "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
+//    Referer - "http://localhost:2222/"
+//    Response - 200
+//    something - {"name":"Smelly Zebra"}
+
+//    +497.0671 ms Info Getting random name
+//    +508.0291 ms Info Prepare something object
+
+//    - Story "Request" took 815 ms
+//      - Story "GetSomething" took 44 ms
+</code></pre>
+
+<p>We can also collect information in inner methods.</p>
+
+<pre><code>public async Task&lt;string&gt; GetRandomName()
+{
+    Storytelling.Info("Getting random name");
+    await Task.Delay(10);
+    return GetRandomItem(Adjectives) + " " + GetRandomItem(Animals);
+}
+</code></pre>
+
+<p>Finally we need to initialize the story factory, we will use <code>FileBasedStoryFactory</code> which lets us update the ruleset on the fly. The ruleset itself is a class written in a file, to change it we change the code in that file and copy it over to the server.</p>
+
+<blockquote>
+  <p>The ruleset code file is stored in the project both as a source file (Compile) and as a content file (marked as "Copy Always") so it has the benefit of intellisense and used as an external file to the project.</p>
+</blockquote>
+
+<pre><code>// Startup.cs
+public void Configuration(IAppBuilder appBuilder)
+{
+    Storytelling.Factory = new FileBasedStoryFactory(ConfigurationManager.AppSettings["StoryRulesetPath"]);
+    // ...
+}
+
+// StoryRuleset.cs
+public class StoryRuleset : Ruleset&lt;IStory, IStoryHandler&gt;
+{
+    public StoryRuleset()
+    {
+        IStoryHandler storyHandler =
+            StoryHandlers.DefaultTraceHandler.Compose(
+            new AzureTableStorageHandler("AzureTable", azureTableStorageConfiguration));
+
+        Rules.Add(
+            new PredicateRule(
+                story =&gt; story.IsRoot(),
+                story =&gt; storyHandler));
+    }
+}
+</code></pre>
+
+<p>You'll notice we've added both a story handler that sends stories to the Trace and one that sends stories to the azure table storage.
+To make the second one work you'll need to add a connection string for your azure storage account with the name "StoryTableStorage" (can be in the web/app.config or the azure portal settings if using azure).</p>
+
+<blockquote>
+  <p>If you use the azure table storage story handler to persist your stories and also use Azure Web Apps to deploy your web application you can install the <a href="https://www.siteextensions.net/packages/websitelogs/">Azure Websites Log Browser</a> (<a href="http://blog.amitapple.com/post/2014/06/azure-website-logging/">blog post here</a>) which now supports viewing your stories in a readable way.</p>
+</blockquote>
+
+<p><img src="/images/viewstory.png" alt="Log Browser" /></p>
+
+<p>You can find the full sample app <a href="https://github.com/amitapl/FooWebApplication">here on github</a>.</p>
+
+<p>It also has a <strong>Deploy to Azure</strong> button if you want to try it out on the cloud and try out the log browser site extension, just make sure to set the azure storage connection string (when asked). To access the log browser, go to: <code>https://{sitename}.scm.azurewebsites.net/websitelogs/</code>.</p>
+
+<p>You can find more information about the Story framework <a href="https://github.com/narratr/story">here</a>.</p>
+
+        <p><a class="btn" href="/post/2015/11/story-new-logging-approach/">Read more...</a></p>
+      </div>
+      <div class="blog-post">
+        <h2 class="blog-post-title"><a href="/post/2015/06/scheduling-azure-webjobs/">Scheduling Azure WebJobs with cron expressions</a></h2>
+        <p class="blog-post-meta">posted on 17 Jun 2015</p>
+        
+        <p>Scheduled WebJobs have existed from the beginning of Azure WebJobs, they are a result of combining 2 different Azure resources: a triggered WebJob containing the script to run and an Azure Scheduler job containing the schedule to use.</p>
+
+<p>The Azure Scheduler job would point to the triggered WebJob invoke url and would make a request to it on schedule.</p>
+
+<p>There have been some difficulties with this approach mainly around the deployment part of the schedule which convinced us to build another scheduler implementation that is built into <a href="https://github.com/projectkudu/kudu">kudu</a> (the WebJobs host) which enables a scheduled WebJob to be deployed by simply adding a file with the WebJob binaries.</p>
+
+<h2>How to add a schedule to a triggered WebJob</h2>
+
+<p>The way to add a schedule to a triggered WebJob is by adding a file called <code>settings.job</code> with the following json content: <code>{"schedule": "the schedule as a cron expression"}</code>, this file should be at the root of the WebJob directory (next to the WebJob executable).</p>
+
+<blockquote>
+  <p>If you already have this file with other settings simply add the <code>schedule</code> property.</p>
+</blockquote>
+
+<p>The schedule is configured using a <a href="https://code.google.com/p/ncrontab/wiki/CrontabExpression">cron expression</a> which is a common way to write schedules.</p>
+
+<h3>CRON Expressions</h3>
+
+<p>There are many pages that can teach you how to write a cron expression, I will describe the main format used for the scheduled WebJob.</p>
+
+<ul>
+<li>The cron parsing is implemented by <a href="http://www.nuget.org/packages/ncrontab/">NCrontab</a> nuget package.</li>
+<li>The cron expression is composed of 6 fields: <code>{second} {minute} {hour} {day} {month} {day of the week}</code>.</li>
+<li>The supported operators are: <code>,</code> <code>-</code> <code>*</code> <code>/</code></li>
+<li>Each field can have a specific value (1), a range (1-10), a set of values (1,2,3), all values (), an interval value (/2 == 0,2,4,6,...) or a mix of these (1,5-10).</li>
+<li>Each value represents a point in time, for example: "5 * * * * *" - means on the 5th second of every minutes --> 00:00:05, 00:01:05, 00:02:05, ... (and not every 5 seconds).</li>
+</ul>
+
+<h3>Samples</h3>
+
+<ul>
+<li><code>0 0 13 * * *</code> - 1pm every day.</li>
+<li><code>0 15 9 * * *</code> - 9:15am every day.</li>
+<li><code>0 0/5 16 * * *</code> - Every 5 minutes starting at 4pm and ending at 4:55pm, every day.</li>
+<li><code>0 11 11 11 11 *</code> - Every November 11th at 11:11am.</li>
+</ul>
+
+<p>You can find some more cron expression samples <a href="https://code.google.com/p/ncrontab/wiki/CrontabExamples">here</a> but note that they have 5 fields, to use them you should add a <code>0</code> as the first field (for the seconds).</p>
+
+<blockquote>
+  <p><strong>Important</strong> - To use this way of scheduling WebJobs you'll have to configure the website as <strong>Always On</strong> (just as you would with continuous WebJobs) otherwise the <strong>scm</strong> website will go down and the scheduling will stop until it is brought up again.</p>
+</blockquote>
+
+<h3>Debugging a schedule</h3>
+
+<p>To see the scheduler logs for a scheduled WebJob you need to use the get triggered WebJob api, go to the url: https://{sitename}.scm.azurewebsites.net/api/triggeredwebjobs/{jobname} (remove the job name to see all triggered WebJobs).</p>
+
+<p>You will receive the following json result:</p>
+
+<pre><code>{
+    name: "jobName",
+    runCommand: "...\run.cmd",
+    type: "triggered",
+    url: "http://.../triggeredwebjobs/jobName",
+    history_url: "http://.../triggeredwebjobs/jobName/history",
+    extra_info_url: "http://.../",
+    scheduler_logs_url: "https://.../vfs/data/jobs/triggered/jobName/job_scheduler.log",
+    settings: { },
+    using_sdk: false,
+    latest_run:
+      {
+        id: "20131103120400",
+        status: "Success",
+        start_time: "2013-11-08T02:56:00.000000Z",
+        end_time: "2013-11-08T02:57:00.000000Z",
+        duration: "00:01:00",
+        output_url: "http://.../vfs/data/jobs/triggered/jobName/20131103120400/output_20131103120400.log",
+        error_url: "http://.../vfs/data/jobs/triggered/jobName/20131103120400/error_20131103120400.log",
+        url: "http://.../triggeredwebjobs/jobName/history/20131103120400",
+        trigger: "Schedule - 0 0 0 * * *"
+      }
+}
+</code></pre>
+
+<p>The <code>scheduler_logs_url</code> property has a url that will get you the scheduler log, that log will tell you some verbose information on the scheduling and invocation of the triggered WebJob.</p>
+
+<p>There is also a <code>trigger</code> property for a triggered WebJob run that tells you which schedule (or external user agent) invoked the specific run.</p>
+
+<p>More information about <a href="https://github.com/projectkudu/kudu/wiki/WebJobs-API">WebJobs API</a>.</p>
+
+<h3>Adding a schedule for an on demand WebJob in Visual Studio</h3>
+
+<p>If you have a Visual Studio Azure WebJob project, the way to add a schedule is by authoring the <code>settings.job</code> file described above and adding it to the project.
+In the solution explorer you'll need to change the properties of that <code>settings.job</code> file and set the <strong>Copy to output directory</strong> to <strong>Copy always</strong>.</p>
+
+<p>This will make sure the file is in the root directory of the WebJob.</p>
+
+<blockquote>
+  <p>Changing (or setting/removing) a schedule of a triggered WebJob is all about updating the <code>schedule</code> property of the <code>settings.job</code> file in the WebJob's directory (<code>d:\home\site\wwwroot\App_Data\jobs\triggered\{jobname}</code>), whenever the file is updated the change is picked up and the schedule will change according.</p>
+  
+  <p>This means you can deploy the schedule in any way you wish including by updating the file on your git repository.</p>
+</blockquote>
+
+<h2>Differences between the two scheduled WebJobs</h2>
+
+<p>There are pros and cons to each way of scheduling a WebJob, review them and choose which way to go.</p>
+
+<h3>Azure Scheduler</h3>
+
+<p><strong>Pros</strong></p>
+
+<ul>
+<li>Doesn't require the website to be configured as <strong>Always On</strong>.</li>
+<li>Supported by Visual Studio tooling and the current Azure portal.</li>
+</ul>
+
+<p><strong>Cons</strong></p>
+
+<ul>
+<li>Doesn't support continuous integration - to schedule a job or reschedule a job you'll need access to your Azure account.</li>
+<li>Loosely tied to the triggered WebJob, you cannot always tell that a WebJob has an Azure Scheduler job behind it.</li>
+</ul>
+
+<h3>Internal WebJob Scheduler</h3>
+
+<p><strong>Pros</strong></p>
+
+<ul>
+<li>Supports continuous integration and any deployment mechanism available for Azure Web Apps as it is file based.</li>
+<li>Supports the common cron expressions.</li>
+<li>Can tell a WebJob is scheduled with a simple api call.</li>
+</ul>
+
+<p><strong>Cons</strong></p>
+
+<ul>
+<li>Requires <strong>Always On</strong>.</li>
+<li>Not yet supported by tooling and portal (hopefully that will change).</li>
+</ul>
+
+<h2>Summary</h2>
+
+<p>To summarize, we've introduced a new way to schedule WebJobs that is continuous deployment friendly, in some cases it won't be the right one to choose but if the cons doesn't bother you it is a simpler and way for you to schedule triggered WebJobs.</p>
+
+<p>Please let us know how it works for you in the comments or better yet on <a href="https://github.com/projectkudu/kudu/issues">kudu project issues</a>.</p>
+
+        <p><a class="btn" href="/post/2015/06/scheduling-azure-webjobs/">Read more...</a></p>
+      </div>
+    </div>
+
+  <!-- Pagination links -->
+  <div id="post-pagination" class="pagination">
+
+   
+
+      <!--<a href="/">Previous Page</a>-->
+
+    <p class="previous">
+      <a href="/page2">Next Page</a>
+    </p>
+
+  </div>
+
+
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>&copy; 2014 - Powered by <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a>.</p>
+        </footer>
+    </div> <!-- /container -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/prettify.js"></script>
+
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-34307246-1']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+    <script>
+        $('pre').addClass('prettyprint');
+        !function ($) {
+            $(function () {
+                window.prettyPrint && prettyPrint()
+            })
+        }(window.jQuery)
+    </script>
+</body>
+</html>

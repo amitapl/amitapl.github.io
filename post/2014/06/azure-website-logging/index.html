@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="last-modified" content="2020-05-28T20:51:05.6982304+00:00" />
+    <meta name="keywords" content="Azure Websites,Logging,Azure Site Extensions,Azure Web Apps" />
+    <title>Blog.Amit Apple</title>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="/stylesheets/prettify.css">
+    <link href="/stylesheets/styles.css" rel="stylesheet" media="screen">
+
+    <script type="text/javascript">
+        window.appInsights={queue:[],applicationInsightsId:null,accountId:null,appUserId:null,configUrl:null,start:function(n){function u(n){t[n]=function(){var i=arguments;t.queue.push(function(){t[n].apply(t,i)})}}function f(n,t){if(n){var u=r.createElement(i);u.type="text/javascript";u.src=n;u.async=!0;u.onload=t;u.onerror=t;r.getElementsByTagName(i)[0].parentNode.appendChild(u)}else t()}var r=document,t=this,i;t.applicationInsightsId=n;u("logEvent");u("logPageView");i="script";f(t.configUrl,function(){f("//az416426.vo.msecnd.net/scripts/a/ai.0.7.js")});t.start=function(){}}};
+        
+        appInsights.start("21e48bf6-b6c7-4526-99b0-8afef5a10e20");
+        appInsights.logPageView();
+    </script>
+
+    <link rel="canonical" href="http://blog.amitapple.com/post/2014/06/azure-website-logging/" />
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img class="img img-circle" src="http://www.gravatar.com/avatar/39b6f2748dea9f8eef5323c14e7be79d.jpg?s=80" /></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a style="font-weight: bold" href="/">Blog.Amit Apple</a></li>
+            </ul>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/category">Categories</a></li>
+                    <li><a href="/archive">Archive</a></li>
+                    <li><a href="/feed.xml">RSS</a></li>
+                </ul>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </div>
+
+    
+
+    <div class="container">
+
+        <div class="row">
+            
+
+<div class="blog-main" id="post">
+    <h1 class="blog-post-title">Azure Web App (Website) Logging - Tips and Tools</h1>
+
+    <div class="blog-post-meta">
+        posted on 24 Jun 2014
+            | <a class="label label-info" href="/category/azure-websites">Azure Websites</a>
+            | <a class="label label-info" href="/category/logging">Logging</a>
+            | <a class="label label-info" href="/category/azure-site-extensions">Azure Site Extensions</a>
+            | <a class="label label-info" href="/category/azure-web-apps">Azure Web Apps</a>
+    </div>
+
+    <div class="row">
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style row pull-right" style="margin:10px">
+            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+            <a class="addthis_button_tweet"></a>
+        </div>
+        <script type="text/javascript">var addthis_config = { "data_track_addressbar": true };</script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-537248a1187b7a5c"></script>
+    </div>
+    <div class="blog-post">
+        <!-- AddThis Button END -->
+        
+
+        <p>Using Azure Web Apps includes many benefits that come just out of the box, you just need to know that they're there and how to use them properly. Logging is one of those benefits that integrate seamlessly to your Azure Web App.</p>
+
+<p><em>Reference to the official <a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/">Azure Web Apps Logging Document</a></em></p>
+
+<p><strong>In this post I'll show ways on maximizing the Azure Web Apps logging experience.</strong></p>
+
+<h2>Log Types</h2>
+
+<p>These are the different log types you can get for your Azure Web App:</p>
+
+<ul>
+<li><p><strong>Web Server Logging</strong> - Also known as http logs or iis logs, this will log all requests to your website in <a href="http://www.microsoft.com/technet/prodtechnol/WindowsServer2003/Library/IIS/676400bc-8969-4aa7-851a-9319490a9bbb.mspx?mfr=true">W3C Extended Log File Format</a>.</p></li>
+<li><p><strong>Detailed Error Messages</strong> - Detailed version of the html files produced when your website responds with an error message. This is good to enable for debugging some error responses in your website. It is stored in the website's file system.</p></li>
+<li><p><strong>Failed Request Tracing</strong> - Also known as FREB, here you can get lots of information from IIS through its different stacks for each failing request. Note that these log files are also stored in the website's file system.</p>
+
+<p>You can get some more information about FREB <a href="http://blogs.iis.net/webtopics/archive/2009/06/12/troubleshooting-a-simple-error-message-using-freb.aspx">here</a>.</p></li>
+<li><p><strong>Eventlog.xml</strong> - You may see this file sometimes under your LogFiles directory of your website (<code>d:\home\LogFiles</code>). This file contains ETW designated events, usually it is generated and populated with errors of some crash that occurred.</p></li>
+<li><p><strong>Kudu Traces</strong> - In your website's file system under <code>d:\home\LogFiles\kudu\trace</code> you can find the traces file for <a href="https://github.com/projectkudu/kudu/wiki">Kudu</a> which drives some of the developer experience features of Azure Web Apps like: git deployment and WebJobs.</p></li>
+<li><p><strong>Application Logs</strong> - See detailed information on application logs in the next section.</p></li>
+</ul>
+
+<blockquote>
+  <p>Log files stored in the website's file system will show up under <code>d:\home\LogFiles</code>.</p>
+</blockquote>
+
+<hr />
+
+<p><img src="/images/sitediagnostics.png" alt="Setting different logs in the Azure portal" /></p>
+
+<p><em>Setting different logs in the Azure portal</em></p>
+
+<hr />
+
+<h2>Application Logs</h2>
+
+<p>These are the logs coming from your Application/Service/Website/WebJob.</p>
+
+<h3>Application Logs for Websites</h3>
+
+<p>If you're using ASP.NET it's simple to write application logs, just use the <code>Trace</code> class, for example:</p>
+
+<pre><code>        Trace.WriteLine("Message"); // Write a verbose message
+        Trace.TraceInformation("Message"); // Write an information message
+        Trace.TraceWarning("Message");
+        Trace.TraceError("Message");
+</code></pre>
+
+<p>In the Azure portal you can direct different verbosity levels to different targets (at the same time). The targets are: file system, Azure table storage and Azure blob storage.</p>
+
+<p><strong>For example</strong> you can have all Information level (and up including Warning and Error) logs go to Azure table storage and all logs (including Verbose and up) go to blob storage.</p>
+
+<hr />
+
+<p><img src="/images/applicationdiagnostics.png" alt="Setting application logs in the Azure portal" /></p>
+
+<p><em>Setting application logs in the Azure portal</em></p>
+
+<hr />
+
+<p><strong>For node.js</strong> websites the way to write application logs is by writing to the console using <code>console.log('message')</code> and <code>console.error('message')</code> which goes to Information/Error level log entries. Currently the only supported target for the log files for node.js is the file system.</p>
+
+<p>Other web site types like php and python are not supported for the application logs feature.</p>
+
+<h3>Application Logs for WebJobs</h3>
+
+<p><strong>Triggered</strong> (Scheduled/On Demand)</p>
+
+<p>Whatever is written to console output and console error <strong>will go to a log file for the specific triggered webjob run</strong>. You can see it on the WebJobs dashboard but the file itself is located under <code>d:\home\data\jobs\triggered\{jobname}\{jobrunid}</code>.</p>
+
+<p><strong>Continuous</strong></p>
+
+<p>Whatever is written to console output and console error <strong>will go to the application logs</strong> as log entries with log level Information/Error. The first 100 log entries when the continuous WebJob starts will also show up in the continuous WebJob log file that is available on the WebJobs dashboard.</p>
+
+<p>The file itself is under  <code>d:\home\data\jobs\continuous\{jobname}</code>.</p>
+
+<p><strong>.NET WebJobs</strong></p>
+
+<p>If you're using .NET console application as your WebJob, you can follow the same guideline as for an ASP.NET website. Once you use the <code>Trace</code> class, your traces are handled as application logs (including triggered WebJobs).</p>
+
+<h3>Application Logs Fields</h3>
+
+<p>Here is the list of fields each application log entry consists of:</p>
+
+<ul>
+<li><strong>Application Name</strong> - The website name.</li>
+<li><strong>Date Time</strong></li>
+<li><strong>Level</strong> - Log level.</li>
+<li><strong>Event Id</strong></li>
+<li><strong>Instance Id</strong> - A unique id for the VM running the website where the log entry came from.</li>
+<li><strong>Process Id</strong></li>
+<li><strong>Thread Id</strong></li>
+<li><strong>Activity Id</strong> - The current (at the time of the log) activity id.</li>
+<li><strong>Message</strong></li>
+</ul>
+
+<blockquote>
+  <p>There are a couple a differences between logs stored in file system, table storage and blob storage:</p>
+  
+  <p><strong>Blob storage</strong> - Stored as a csv file with the following structure:
+  <code>Timestamp(DateTime), Level, ApplicationName, InstanceID, Timestamp(Ticks), EventID, ProcessID, ThreadID, Message, ActivityId</code></p>
+  
+  <p><strong>Table storage</strong> - Each log entry is stored as a table entity, with a <strong>Partition Key</strong> that is the log's date (formatted as "YYYYMMDDHH") and a <strong>Row Key</strong> which is an ordered GUID to help get the logs in the same order as they happened.</p>
+  
+  <p><strong>File system</strong> - Has a subset of the fields mentioned in the following format:
+  <code>{Date}  PID[{Process ID}] {Event Type} {Message}</code></p>
+</blockquote>
+
+<h2>Using the Activity Id</h2>
+
+<p>The activity id field can be very powerful. It can help you correlate all log entries which came from a single request.</p>
+
+<p>The easiest way to use it is to enable <strong>Failed Request Tracing</strong> on the Azure portal. This will have a side-effect of setting an activity id for each request your website receives where the activity id will propagate to all your application logs.</p>
+
+<blockquote>
+  <p>The actual proper way to set the activity id would have been using this code in the <code>global.asax.cs</code> file:</p>
+
+<pre><code>public class MvcApplication : System.Web.HttpApplication
+{
+    protected void Application_BeginRequest()
+    {
+        System.Diagnostics.Trace.CorrelationManager.ActivityId = Guid.NewGuid();
+    }
+}
+</code></pre>
+  
+  <p>But since ASP.NET is doing some funky things, the activity id <strong>may</strong> get lost (become empty) when using async operations.</p>
+</blockquote>
+
+<p><strong>Note</strong> that the same activity id concept would work for .NET WebJobs. For that you should use: <code>System.Diagnostics.Trace.CorrelationManager.ActivityId = Guid.NewGuid();</code> before an operation that requires an activity id.</p>
+
+<h2>Retention Policies</h2>
+
+<p><strong>File system</strong></p>
+
+<p>Log files will have some retention policy for each type:</p>
+
+<ul>
+<li>Web server logs have a maximum size per log file and per sum of all log files (which is configurable in the Azure portal).</li>
+<li>Similar for application logs, each log file can get up to 128 KB and the total size of all log files will go up to 1 MB after that old files are removed.</li>
+<li>Detailed error messages and FREB have a maximum amount of files (each file consists of a single error). </li>
+</ul>
+
+<p><strong>Blob storage</strong></p>
+
+<p>Web server logs and application logs stored in blob storage can be configured with a retention policy for deleting log files older than X days.</p>
+
+<h2>Log Browser Site Extension</h2>
+
+<p>One more cool feature that Azure Web Apps release recently is the <a href="http://azure.microsoft.com/blog/2014/06/20/azure-web-sites-extensions/">Azure Site Extensions</a>.</p>
+
+<p>Azure site extensions is basically a gallery of extensions to your Azure Web App that can originate from Microsoft or from the community. These site extensions can be useful utilities for your website administration.</p>
+
+<p>One of those site extensions is called <strong>Azure Website Log Browser</strong>.</p>
+
+<p>The <strong>Log Browser</strong> makes it super easy for you to access all of your Azure Web App logs described here.</p>
+
+<p><strong>Features</strong></p>
+
+<ul>
+<li>Provides first-class links to the different log directories that you have if you have them.</li>
+<li>Show logs stored in your website's file system.</li>
+<li>Show logs stored in your blob storage (based on the current configuration for http logs or application logs).</li>
+<li>View the log files in the browser (with word highlighting capability) or download them for offline viewing.</li>
+<li>For application logs stored in Azure table storage it has a nice UI for showing those too.</li>
+</ul>
+
+<p>The tool itself should be self-explanatory, just install and start using it.</p>
+
+<p>Here are some screen-shots:</p>
+
+<hr />
+
+<p><img src="/images/logbrowserazureportal.PNG" alt="Install the Log Browser from the new Azure Portal" /></p>
+
+<p><em>Install the Log Browser from the new Azure Portal</em></p>
+
+<hr />
+
+<p><img src="/images/logbrowsermain.PNG" alt="" /></p>
+
+<p><em>Main page</em></p>
+
+<hr />
+
+<p><img src="/images/logbrowserviewlog.PNG" alt="" /></p>
+
+<p><em>View a log file</em></p>
+
+<hr />
+
+<p><img src="/images/logbrowsertablestorage.PNG" alt="" /></p>
+
+<p><em>View log entries from table storage</em></p>
+
+<hr />
+
+<p>The <strong>Log Browser</strong> site extension is open source and is hosted on <a href="https://github.com/amitapl/ThatLogExtension">GitHub</a>. You can use this repository to help you get started on your own site extension idea or to contribute to the <strong>Log Browser</strong> site extension.</p>
+
+<h2>Final Thoughts</h2>
+
+<p>Azure Web Apps has a very nice and powerful logging experience, together with the <strong>Log Browser</strong> you get an online dashboard and log viewing experience for free and with minimal effort.</p>
+
+    </div>
+
+    <div id="disqus_thread"></div>
+<script>
+    var reset_disqus = function(){
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                //this.page.identifier = '';
+                this.page.url = 'http://blog.amitapple.com/post/2014/06/azure-website-logging/';
+                //this.page.title = '';
+            }
+        });
+    };
+
+    var disqus_shortname = 'blogamitapple';
+    var disqus_url = 'http://blog.amitapple.com/post/2014/06/azure-website-logging/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    window.addEventListener('orientationchange', reset_disqus);
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>&copy; 2014 - Powered by <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a>.</p>
+        </footer>
+    </div> <!-- /container -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/prettify.js"></script>
+
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-34307246-1']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+    <script>
+        $('pre').addClass('prettyprint');
+        !function ($) {
+            $(function () {
+                window.prettyPrint && prettyPrint()
+            })
+        }(window.jQuery)
+    </script>
+</body>
+</html>

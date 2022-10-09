@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="last-modified" content="2020-05-28T20:51:05.6982304+00:00" />
+    <meta name="keywords" content="Analytics,Azure Mobile Services,Azure Site Extensions,Azure Web Apps,Azure WebJobs,Azure Websites,Deployment Slots,Logging,Messaging,Microsoft Teams,Sandra.Snow,Tags,Telecommunication,Telemetry,Web Applications,Windows 8" />
+    <title>Blog.Amit Apple</title>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="/stylesheets/prettify.css">
+    <link href="/stylesheets/styles.css" rel="stylesheet" media="screen">
+
+    <script type="text/javascript">
+        window.appInsights={queue:[],applicationInsightsId:null,accountId:null,appUserId:null,configUrl:null,start:function(n){function u(n){t[n]=function(){var i=arguments;t.queue.push(function(){t[n].apply(t,i)})}}function f(n,t){if(n){var u=r.createElement(i);u.type="text/javascript";u.src=n;u.async=!0;u.onload=t;u.onerror=t;r.getElementsByTagName(i)[0].parentNode.appendChild(u)}else t()}var r=document,t=this,i;t.applicationInsightsId=n;u("logEvent");u("logPageView");i="script";f(t.configUrl,function(){f("//az416426.vo.msecnd.net/scripts/a/ai.0.7.js")});t.start=function(){}}};
+        
+        appInsights.start("21e48bf6-b6c7-4526-99b0-8afef5a10e20");
+        appInsights.logPageView();
+    </script>
+
+    <link rel="canonical" href="http://blog.amitapple.com/page7/" />
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img class="img img-circle" src="http://www.gravatar.com/avatar/39b6f2748dea9f8eef5323c14e7be79d.jpg?s=80" /></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a style="font-weight: bold" href="/">Blog.Amit Apple</a></li>
+            </ul>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/category">Categories</a></li>
+                    <li><a href="/archive">Archive</a></li>
+                    <li><a href="/feed.xml">RSS</a></li>
+                </ul>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </div>
+
+    
+    <div class="blog-header">
+        <h1 class="blog-title">Blog.Amit Apple</h1>
+        <p class="lead blog-description">Blog by Amit Apple</p>
+    </div>
+
+
+    <div class="container">
+
+        <div class="row">
+            
+
+
+    <div class="blog-main">
+      <div class="blog-post">
+        <h2 class="blog-post-title"><a href="/post/33776906129/myfirstwindowsstoreapp">My First Windows Store App - חדשות  8</a></h2>
+        <p class="blog-post-meta">posted on 17 Oct 2012</p>
+        
+        <p>Just published my first windows 8 app to the store, it is a news reader in Hebrew.</p>
+
+<p><a href="http://apps.microsoft.com/webpdp/en-US/app/8/feb11719-8b28-407a-ba6c-bcf14901e643" title="חדשות 8">My App On The Windows Store</a></p>
+
+<p><img src="/images/2012-10-17-my-first-windows-store-app.md1.jpg" alt="" /></p>
+
+<p>Basically it is an RSS feed reader for a specific set of feeds from different Israeli news sites.
+To use it you currently have to login using your Microsoft account as it will save the current feeds you selected to follow on the main screen of the app.</p>
+
+<p>Writing a Windows 8 app turns out to be quite a process, I really like the Windows SDK and tools for writing an app and it takes a fairly small amount of time to get the basic scenario going but finishing up the app took much longer than I expected.</p>
+
+<p>Among things I had to do (which is a good starting check-list for writing apps for the store):
+- Make sure all pages work in all layouts (including: portrait and snapped especially) and all resolutions (at least the lowest ones), using the LayoutAwarePage class you can update the way a page looks in the different layouts.
+- Have all graphics ready, there are several images you have to produce like: wide tile, square tile, different Windows store images and more.
+- Test your app, it is a given but sometimes when we are the dev and tester we tend to give ourselves some slack
+- Create a privacy policy, there are some free tools online you can use.
+- Put a link for the privacy policy in the Settings charm, I failed on this thing twice simply because I didn’t know that the settings charm is customizable per app (who figured? ), it is fairly simple.</p>
+
+<p>Most of the time I spent on this app was for polishing up the graphics and understanding some XAML related quirk like finding a proper (or any in fact) way to bind the selected values of a grid view (two way bind).</p>
+
+<p>On the backend for this app I used <a href="http://www.windowsazure.com/en-us/develop/mobile/">Windows Azure Mobile Services</a> which hands down makes backend development a breeze, I use it to authenticate users (with the Live SDK also) and store their selected feeds and also to store all of the feeds the app has so I can add more feeds without updating through the store.</p>
+
+<p>I’ve also authored a simple website to hold my About and Privacy Policy html pages, for that I used Microsoft Azure Web Apps, setting up a site took about a minute and that includes creating it (naming it) and setting up a cool git repository on it so deployment is as fast and easy as “git push”, this was also an awesome experience (<a href="http://www.windowsazure.com/en-us/develop/net/common-tasks/publishing-with-git/">git deployment</a>).</p>
+
+<p><a href="http://newsinhebrew8.azurewebsites.net/" title="חדשות 8">My Website</a></p>
+
+<p>So <a href="http://apps.microsoft.com/webpdp/en-US/app/8/feb11719-8b28-407a-ba6c-bcf14901e643" title="חדשות 8">there</a> it is, my first Windows store app, sorry just for Hebrew speakers, soon I’ll have another one out which has more integration with Mobile Services (in certification process now).</p>
+
+<p>Last note – Live Tiles are cool!!! </p>
+
+        <p><a class="btn" href="/post/33776906129/myfirstwindowsstoreapp">Read more...</a></p>
+      </div>
+      <div class="blog-post">
+        <h2 class="blog-post-title"><a href="/post/32655170474/joinedtablesview">Joined Tables View in Windows Azure Mobile Services</a></h2>
+        <p class="blog-post-meta">posted on 30 Sep 2012</p>
+        
+        <p>Windows Azure Mobile Services is using SQL Azure as the backend, one of the benefits you have with a SQL database is the ability to join tables simply, but currently that ability is not manifested in an easy way through the server-side scripts or the client SDK of the mobile services.</p>
+
+<p>So when I needed to get rows by joining 2 tables, I used this following simple solution.</p>
+
+<p>In my case I had 2 tables, one for users with the user id and user name among other columns, and the other for user groups with information on which user is a part of which group, there I had the same user id with other group related information.</p>
+
+<p>I needed a view with all of the user group columns together with the name of the user.</p>
+
+<p>To do that I've created a new table called <strong>UserGroupsExtended</strong> and I've set permissions to admin for all operations except read, this is a workaround for creating a new endpoint in our mobile service.</p>
+
+<p><img src="/images/2012-09-30-joined-tables-view.md1.jpg" alt="" /></p>
+
+<p>In the read operation server-side script of this new table, I have the following code in which I use a SQL query to join the 2 tables and return the results of that query (instead of returning results related to the original UserGroupsExtended table which will always be empty).</p>
+
+<script src="https://gist.github.com/3809541.js?file=UserGroupExtended.read.js"></script>
+
+<p>In this script I actually do more than that, I use a custom parameter (as described <a href="/post/30921523746/customparametersinmobileservices" title="custom parameters in mobile services">here</a>) to pass the specific group id I want to get results on, this is since the query object is for the original UserGroupsExtended table which we are not really using.</p>
+
+<p>And I also added this "in" part to only get results for groups where the current user is part of.</p>
+
+<p>On the client side I've added a new UserGroupExtended class which derives from UserGroup and adds the user name as a property.</p>
+
+<script src="https://gist.github.com/3809541.js?file=UserGroupExtended.cs"></script>
+
+<p>And the last piece is for actually getting a result back from this new view.</p>
+
+<script src="https://gist.github.com/3809541.js?file=Data.cs"></script>
+
+<p>The last piece assumes you have the client-side code mentioned on the <a href="/post/30921523746/customparametersinmobileservices" title="custom parameters in mobile services">custom parameters post</a>.</p>
+
+        <p><a class="btn" href="/post/32655170474/joinedtablesview">Read more...</a></p>
+      </div>
+      <div class="blog-post">
+        <h2 class="blog-post-title"><a href="/post/30921523746/customparametersinmobileservices">Custom Parameters in Azure Mobile Services</a></h2>
+        <p class="blog-post-meta">posted on 04 Sep 2012</p>
+        
+        <p>Windows Azure Mobile Services is using SQL Azure as the backend, one of the benefits you have with a SQL database is the ability to join tables simply, but currently that ability is not manifested in an easy way through the server-side scripts or the client SDK of the mobile services.</p>
+
+<p>So when I needed to get rows by joining 2 tables, I used this following simple solution.</p>
+
+<p>In my case I had 2 tables, one for users with the user id and user name among other columns, and the other for user groups with information on which user is a part of which group, there I had the same user id with other group related information.</p>
+
+<p>I needed a view with all of the user group columns together with the name of the user.</p>
+
+<p>To do that I've created a new table called <strong>UserGroupsExtended</strong> and I've set permissions to admin for all operations except read, this is a workaround for creating a new endpoint in our mobile service.</p>
+
+<p><img src="/images/2012-09-04-custom-parameters-in-mobile-services.md1.jpg" alt="" /></p>
+
+<p>In the read operation server-side script of this new table, I have the following code in which I use a SQL query to join the 2 tables and return the results of that query (instead of returning results related to the original UserGroupsExtended table which will always be empty).</p>
+
+<script src="https://gist.github.com/3809541.js?file=UserGroupExtended.read.js"></script>
+
+<p>In this script I actually do more than that, I use a custom parameter (as described <a href="/post/30921523746/customparametersinmobileservices" title="custom parameters in mobile services">here</a>) to pass the specific group id I want to get results on, this is since the query object is for the original UserGroupsExtended table which we are not really using.</p>
+
+<p>And I also added this "in" part to only get results for groups where the current user is part of.</p>
+
+<p>On the client side I've added a new UserGroupExtended class which derives from UserGroup and adds the user name as a property.</p>
+
+<script src="https://gist.github.com/3809541.js?file=UserGroupExtended.cs"></script>
+
+<p>And the last piece is for actually getting a result back from this new view.</p>
+
+<script src="https://gist.github.com/3809541.js?file=Data.cs"></script>
+
+<p>The last piece assumes you have the client-side code mentioned on the <a href="/post/30921523746/customparametersinmobileservices" title="custom parameters in mobile services">custom parameters post</a>.</p>
+
+        <p><a class="btn" href="/post/30921523746/customparametersinmobileservices">Read more...</a></p>
+      </div>
+    </div>
+
+  <!-- Pagination links -->
+  <div id="post-pagination" class="pagination">
+
+   
+      <p class="previous">
+        <a href="/page6">Previous Page</a>
+        </p>
+
+
+    <p class="previous">
+      <a href="/page8">Next Page</a>
+    </p>
+
+  </div>
+
+
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>&copy; 2014 - Powered by <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a>.</p>
+        </footer>
+    </div> <!-- /container -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/prettify.js"></script>
+
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-34307246-1']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+    <script>
+        $('pre').addClass('prettyprint');
+        !function ($) {
+            $(function () {
+                window.prettyPrint && prettyPrint()
+            })
+        }(window.jQuery)
+    </script>
+</body>
+</html>

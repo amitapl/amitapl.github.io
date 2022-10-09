@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="last-modified" content="2020-05-28T20:51:05.6982304+00:00" />
+    <meta name="keywords" content="Azure Websites,Azure WebJobs,Azure Web Apps" />
+    <title>Blog.Amit Apple</title>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="/stylesheets/prettify.css">
+    <link href="/stylesheets/styles.css" rel="stylesheet" media="screen">
+
+    <script type="text/javascript">
+        window.appInsights={queue:[],applicationInsightsId:null,accountId:null,appUserId:null,configUrl:null,start:function(n){function u(n){t[n]=function(){var i=arguments;t.queue.push(function(){t[n].apply(t,i)})}}function f(n,t){if(n){var u=r.createElement(i);u.type="text/javascript";u.src=n;u.async=!0;u.onload=t;u.onerror=t;r.getElementsByTagName(i)[0].parentNode.appendChild(u)}else t()}var r=document,t=this,i;t.applicationInsightsId=n;u("logEvent");u("logPageView");i="script";f(t.configUrl,function(){f("//az416426.vo.msecnd.net/scripts/a/ai.0.7.js")});t.start=function(){}}};
+        
+        appInsights.start("21e48bf6-b6c7-4526-99b0-8afef5a10e20");
+        appInsights.logPageView();
+    </script>
+
+    <link rel="canonical" href="http://blog.amitapple.com/post/73574681678/git-deploy-console-app" />
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img class="img img-circle" src="http://www.gravatar.com/avatar/39b6f2748dea9f8eef5323c14e7be79d.jpg?s=80" /></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a style="font-weight: bold" href="/">Blog.Amit Apple</a></li>
+            </ul>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/category">Categories</a></li>
+                    <li><a href="/archive">Archive</a></li>
+                    <li><a href="/feed.xml">RSS</a></li>
+                </ul>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </div>
+
+    
+
+    <div class="container">
+
+        <div class="row">
+            
+
+<div class="blog-main" id="post">
+    <h1 class="blog-post-title">Git deploying a .NET console app to Azure using WebJobs</h1>
+
+    <div class="blog-post-meta">
+        posted on 17 Jan 2014
+            | <a class="label label-info" href="/category/azure-websites">Azure Websites</a>
+            | <a class="label label-info" href="/category/azure-webjobs">Azure WebJobs</a>
+            | <a class="label label-info" href="/category/azure-web-apps">Azure Web Apps</a>
+    </div>
+
+    <div class="row">
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style row pull-right" style="margin:10px">
+            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+            <a class="addthis_button_tweet"></a>
+        </div>
+        <script type="text/javascript">var addthis_config = { "data_track_addressbar": true };</script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-537248a1187b7a5c"></script>
+    </div>
+    <div class="blog-post">
+        <!-- AddThis Button END -->
+        
+
+        <p>There's a new concept coming from Microsoft Azure Web Apps called <strong>WebJobs</strong> where you can have scripts running on a schedule, continuously or simply by invoking them manually.</p>
+
+<p>In this article I'll talk about a simple way of deploying a .NET console application to Microsoft Azure Web Apps which will be deployed as a <strong>continuous job</strong>.</p>
+
+<p>In short, a continuous job is treated similar to a windows service, as long as it's started/enabled, Azure will make sure it's up, it'll start the process (on all of your instances) and whenever the process goes down it'll simply bring it back up (after a 60 seconds delay).</p>
+
+<p>The executable that is deployed as a continuous job should have some kind of an infinite loop (<code>while (true)</code>).</p>
+
+<blockquote>
+  <p><strong>Note:</strong> While you can experiment with continuous jobs in free or shared websites, it'll only work properly in a standard website that has the "always on" setting set, this is since in free/shared sites the jobs process will be brought down after about 20 minutes of no requests to it (a request to the jobs process can be to check the status of current jobs).</p>
+</blockquote>
+
+<p>Enough chit-chat, now to the main event, we have .NET code which we want to (continuously) run on Azure, here are the steps:</p>
+
+<ul>
+<li><strong>Write</strong> your .NET code as a .NET console application, here is a sample:</li>
+</ul>
+
+<script src="https://gist.github.com/amitapl/8467381.js"></script>
+
+<ul>
+<li><p><strong>Add</strong> your code to a git repo.</p>
+
+<p><code>git init</code></p>
+
+<p><code>git add .</code></p>
+
+<p><code>git commit -am Coding</code></p></li>
+<li><p><strong>Create</strong> a new web site with source control.</p></li>
+</ul>
+
+<p><img src="/images/2014-01-17-git-deploy-console-app.md1.png" alt="" /></p>
+
+<ul>
+<li><strong>Get</strong> the url to your site's git repository</li>
+</ul>
+
+<p><img src="/images/2014-01-17-git-deploy-console-app.md2.png" alt="" /></p>
+
+<ul>
+<li><p><strong>Push</strong> the repository to your site.</p>
+
+<p><code>git push http://.../.git master</code></p></li>
+<li><p>That's it, you now have your .NET console application running on Microsoft Azure Web Apps, just go to the WEBJOBS tab and take a look.</p></li>
+</ul>
+
+<p><img src="/images/2014-01-17-git-deploy-console-app.md3.png" alt="" /></p>
+
+<blockquote>
+  <p><strong>Note:</strong> Don't forget to enable the <strong>Always On</strong> feature if you're on standard to make sure this job will never stop running.</p>
+</blockquote>
+
+<p>Now to see the continuous job logs click on the "logs" link (you'll need to enter your publishing user name and password, if you're on chrome even better - it just works), there you would see all the system logs (when the job started, stopped, etc...).</p>
+
+<p>To see the logs produced by the application (console output and error) you need to enable application logging under the CONFIGURATION tab, your logs can go to your file system/azure storage table or blob.</p>
+
+<blockquote>
+  <p><strong>Note:</strong> You can also use app settings/connection strings which would come from the site's configuration, same as you would do for your ASP.NET website.</p>
+</blockquote>
+
+<p>There are more awesome things to say about webjobs, but that's in next posts.</p>
+
+<p>You can use my repo to try it: <a href="https://github.com/amitapl/ContinuousHelloWorld"></a></p>
+
+    </div>
+
+    <div id="disqus_thread"></div>
+<script>
+    var reset_disqus = function(){
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                //this.page.identifier = '';
+                this.page.url = 'http://blog.amitapple.com/post/73574681678/git-deploy-console-app';
+                //this.page.title = '';
+            }
+        });
+    };
+
+    var disqus_shortname = 'blogamitapple';
+    var disqus_url = 'http://blog.amitapple.com/post/73574681678/git-deploy-console-app';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    window.addEventListener('orientationchange', reset_disqus);
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>&copy; 2014 - Powered by <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a>.</p>
+        </footer>
+    </div> <!-- /container -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/prettify.js"></script>
+
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-34307246-1']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+    <script>
+        $('pre').addClass('prettyprint');
+        !function ($) {
+            $(function () {
+                window.prettyPrint && prettyPrint()
+            })
+        }(window.jQuery)
+    </script>
+</body>
+</html>

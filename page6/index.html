@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="last-modified" content="2020-05-28T20:51:05.6982304+00:00" />
+    <meta name="keywords" content="Analytics,Azure Mobile Services,Azure Site Extensions,Azure Web Apps,Azure WebJobs,Azure Websites,Deployment Slots,Logging,Messaging,Microsoft Teams,Sandra.Snow,Tags,Telecommunication,Telemetry,Web Applications,Windows 8" />
+    <title>Blog.Amit Apple</title>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="/stylesheets/prettify.css">
+    <link href="/stylesheets/styles.css" rel="stylesheet" media="screen">
+
+    <script type="text/javascript">
+        window.appInsights={queue:[],applicationInsightsId:null,accountId:null,appUserId:null,configUrl:null,start:function(n){function u(n){t[n]=function(){var i=arguments;t.queue.push(function(){t[n].apply(t,i)})}}function f(n,t){if(n){var u=r.createElement(i);u.type="text/javascript";u.src=n;u.async=!0;u.onload=t;u.onerror=t;r.getElementsByTagName(i)[0].parentNode.appendChild(u)}else t()}var r=document,t=this,i;t.applicationInsightsId=n;u("logEvent");u("logPageView");i="script";f(t.configUrl,function(){f("//az416426.vo.msecnd.net/scripts/a/ai.0.7.js")});t.start=function(){}}};
+        
+        appInsights.start("21e48bf6-b6c7-4526-99b0-8afef5a10e20");
+        appInsights.logPageView();
+    </script>
+
+    <link rel="canonical" href="http://blog.amitapple.com/page6/" />
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img class="img img-circle" src="http://www.gravatar.com/avatar/39b6f2748dea9f8eef5323c14e7be79d.jpg?s=80" /></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a style="font-weight: bold" href="/">Blog.Amit Apple</a></li>
+            </ul>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/category">Categories</a></li>
+                    <li><a href="/archive">Archive</a></li>
+                    <li><a href="/feed.xml">RSS</a></li>
+                </ul>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </div>
+
+    
+    <div class="blog-header">
+        <h1 class="blog-title">Blog.Amit Apple</h1>
+        <p class="lead blog-description">Blog by Amit Apple</p>
+    </div>
+
+
+    <div class="container">
+
+        <div class="row">
+            
+
+
+    <div class="blog-main">
+      <div class="blog-post">
+        <h2 class="blog-post-title"><a href="/post/38417491924/azurewebsitecustomdeploymentpart1">Custom Deployment Scripts For Microsoft Azure Web App (Website) Using Git Deployment</a></h2>
+        <p class="blog-post-meta">posted on 20 Dec 2012</p>
+        <ul class="snow-series"><li>Part 1 - Introduction to custom deployment</li><li><a href="/post/38418009331/azurewebsitecustomdeploymentpart2">Part 2 - Custom script generator</a></li><li><a href="/post/38419111245/azurewebsitecustomdeploymentpart3">Part 3 - Custom script generator</a></li></ul>
+        <p>The coolest feature on Microsoft Azure Web Apps is the ability to deploy your website using git.
+Do a <code>git push</code> and bam you're done and deployed within seconds.
+The deployment process is automated, the process will look at the files on the git repository and decide which kind of website it is (asp.net, node, ...) and based on that will do the required steps for the deployment.</p>
+
+<p>For example for an MVC web app it'll find the solution file and determine which project is the actual web app project and with those it'll msbuild that project, the artifacts from the build will be placed in a temporary folder and only the files that were changed will be copied to the wwwroot location for the actual deployment.</p>
+
+<p>The nice thing is that files that were removed will also be removed on the wwwroot location but only if they were actually deployed the previous time (so files that are generated on the fly on the wwwroot directory won't be removed).</p>
+
+<p>So what if you want to customize the deployment process, for example you want to run your tests before deploying (or after) and cancel the deployment if they fail?</p>
+
+<p>That's what the custom deployment feature is about, you just need to add a file to the root of your repository with the name <code>.deployment</code> and the content:</p>
+
+<pre><code>[config]
+command = YOUR COMMAND TO RUN FOR DEPLOYMENT
+</code></pre>
+
+<p>this command can be just running a script (batch file) that has all that is required for your deployment, like copying files from the repository to the web root directory for example.</p>
+
+<p>You also get some environment variables that you need in order to get and put things in the right place:</p>
+
+<ul>
+<li>DEPLOYMENT_SOURCE - The path for the root of your repository (In Azure).</li>
+<li>DEPLOYMENT_TARGET - The wwwroot path (the deployment destination directory).</li>
+<li>DEPLOYMENT_TEMP - Path to a temporary directory that will be removed after the deployment.</li>
+<li>MSBUILD_PATH - Path to msbuild executable.</li>
+</ul>
+
+<p>With all of those you can create your own deployment script, a simple one for example:</p>
+
+<pre><code>@echo off
+echo Deploying files...
+xcopy %DEPLOYMENT_SOURCE% %DEPLOYMENT_TARGET% /Y
+</code></pre>
+
+<p>This script will copy all of the files from your repository to the wwwroot directory.</p>
+
+<p>But to make things easier, you can use the azure-cli tool which will actually generate a deployment script for you that will do exactly the same deployment process as the default one but now you are able to update that script and add (or remove) your own steps.</p>
+
+<p>More on that in the next post:
+<a href="/post/38418009331/azurewebsitecustomdeploymentpart2">Custom Deployments Script Generator</a></p>
+
+        <p><a class="btn" href="/post/38417491924/azurewebsitecustomdeploymentpart1">Read more...</a></p>
+      </div>
+      <div class="blog-post">
+        <h2 class="blog-post-title"><a href="/post/38418009331/azurewebsitecustomdeploymentpart2">Azure Web Apps (Websites) - Custom Deployment Scripts Generator</a></h2>
+        <p class="blog-post-meta">posted on 20 Dec 2012</p>
+        <ul class="snow-series"><li><a href="/post/38417491924/azurewebsitecustomdeploymentpart1">Part 1 - Introduction to custom deployment</a></li><li>Part 2 - Custom script generator</li><li><a href="/post/38419111245/azurewebsitecustomdeploymentpart3">Part 3 - Custom script generator</a></li></ul>
+        <p><strong>With</strong> Microsoft Azure Web Apps you can deploy your website by simply pushing your git repository, this will automatically deploy your website, and if you want to control this deployment flow you can use the custom deployment feature.</p>
+
+<p>To make it easy on us there is a custom deployment script generator feature in the azure-cli tool that will simplify the whole process, basically it will generate a script that has the same logic as the automatic deployment one only now you can change it and also run it locally to test it.</p>
+
+<p>All you have to do is:</p>
+
+<p>a. Install <a href="http://nodejs.org/">node.js</a>, this is required to run the azure-cli tool.</p>
+
+<p>b. Install the <a href="http://www.windowsazure.com/en-us/manage/linux/other-resources/command-line-tools/">azure-cli</a> tool, it'll also give you some cool features on managing azure related resources directly from the command-line:</p>
+
+<pre><code>npm install azure-cli -g
+</code></pre>
+
+<p>c. Go to the root of your repository (from which you deploy your site).</p>
+
+<p>d. Run the custom deployment script generator command:</p>
+
+<pre><code>azure site deploymentscript [options]
+</code></pre>
+
+<p>You can find help on the [options] by using the -h flag.</p>
+
+<p>For example to create a script for deploying an asp.net web application you do the following:</p>
+
+<pre><code>azure site deploymentscript --aspWAP pathToYourWebProjectFile.csproj -s pathToYourSolutionFile.sln
+</code></pre>
+
+<p>Or for deploying a node website:</p>
+
+<pre><code>azure site deploymentscript --node
+</code></pre>
+
+<p>Any of these commands will generate the files required to deploy your site, mainly:</p>
+
+<blockquote>
+  <ul>
+  <li>.deployment - Contains the command to run for deploying your site.</li>
+  <li>deploy.cmd - Contains the deployment script.</li>
+  </ul>
+</blockquote>
+
+<p>Now you can edit the deploy.cmd file and add your custom steps.</p>
+
+<p>Looking at the file you'll notice that it may look a bit complicated at first but actually most of the code there is to make sure the script can run locally so the place to look for the deployment logic is here:</p>
+
+<pre><code>::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: Deployment
+:: ----------
+
+... [deployment steps]
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+</code></pre>
+
+<p>It'll contain very few steps and that's the right place to put your custom steps, for example: running your tests.</p>
+
+<p>In this script you'll also notice the use of a tool called <a href="https://github.com/projectkudu/KuduSync">KuduSync</a>, this tool is the publishing tool which copies the website from the repository (or temporary directory) to the wwwroot directory.</p>
+
+<p>The genius of this tool is that it'll only copy the files that were changed, it'll also remove the files that don't exist on the source but only those that were previously on the source so it won't remove any runtime generated files (it does that by keeping a files list of each deployment, this is what the manifest files are about).</p>
+
+<p>After adding your own logic to the deployment script you can run in locally and test it to make sure it does what you need it to, it'll publish your site to a sub-directory called <em>artifacts</em> so make sure you're not add the files there to your repository.</p>
+
+<p>When the script is tested, add the generated files to your repository (.deployment and deploy.cmd, for node also web.config and iisnode.yml) and push your repository to your Microsoft azure web app and see your custom deployment running.</p>
+
+<p><a href="/post/38419111245/azurewebsitecustomdeploymentpart3">Next post a step by step on a specific custom script</a>.</p>
+
+        <p><a class="btn" href="/post/38418009331/azurewebsitecustomdeploymentpart2">Read more...</a></p>
+      </div>
+      <div class="blog-post">
+        <h2 class="blog-post-title"><a href="/post/38419111245/azurewebsitecustomdeploymentpart3">Customizing site deployment based on site's app settings in Azure Web Apps (Websites)</a></h2>
+        <p class="blog-post-meta">posted on 20 Dec 2012</p>
+        <ul class="snow-series"><li><a href="/post/38417491924/azurewebsitecustomdeploymentpart1">Part 1 - Introduction to custom deployment</a></li><li><a href="/post/38418009331/azurewebsitecustomdeploymentpart2">Part 2 - Custom script generator</a></li><li>Part 3 - Custom script generator</li></ul>
+        <p><strong>In</strong> previous posts I talked about <a href="/post/38417491924/azurewebsitecustomdeploymentpart1">Microsoft Azure Web App's custom deployment feature</a> and the <a href="/post/38418009331/azurewebsitecustomdeploymentpart2">tool to easily generate a deployment script</a>, in this post I'll do a step by step guide on writing a custom deployment script.</p>
+
+<p>Let's say we have two websites in azure, one is a node.js website and the other is an mvc4 web application, both sites sources are in the same repository so we need a deployment script that handles differently based on which website it is deploying.</p>
+
+<p><a href="https://github.com/amitapl/CustomScriptSample">Full sample repository</a></p>
+
+<p>Some Prerequisites:</p>
+
+<ol>
+<li>Assuming git is installed and the websites are in a local git repository.</li>
+<li>Install <a href="http://nodejs.org/">node.js</a>.</li>
+<li>Install <a href="http://www.windowsazure.com/en-us/manage/linux/other-resources/command-line-tools/">azure-cli</a> by 
+running the following command: <code>npm install azure-cli -g</code></li>
+</ol>
+
+<h3>(a) First let's generate a deployment script for the node.js website:</h3>
+
+<ul>
+<li>Go to the root of the repository.</li>
+<li>Enter the following command: <code>azure site deploymentscript --node --sitePath nodejs</code></li>
+<li>Where "nodejs" is the path to the node.js website directory.</li>
+</ul>
+
+<p><img src="/images/2012-12-20-azure-website-custom-deployment-part-3.md1.png" alt="" /></p>
+
+<ul>
+<li><p>Notice the files that were generated:</p>
+
+<blockquote>
+  <ul>
+  <li>.deployment - a file telling which command to run for deployment (currently deploy.cmd).</li>
+  <li>deploy.cmd - the deployment script.</li>
+  <li>nodejs\web.config - configuration for iis to run node.js.</li>
+  <li>nodejs\iisnode.yml - this file allows some configuration settings relating to node.js, <a href="http://tomasz.janczuk.org/2012/05/yaml-configuration-support-in-iisnode.html" title="more info on iisnode.yml">more info on iisnode.yml</a></li>
+  </ul>
+</blockquote></li>
+<li><p>Rename deploy.cmd to deploy.node.cmd: <code>move deploy.cmd deploy.node.cmd</code></p></li>
+</ul>
+
+<h3>(b) Let's generate a deployment script for the mvc4 web application:</h3>
+
+<p>At the root of the repository enter the command:</p>
+
+<pre><code>azure site deploymentscript --aspWAP mvc4\Mvc4WebApplication\Mvc4WebApplication.csproj -s mvc4\Mvc4WebApplication.sln
+</code></pre>
+
+<p><img src="/images/2012-12-20-azure-website-custom-deployment-part-3.md2.png" alt="" /></p>
+
+<ul>
+<li>Rename deploy.cmd to deploy.mvc4.cmd: <code>move deploy.cmd deploy.mvc4.cmd</code></li>
+</ul>
+
+<p><em>NOTE: You can also edit this generated file (deploy.cmd) with any custom steps you have, you can also test it on your machine simply by running it, it will publish your website to %REPOSITORY_ROOT%\artifacts.</em></p>
+
+<h3>(c) To decide which script should run, based on the website we are currently deploying, we'll use the "app settings" feature in Microsoft Azure Web Apps:</h3>
+
+<ul>
+<li>Create a deploy.cmd file under the root of the repository with the following:</li>
+</ul>
+
+<script src="https://gist.github.com/4349245.js"></script>
+
+<ul>
+<li><p>%SITE_FLAVOR% will be set by Windows Azure with the value we'll give it in the management portal.</p></li>
+<li><p>Add all generated files and commit them to the repository.</p></li>
+</ul>
+
+<h3>(d) Now let's try to push our repository to our Microsoft Azure Web App:</h3>
+
+<pre><code>git push WA master
+</code></pre>
+
+<p><img src="/images/2012-12-20-azure-website-custom-deployment-part-3.md3.png" alt="" /></p>
+
+<ul>
+<li><p>We receive an error and the deployment fails since we still haven't set the app setting yet, so let's do that.</p></li>
+<li><p>Go to the website on windows azure management portal and add under the CONFIGURATION tab under "app settings" a setting with name SITE_FLAVOR and value nodejs/mvc3 (based on the current site we're configuring).</p></li>
+</ul>
+
+<p><img src="/images/2012-12-20-azure-website-custom-deployment-part-3.md4.png" alt="" /></p>
+
+<p><img src="/images/2012-12-20-azure-website-custom-deployment-part-3.md5.png" alt="" /></p>
+
+<ul>
+<li><p>Click on the "Save" button.</p></li>
+<li><p>Now we can either push our changes again (we'll need a new commit, even an empty one, otherwise it'll tell us that nothing has changed and the deployment won't reinitiate).</p></li>
+<li>Or we can go to the DEPLOYMENTS tab in Windows Azure portal, select the last deployment which failed and push the RETRY button to retry the deployment.</li>
+</ul>
+
+<p><img src="/images/2012-12-20-azure-website-custom-deployment-part-3.md6.png" alt="" /></p>
+
+<h3>That's it, now we have a working mvc4/node.js website</h3>
+
+<p><img src="/images/2012-12-20-azure-website-custom-deployment-part-3.md7.png" alt="" /></p>
+
+<p><img src="/images/2012-12-20-azure-website-custom-deployment-part-3.md8.png" alt="" /></p>
+
+<p><strong>NOTE: Another improvement we could do here is to store the repository on GitHub/Bitbucket and connect them to our 2 sites, now every time we push to GitHub/Bitbucket, both of our sites will be deployed.</strong></p>
+
+<p>The repository I've used can be cloned from <a href="https://github.com/amitapl/CustomScriptSample">here</a>.</p>
+
+        <p><a class="btn" href="/post/38419111245/azurewebsitecustomdeploymentpart3">Read more...</a></p>
+      </div>
+    </div>
+
+  <!-- Pagination links -->
+  <div id="post-pagination" class="pagination">
+
+   
+      <p class="previous">
+        <a href="/page5">Previous Page</a>
+        </p>
+
+
+    <p class="previous">
+      <a href="/page7">Next Page</a>
+    </p>
+
+  </div>
+
+
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>&copy; 2014 - Powered by <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a>.</p>
+        </footer>
+    </div> <!-- /container -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/prettify.js"></script>
+
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-34307246-1']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+    <script>
+        $('pre').addClass('prettyprint');
+        !function ($) {
+            $(function () {
+                window.prettyPrint && prettyPrint()
+            })
+        }(window.jQuery)
+    </script>
+</body>
+</html>

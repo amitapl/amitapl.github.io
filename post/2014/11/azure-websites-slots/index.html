@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="last-modified" content="2020-05-28T20:51:05.6982304+00:00" />
+    <meta name="keywords" content="Azure Websites,Deployment Slots,Azure Web Apps" />
+    <title>Blog.Amit Apple</title>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="/stylesheets/prettify.css">
+    <link href="/stylesheets/styles.css" rel="stylesheet" media="screen">
+
+    <script type="text/javascript">
+        window.appInsights={queue:[],applicationInsightsId:null,accountId:null,appUserId:null,configUrl:null,start:function(n){function u(n){t[n]=function(){var i=arguments;t.queue.push(function(){t[n].apply(t,i)})}}function f(n,t){if(n){var u=r.createElement(i);u.type="text/javascript";u.src=n;u.async=!0;u.onload=t;u.onerror=t;r.getElementsByTagName(i)[0].parentNode.appendChild(u)}else t()}var r=document,t=this,i;t.applicationInsightsId=n;u("logEvent");u("logPageView");i="script";f(t.configUrl,function(){f("//az416426.vo.msecnd.net/scripts/a/ai.0.7.js")});t.start=function(){}}};
+        
+        appInsights.start("21e48bf6-b6c7-4526-99b0-8afef5a10e20");
+        appInsights.logPageView();
+    </script>
+
+    <link rel="canonical" href="http://blog.amitapple.com/post/2014/11/azure-websites-slots/" />
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img class="img img-circle" src="http://www.gravatar.com/avatar/39b6f2748dea9f8eef5323c14e7be79d.jpg?s=80" /></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a style="font-weight: bold" href="/">Blog.Amit Apple</a></li>
+            </ul>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/category">Categories</a></li>
+                    <li><a href="/archive">Archive</a></li>
+                    <li><a href="/feed.xml">RSS</a></li>
+                </ul>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </div>
+
+    
+
+    <div class="container">
+
+        <div class="row">
+            
+
+<div class="blog-main" id="post">
+    <h1 class="blog-post-title">Azure Web Apps (Websites) Deployment Slots - Explained</h1>
+
+    <div class="blog-post-meta">
+        posted on 17 Nov 2014
+            | <a class="label label-info" href="/category/azure-websites">Azure Websites</a>
+            | <a class="label label-info" href="/category/deployment-slots">Deployment Slots</a>
+            | <a class="label label-info" href="/category/azure-web-apps">Azure Web Apps</a>
+    </div>
+
+    <div class="row">
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style row pull-right" style="margin:10px">
+            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+            <a class="addthis_button_tweet"></a>
+        </div>
+        <script type="text/javascript">var addthis_config = { "data_track_addressbar": true };</script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-537248a1187b7a5c"></script>
+    </div>
+    <div class="blog-post">
+        <!-- AddThis Button END -->
+        
+
+        <p>One of the premium features you get when using Azure Web Apps in a standard SKU is the <strong>deployment slots</strong> feature also known as <strong>staged deployment</strong> but it is actually more than that.</p>
+
+<p>In this post I will go over the <strong>deployment slots</strong> concept and what you can do with it.</p>
+
+<p><img src="/images/slots1.png" alt="Deployment slots" /></p>
+
+<h2>What are those deployment slots?</h2>
+
+<p>From a (standard) website you can create deployment slots which will actually be Azure Web App instances that are tied to that Website.</p>
+
+<p>A deployment slot will carry the name of the Azure Web App + the name of the slot, for example:</p>
+
+<p>If my Azure Web App is called <strong>mysite</strong> and I create a slot called <strong>staging</strong> then my slot will be an Azure Web App with the name <strong>mysite(staging)</strong> and its url will be <strong>http://mysite-staging.azurewebsites.net</strong>.</p>
+
+<p><img src="/images/slots2.png" alt="Add deployment slot" /></p>
+
+<blockquote>
+  <p>It's important to emphasize that the slot is in itself a regular Azure Web App, it will have its own app settings, connection string, any other configuration settings and even an scm site (<strong>https://mysite-staging.scm.azurewebsites.net</strong>).</p>
+  
+  <p>In fact by default each Azure Web App has a single deployment slot called <strong>production</strong> which is the Azure Web App itself.</p>
+</blockquote>
+
+<p>You can add more than one <strong>deployment slot</strong>.</p>
+
+<h2>Why do I need this?</h2>
+
+<p>The first feature of deployment slots is the <strong>Swap Slots</strong> and it's used for <strong>Staged Deployment</strong></p>
+
+<p><img src="/images/slots5.png" alt="Add deployment slot" /></p>
+
+<p>In short, the <strong>Swap</strong> operation will exchange the website's content between 2 deployment slots.</p>
+
+<blockquote>
+  <p>Later I'll explain what is swapped and what is not but note that swap is not about copying the content of the website but more about swapping DNS pointers.</p>
+</blockquote>
+
+<p>So in our scenario we have the <strong>Production</strong> site with <code>index.html</code> that starts with <code>Hello World</code> and our <strong>staging</strong> slot has the same <code>index.html</code> but it starts with <code>Yello World</code>.</p>
+
+<p>Before swap - <strong>http://mysite.azurewebsites.net/index.html</strong> will return <code>Hello World...</code></p>
+
+<p>After swap - <strong>http://mysite.azurewebsites.net/index.html</strong> will return <code>Yello World...</code></p>
+
+<p>Now to get this into a real life scenario.</p>
+
+<h3>Staged Deployment</h3>
+
+<p>Deploying your website in the traditional way, whether deploying via WebDeploy, FTP, git, CI or any other way, has weaknesses that may or may not concern you:</p>
+
+<ul>
+<li>After the deployment completes the website might restart and this results in a cold start for the website, the first request will be slower (can be significant depending on the website).</li>
+<li>Potentially you are deploying a "bad" version of your website and maybe you would want to test it (in production) before releasing it to your customers.</li>
+</ul>
+
+<p>This is where <strong>staged deployment</strong> comes into play. Instead of deploying directly to our production website we create a <strong>deployment slot</strong> used for <strong>staging</strong> and we deploy our new bits there.</p>
+
+<p>Then we "warm" our site (<strong>staging</strong> slot) by making requests to it and we can start testing our new bits verifying everything works as expected. Once we're ready we hit the Azure Portal's <strong>Swap</strong> button (or PowerShell/xplat cli command) and the slots will be swapped.</p>
+
+<p>Our customers will not hit the "cold start" delay and we have more confidence in our new bits.</p>
+
+<h3>Auto-Swap</h3>
+
+<p>Since we want to test our website before going into production we have this manual step where we hit the <strong>Swap</strong> button to swap.</p>
+
+<p>But if we only want to address the "cold start" delay we can configure the <strong>Auto Swap</strong> feature where the website automatically swaps a configured slot (in our case <strong>staging</strong>) with the <strong>Production</strong> slot after the deployment completes.</p>
+
+<blockquote>
+  <p>Currently <strong>auto-swap</strong> only works when deploying using WebDeploy (deploying through VS will usually use WebDeploy) and Continuous Integration (VSO, GitHub, Bitbucket).
+  FTP and <code>git push</code> will not cause an <strong>auto swap</strong>.</p>
+  
+  <p>Auto-swap can take a while to swap (1-2 minutes), until the swap completes any other attempts to deploy the website will fail.</p>
+</blockquote>
+
+<p>To set this up you'll need to use the <a href="http://azure.microsoft.com/en-us/documentation/articles/install-configure-powershell/">Azure PowerShell tool</a> (<a href="http://go.microsoft.com/fwlink/p/?linkid=320376&amp;clcid=0x409">download</a>)</p>
+
+<p>In PowerShell use the following command:</p>
+
+<pre><code>Set-AzureWebsite -Name mysite –Slot staging -AutoSwapSlotName production
+</code></pre>
+
+<p>This command will set Azure Web Apps to auto swap the <strong>staging</strong> slot into <strong>Production</strong> slot whenever <strong>staging</strong> is deployed.</p>
+
+<blockquote>
+  <p>You can use the operation logs in the (current) Azure portal to see the <strong>auto swap</strong> operation status.</p>
+</blockquote>
+
+<h3>Deployment Slot App Settings / Connection String / Configuration</h3>
+
+<p>One important concept to understand about <strong>deployment slots</strong> is how the configuration works.</p>
+
+<p>A deployment slot is a full Azure Web App and as one it has all the same configurations as any Azure Web App. When you swap deployment slots there are some settings you actually need to keep with the slot and not swap them.</p>
+
+<p>A setting that is not swapped is referred to as a setting that is <strong>sticky to the slot</strong>.</p>
+
+<p>Some of the default settings that are <strong>sticky to the slot</strong>:</p>
+
+<ul>
+<li>Most obvious one is the url - <strong>http://mysite-staging.azurewebsites.net/</strong> will always point to the <strong>staging</strong> slot.</li>
+<li><strong>WEBSITE_HOSTNAME</strong> environment variable for the <strong>staging</strong> slot will always be <strong>mysite-staging.azurewebsites.net</strong> and this is something we can use in our website code to find it's currently running in the <strong>Production</strong> slot or <strong>staging</strong> slot.</li>
+<li>Deployment settings - if you have the deployment profile for the <strong>staging</strong> slot, after a swap the profile would still point to the <strong>staging</strong> slot.
+<blockquote>
+  <p>This also includes continuous integration settings - if you hooked your <strong>staging</strong> slot with a GitHub repository after a swap the hook will still exist between GitHub and the <strong>staging</strong> slot.</li>
+  </ul>
+
+<p>App settings and connection strings are <strong>not</strong> sticky to the slot and will remain with the website when swapped but we can configure selected app settings and connection strings to become <strong>sticky to the slot</strong> using a PowerShell command (not yet supported by the Azure portal).</p>
+</blockquote></p>
+
+<p>Use this command in Azure PowerShell to set 2 app settings as <strong>sticky to the slot</strong></p>
+
+<pre><code>Set-AzureWebsite -Name mysite -SlotStickyAppSettingNames @("myslot", "myslot2")
+</code></pre>
+
+<p>And this command to set 2 connection strings as <strong>sticky to the slot</strong></p>
+
+<pre><code>Set-AzureWebsite -Name mysite -SlotStickyConnectionStringNames @("myconn", "myconn2")
+</code></pre>
+
+<blockquote>
+  <p><strong>Sticky to the slot</strong> configuration is website-wide configuration and affects all slots in that website.</p>
+</blockquote>
+
+<h3>Deployment Slots Traffic Routing</h3>
+
+<p>Another great feature for <strong>deployment slots</strong> is the <strong>traffic routing</strong> also known as <strong>testing in production</strong>.</p>
+
+<p>This feature will allow you to route traffic that is coming to your Azure Web App between your <strong>deployment slots</strong> based on percentage of the traffic.</p>
+
+<p>This feature exists only in the new <a href="https://portal.azure.com">Azure preview portal</a>.</p>
+
+<p>In the portal under your website there is a tile called <strong>Testing in production</strong>, click on it to get to the "Testing in production" <em>blade</em> where you can direct traffic coming to your website between all of your <strong>deployment slots</strong>.</p>
+
+<p><img src="/images/slots4.png" alt="Testing in production" /></p>
+
+<p>One usage scenario for this feature is <a href="http://en.wikipedia.org/wiki/A/B_testing">A/B testing</a>.</p>
+
+<p>By default 100% of the traffic will go to the <strong>Production</strong> slot but you can create a new <strong>deployment slot</strong> with a slightly different version of your website (differs by what you want to A/B test) and add it there with a 50% value so 50% of your visitors will actually be served from the new slot.</p>
+
+<p>Another scenario for this feature is having a <strong>dev</strong> slot that is a little less stable which gets 1% of the traffic so you can test feature currently being developed with real traffic.</p>
+
+<p><a href="http://blogs.msdn.com/b/tomholl/archive/2014/11/10/a-b-testing-with-azure-websites.aspx">For more information on this feature</a>.</p>
+
+<h2>Wrap Up</h2>
+
+<p>I hope that if the <strong>deployment slots</strong> were just a mysterious link/tile/concept before, you now know how to master them as they can bring lots of value to your production website.</p>
+
+    </div>
+
+    <div id="disqus_thread"></div>
+<script>
+    var reset_disqus = function(){
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                //this.page.identifier = '';
+                this.page.url = 'http://blog.amitapple.com/post/2014/11/azure-websites-slots/';
+                //this.page.title = '';
+            }
+        });
+    };
+
+    var disqus_shortname = 'blogamitapple';
+    var disqus_url = 'http://blog.amitapple.com/post/2014/11/azure-websites-slots/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    window.addEventListener('orientationchange', reset_disqus);
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>&copy; 2014 - Powered by <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a>.</p>
+        </footer>
+    </div> <!-- /container -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/prettify.js"></script>
+
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-34307246-1']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+    <script>
+        $('pre').addClass('prettyprint');
+        !function ($) {
+            $(function () {
+                window.prettyPrint && prettyPrint()
+            })
+        }(window.jQuery)
+    </script>
+</body>
+</html>

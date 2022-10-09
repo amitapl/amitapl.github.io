@@ -1,0 +1,424 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="last-modified" content="2020-05-28T20:51:05.6982304+00:00" />
+    <meta name="keywords" content="Logging,Analytics,Telemetry,Web Applications" />
+    <title>Blog.Amit Apple</title>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="/stylesheets/prettify.css">
+    <link href="/stylesheets/styles.css" rel="stylesheet" media="screen">
+
+    <script type="text/javascript">
+        window.appInsights={queue:[],applicationInsightsId:null,accountId:null,appUserId:null,configUrl:null,start:function(n){function u(n){t[n]=function(){var i=arguments;t.queue.push(function(){t[n].apply(t,i)})}}function f(n,t){if(n){var u=r.createElement(i);u.type="text/javascript";u.src=n;u.async=!0;u.onload=t;u.onerror=t;r.getElementsByTagName(i)[0].parentNode.appendChild(u)}else t()}var r=document,t=this,i;t.applicationInsightsId=n;u("logEvent");u("logPageView");i="script";f(t.configUrl,function(){f("//az416426.vo.msecnd.net/scripts/a/ai.0.7.js")});t.start=function(){}}};
+        
+        appInsights.start("21e48bf6-b6c7-4526-99b0-8afef5a10e20");
+        appInsights.logPageView();
+    </script>
+
+    <link rel="canonical" href="http://blog.amitapple.com/post/2015/11/story-new-logging-approach/" />
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img class="img img-circle" src="http://www.gravatar.com/avatar/39b6f2748dea9f8eef5323c14e7be79d.jpg?s=80" /></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a style="font-weight: bold" href="/">Blog.Amit Apple</a></li>
+            </ul>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/category">Categories</a></li>
+                    <li><a href="/archive">Archive</a></li>
+                    <li><a href="/feed.xml">RSS</a></li>
+                </ul>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </div>
+
+    
+
+    <div class="container">
+
+        <div class="row">
+            
+
+<div class="blog-main" id="post">
+    <h1 class="blog-post-title">New approach to logging - Story</h1>
+
+    <div class="blog-post-meta">
+        posted on 21 Nov 2015
+            | <a class="label label-info" href="/category/logging">Logging</a>
+            | <a class="label label-info" href="/category/analytics">Analytics</a>
+            | <a class="label label-info" href="/category/telemetry">Telemetry</a>
+            | <a class="label label-info" href="/category/web-applications">Web Applications</a>
+    </div>
+
+    <div class="row">
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style row pull-right" style="margin:10px">
+            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+            <a class="addthis_button_tweet"></a>
+        </div>
+        <script type="text/javascript">var addthis_config = { "data_track_addressbar": true };</script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-537248a1187b7a5c"></script>
+    </div>
+    <div class="blog-post">
+        <!-- AddThis Button END -->
+        
+
+        <p>Writing logs is usually pretty easy in a project, just select/add your favorite logging framework (Trace, NLog, Log4Net, ...), maybe configure it a bit, and start writing logs.</p>
+
+<p>But then comes the time when you actually need to use these logs, maybe to debug an issue, this is when you realize the mess: here is an error log but wait what happened before that, who was the user, what was the action and how long did it take... someone please put me in context!</p>
+
+<p>Well there are current solutions for that, kinda, you'll need to go back to the code and start adding correlation ids, and use some logging query magic with grouping and filtering on top of what might be a high amount of logs. Not so easy after all, especially after the fact as you have enormous amount of logs and most of them are just noise.</p>
+
+<p>What you really want to do is remove all the noise, but still have full logs when you need them (error case for example).</p>
+
+<p>In this blog post I wanted to show a new approach to logging using a new framework called: <a href="https://github.com/narratr/story">Story</a>.</p>
+
+<h2>What is this story</h2>
+
+<pre><code>Storytelling.Factory.StartNew("MyAction", () =&gt;
+{
+    this.counter++;
+    Storytelling.Info("added 1 to counter");
+    Storytelling.Data["counter"] = this.counter;
+});
+
+// Output:
+// 11/21/2015 5:01:20 PM
+//   Story MyAction (a66feed7-112a-42fe-9a3f-329939151f23) on rule Trace
+//   counter - 1
+//
+//   +1.9999 ms Info added 1 to counter
+//
+//   - Story "MyAction" took 3 ms
+</code></pre>
+
+<p>The story framework (currently only for .NET) is about collecting information (logs and any bits of data) about the currently running code and putting it inside a context and when this context ends using rules figure out what to do with this information collection (story).</p>
+
+<p>Too abstract, lets use an example:</p>
+
+<p>We have a web application for posting questions, in this approach every request will run under a new story context. This means that every log produced will be added to that story and every data will be added to it like the current user posting the question, the url of the request, the response and even the query we ran to insert the question to the database.</p>
+
+<p>Then when the request ends and the story stops, a set of rules will decide what to do with it:</p>
+
+<ul>
+<li>If there was an error store the story.</li>
+<li>If the operation ran too long increase a performance counter.</li>
+<li>If the user is <em>someone you like</em> alert the team.</li>
+<li>If a new question was added send an analytics event to <a href="https://keen.io">keen.io</a>.</li>
+<li>If nothing special happened send to trace (or maybe do nothing with it).</li>
+</ul>
+
+<p>This gives you full control on your logs/telemetry/analytics at coding time, and the story you get, if there was an error for example, will have all the information you need, and more importantly, information (stories) that you don't need (usually most of them) will not distract you.</p>
+
+<p><strong>How cool is that?</strong></p>
+
+<p>Well these rules can also be updated on the fly which opens awesome scenarios, for example - your user has an issue, just add a rule that sends all his stories to a new storage container and observe that container, no need to filter and you see everything that this user do immediately.</p>
+
+<h2>Using Story</h2>
+
+<p>To use the Story you need to create/start a new story and run your code within the context of that Story.</p>
+
+<pre><code>Storytelling.Factory.StartNew("MyAction", () =&gt;
+{
+    // ... your code
+    // and adding logs and information to the story
+    Storytelling.Info("added 1 to i");  // log
+    Storytelling.Data["i"] = i;         // data
+});
+</code></pre>
+
+<p>The created story is added to the context (CallContext or HttpContext depending on where you run) so anything running within that context can just call <code>Storytelling</code> and add logs/data to the story.</p>
+
+<blockquote>
+  <p>We name the story ("MyAction" in this case) to help us later when we run rules on the stories.</p>
+</blockquote>
+
+<p>You can also create new stories, which will be added as children to the current story in context (and will become the current story in the context) giving us an execution graph later when we observe the story.</p>
+
+<p>The second part is setting the rules which tells each story what to do when it ends (and begins), for example:</p>
+
+<pre><code>// Create the ruleset
+var ruleset = new Ruleset&lt;IStory, IStoryHandler&gt;();
+
+// Add a new predicate rule, for any story run the console handler which prints the story to the console
+var consoleHandler = new ConsoleHandler("PrintToConsole", StoryFormatters.GetBasicStoryFormatter(LogSeverity.Debug));
+ruleset.Rules.Add(
+    new PredicateRule(
+        story =&gt; true,
+        story =&gt; consoleHandler));
+
+// Set a new basic factory that uses the ruleset as the default story factory
+Storytelling.Factory = new BasicStoryFactory(ruleset);
+</code></pre>
+
+<blockquote>
+  <p>You should initialize the factory once at the start of the app.</p>
+</blockquote>
+
+<h2>Adding Story to Web Application</h2>
+
+<p>To get a better real sample I'll show how to add stories to an asp.net owin web application.</p>
+
+<blockquote>
+  <p>You can find the code demonstrated in this blog post in <a href="https://github.com/amitapl/FooWebApplication">this github repository</a>.</p>
+</blockquote>
+
+<p>We'll start with a barebone owin web application and add the <a href="https://nuget.org/packages/Story">Story nuget package</a> (<code>nuget install story</code>).</p>
+
+<p>Then add a middleware that puts requests in a Story context.</p>
+
+<pre><code>public class StoryMiddleware : OwinMiddleware
+{
+    public StoryMiddleware(OwinMiddleware next)
+        : base(next)
+    {
+    }
+
+    public override Task Invoke(IOwinContext context)
+    {
+        var request = context.Request;
+        return Storytelling.StartNewAsync("Request", async () =&gt;
+        {
+            try
+            {
+                Storytelling.Data["RequestUrl"] = request.Uri.ToString();
+                Storytelling.Data["RequestMethod"] = request.Method;
+                Storytelling.Data["UserIp"] = request.RemoteIpAddress;
+                Storytelling.Data["UserAgent"] = request.Headers.Get("User-Agent");
+                Storytelling.Data["Referer"] = request.Headers.Get("Referer");
+
+                await Next.Invoke(context);
+
+                Storytelling.Data["Response"] = context.Response.StatusCode;
+            }
+            catch (Exception e)
+            {
+                var m = e.Message;
+                Storytelling.Error(m);
+                throw;
+            }
+        });
+    }
+}
+</code></pre>
+
+<p>To make sure all exceptions are handled properly (and not get lost in web api), we'll add an exception filter too.</p>
+
+<pre><code>public class ExceptionStoryFilterAttribute : ExceptionFilterAttribute
+{
+    public override void OnException(HttpActionExecutedContext context)
+    {
+        Storytelling.Warn("Internal error - " + context.Exception);
+        var message = context.Exception.Message;
+        var httpStatusCode = HttpStatusCode.InternalServerError;
+
+        Storytelling.Data["responseMessage"] = message;
+
+        var resp = new HttpResponseMessage()
+        {
+            Content = new StringContent(message)
+        };
+
+        resp.StatusCode = httpStatusCode;
+
+        context.Response = resp;
+
+        base.OnException(context);
+    }
+}
+</code></pre>
+
+<p>Add them to owin and web api.</p>
+
+<pre><code>public void Configuration(IAppBuilder appBuilder)
+{
+    // ...
+    appBuilder.Use&lt;StoryMiddleware&gt;();
+    // ...
+    HttpConfiguration config = new HttpConfiguration();
+    config.Filters.Add(new ExceptionStoryFilterAttribute());
+    appBuilder.UseWebApi(config);
+    // ...
+}
+</code></pre>
+
+<p>Now, we can start using Story to collect information.</p>
+
+<pre><code>public Task&lt;HttpResponseMessage&gt; GetSomething()
+{
+    // We wrap a controller action with a (sub)story
+    return Storytelling.Factory.StartNewAsync("GetUser", async () =&gt;
+    {
+        var name = await fooService.GetRandomName();
+
+        // Log to the story
+        Storytelling.Info("Prepare something object");
+        object something = new
+        {
+            Name = name
+        };
+
+        // Add data to story
+        Storytelling.Data["something"] = something;
+
+        return Request.CreateResponse(something);
+    });
+}
+
+// Output:
+// Selfhost.exe Information: 0 : 11/21/2015 5:42:42 PM
+//    Story Request (774743a8-768e-4820-a76c-09a32fab6794) on rule Trace
+//    RequestUrl - "http://localhost:2222/api/something"
+//    RequestMethod - "GET"
+//    UserIp - "::1"
+//    UserAgent - "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36"
+//    Referer - "http://localhost:2222/"
+//    Response - 200
+//    something - {"name":"Smelly Zebra"}
+
+//    +497.0671 ms Info Getting random name
+//    +508.0291 ms Info Prepare something object
+
+//    - Story "Request" took 815 ms
+//      - Story "GetSomething" took 44 ms
+</code></pre>
+
+<p>We can also collect information in inner methods.</p>
+
+<pre><code>public async Task&lt;string&gt; GetRandomName()
+{
+    Storytelling.Info("Getting random name");
+    await Task.Delay(10);
+    return GetRandomItem(Adjectives) + " " + GetRandomItem(Animals);
+}
+</code></pre>
+
+<p>Finally we need to initialize the story factory, we will use <code>FileBasedStoryFactory</code> which lets us update the ruleset on the fly. The ruleset itself is a class written in a file, to change it we change the code in that file and copy it over to the server.</p>
+
+<blockquote>
+  <p>The ruleset code file is stored in the project both as a source file (Compile) and as a content file (marked as "Copy Always") so it has the benefit of intellisense and used as an external file to the project.</p>
+</blockquote>
+
+<pre><code>// Startup.cs
+public void Configuration(IAppBuilder appBuilder)
+{
+    Storytelling.Factory = new FileBasedStoryFactory(ConfigurationManager.AppSettings["StoryRulesetPath"]);
+    // ...
+}
+
+// StoryRuleset.cs
+public class StoryRuleset : Ruleset&lt;IStory, IStoryHandler&gt;
+{
+    public StoryRuleset()
+    {
+        IStoryHandler storyHandler =
+            StoryHandlers.DefaultTraceHandler.Compose(
+            new AzureTableStorageHandler("AzureTable", azureTableStorageConfiguration));
+
+        Rules.Add(
+            new PredicateRule(
+                story =&gt; story.IsRoot(),
+                story =&gt; storyHandler));
+    }
+}
+</code></pre>
+
+<p>You'll notice we've added both a story handler that sends stories to the Trace and one that sends stories to the azure table storage.
+To make the second one work you'll need to add a connection string for your azure storage account with the name "StoryTableStorage" (can be in the web/app.config or the azure portal settings if using azure).</p>
+
+<blockquote>
+  <p>If you use the azure table storage story handler to persist your stories and also use Azure Web Apps to deploy your web application you can install the <a href="https://www.siteextensions.net/packages/websitelogs/">Azure Websites Log Browser</a> (<a href="http://blog.amitapple.com/post/2014/06/azure-website-logging/">blog post here</a>) which now supports viewing your stories in a readable way.</p>
+</blockquote>
+
+<p><img src="/images/viewstory.png" alt="Log Browser" /></p>
+
+<p>You can find the full sample app <a href="https://github.com/amitapl/FooWebApplication">here on github</a>.</p>
+
+<p>It also has a <strong>Deploy to Azure</strong> button if you want to try it out on the cloud and try out the log browser site extension, just make sure to set the azure storage connection string (when asked). To access the log browser, go to: <code>https://{sitename}.scm.azurewebsites.net/websitelogs/</code>.</p>
+
+<p>You can find more information about the Story framework <a href="https://github.com/narratr/story">here</a>.</p>
+
+    </div>
+
+    <div id="disqus_thread"></div>
+<script>
+    var reset_disqus = function(){
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                //this.page.identifier = '';
+                this.page.url = 'http://blog.amitapple.com/post/2015/11/story-new-logging-approach/';
+                //this.page.title = '';
+            }
+        });
+    };
+
+    var disqus_shortname = 'blogamitapple';
+    var disqus_url = 'http://blog.amitapple.com/post/2015/11/story-new-logging-approach/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    window.addEventListener('orientationchange', reset_disqus);
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>&copy; 2014 - Powered by <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a>.</p>
+        </footer>
+    </div> <!-- /container -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/prettify.js"></script>
+
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-34307246-1']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+    <script>
+        $('pre').addClass('prettyprint');
+        !function ($) {
+            $(function () {
+                window.prettyPrint && prettyPrint()
+            })
+        }(window.jQuery)
+    </script>
+</body>
+</html>

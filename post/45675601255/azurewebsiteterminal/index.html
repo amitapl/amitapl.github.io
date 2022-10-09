@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="last-modified" content="2020-05-28T20:51:05.6982304+00:00" />
+    <meta name="keywords" content="Azure Websites,Azure Web Apps" />
+    <title>Blog.Amit Apple</title>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="/stylesheets/prettify.css">
+    <link href="/stylesheets/styles.css" rel="stylesheet" media="screen">
+
+    <script type="text/javascript">
+        window.appInsights={queue:[],applicationInsightsId:null,accountId:null,appUserId:null,configUrl:null,start:function(n){function u(n){t[n]=function(){var i=arguments;t.queue.push(function(){t[n].apply(t,i)})}}function f(n,t){if(n){var u=r.createElement(i);u.type="text/javascript";u.src=n;u.async=!0;u.onload=t;u.onerror=t;r.getElementsByTagName(i)[0].parentNode.appendChild(u)}else t()}var r=document,t=this,i;t.applicationInsightsId=n;u("logEvent");u("logPageView");i="script";f(t.configUrl,function(){f("//az416426.vo.msecnd.net/scripts/a/ai.0.7.js")});t.start=function(){}}};
+        
+        appInsights.start("21e48bf6-b6c7-4526-99b0-8afef5a10e20");
+        appInsights.logPageView();
+    </script>
+
+    <link rel="canonical" href="http://blog.amitapple.com/post/45675601255/azurewebsiteterminal" />
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img class="img img-circle" src="http://www.gravatar.com/avatar/39b6f2748dea9f8eef5323c14e7be79d.jpg?s=80" /></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a style="font-weight: bold" href="/">Blog.Amit Apple</a></li>
+            </ul>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/category">Categories</a></li>
+                    <li><a href="/archive">Archive</a></li>
+                    <li><a href="/feed.xml">RSS</a></li>
+                </ul>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </div>
+
+    
+
+    <div class="container">
+
+        <div class="row">
+            
+
+<div class="blog-main" id="post">
+    <h1 class="blog-post-title">Simple terminal for your Azure Web App</h1>
+
+    <div class="blog-post-meta">
+        posted on 18 May 2013
+            | <a class="label label-info" href="/category/azure-websites">Azure Websites</a>
+            | <a class="label label-info" href="/category/azure-web-apps">Azure Web Apps</a>
+    </div>
+
+    <div class="row">
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style row pull-right" style="margin:10px">
+            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+            <a class="addthis_button_tweet"></a>
+        </div>
+        <script type="text/javascript">var addthis_config = { "data_track_addressbar": true };</script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-537248a1187b7a5c"></script>
+    </div>
+    <div class="blog-post">
+        <!-- AddThis Button END -->
+        
+
+        <p>This guide will help you run server-side commands on your Azure Web App hosting environment, it is very simple and useful and since it's implemented in node.js, it'll work on any (node) supporting OS (Windows / MAC / Linux).</p>
+
+<ul>
+<li><p>First, you should install <a href="http://nodejs.org/">node.js</a> if you don't already have it (#whynot?).</p></li>
+<li><p>Install <a href="http://github.com/projectkudu/KuduExec">KuduExec</a>:</p>
+
+<p><code>npm install kuduexec -g</code></p>
+
+<p><strong>Note:</strong> There's also a .NET version of kuduexec called <a href="https://github.com/projectkudu/KuduExec.NET">KuduExec.NET</a></p></li>
+<li><p>Find your "kuduexec" Azure Web App endpoint:</p>
+
+<ul>
+<li><p>Add "scm" after your site's name (if you have a custom domain you still need to add this to the original URL you received from Azure), for example:</p>
+
+<p>http://somesitename.azurewebsites.net/ --&gt; https://somesitename.<code>scm</code>.azurewebsites.net/</p></li>
+<li><p>If you have "git deployment" enabled on your site you can get the endpoint (including user name and password) from the Azure portal go to you site, under the <em>CONFIGURE</em> tab, on the <em>git</em> section in the <em>DEPLOYMENT TRIGGER URL</em>:</p>
+
+<p><img src="/images/2013-05-18-azure-website-terminal.md1.png" alt="" /></p></li>
+</ul></li>
+<li><p>Now that you have your endpoint, open a shell window and run the command:</p>
+
+<p><code>kuduexec &lt;Your endpoint URL / git deployment url&gt;</code></p>
+
+<p>For example:</p>
+
+<p><code>kuduexec https://somesitename.scm.azurewebsites.net/</code></p>
+
+<p><strong>Note:</strong> You can also add your user name and password to the url (otherwise it simply asks you for them):</p>
+
+<p><code>kuduexec https://username@somesitename.scm.azurewebsites.net/</code></p></li>
+<li><p>At this point you'll see a command prompt with the root directory of your site (not "wwwroot"), some info on the <a href="https://github.com/projectkudu/kudu/wiki/File-structure-on-azure">directory structure</a>.</p></li>
+<li><p>Now you can run your commands, including shell commands such as "cd", "dir" and "copy", you'll also be able to run executables such as "git" and "npm".</p>
+
+<p><img src="/images/2013-05-18-azure-website-terminal.md2.png" alt="" /></p></li>
+<li><p>To quit simply type <code>exit</code></p></li>
+</ul>
+
+<h2>Usage Examples</h2>
+
+<ul>
+<li><p>One useful scenario this can help you with is when you want to run a <strong>garbage collection</strong> on your git repository, which can reduce your storage usage:</p>
+
+<ul>
+<li><p>Simply go to the repository directory: <code>cd site\repository</code></p></li>
+<li><p>And run: <code>git gc</code></p></li>
+</ul></li>
+<li><p>Another will be to check if you some lingering processes using: <code>ps -W</code></p>
+
+<ul>
+<li><p>Here I have a lingering node.exe process and I kill it using: <code>kill</code></p>
+
+<pre><code>C:\DWASFiles\Sites\somesitename\VirtualDirectory0&gt; ps -W
+PID    PPID    PGID     WINPID  TTY  UID    STIME COMMAND
+    14620       0       0      14620    ?    0 08:26:30 D:\Windows\SysWOW64\inetsrv\w3wp.exe
+      824       0       0        824    ?    0 08:40:04 D:\Windows\SysWOW64\cmd.exe
+    28484       0       0      28484    ?    0 08:40:04 D:\Program Files (x86)\nodejs\node.exe
+    11584       1   11584      11584    ?  500 08:40:48 /bin/ps
+C:\DWASFiles\Sites\somesitename\VirtualDirectory0&gt; kill -f 28484
+C:\DWASFiles\Sites\somesitename\VirtualDirectory0&gt; ps -W
+PID    PPID    PGID     WINPID  TTY  UID    STIME COMMAND
+    14620       0       0      14620    ?    0 08:26:30 D:\Windows\SysWOW64\inetsrv\w3wp.exe
+    29008       0       0      29008    ?    0 08:41:08 D:\Windows\SysWOW64\cmd.exe
+    19756       1   19756      19756    ?  500 08:41:08 /bin/ps
+C:\DWASFiles\Sites\somesitename\VirtualDirectory0&gt;
+</code></pre></li>
+</ul></li>
+</ul>
+
+<h2>Important notes</h2>
+
+<ul>
+<li><p>This simple terminal is not for running interactive commands, running a command that requires user input will hang (for 3 minutes until recognized as hanging process and then it will be aborted) since there is no way, currently, to provide input for the running command.</p></li>
+<li><p>The output for a single command will arrive only after the command finish running, so if you run a long running command it'll take time for the output to show
+(other than piping: <code>requireInput.exe &lt; input.txt</code>).</p></li>
+</ul>
+
+<h2>Update</h2>
+
+<p>You can find an online terminal to your site under  <code>https://somesitename.scm.azurewebsites.net/DebugConsole/</code></p>
+
+    </div>
+
+    <div id="disqus_thread"></div>
+<script>
+    var reset_disqus = function(){
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                //this.page.identifier = '';
+                this.page.url = 'http://blog.amitapple.com/post/45675601255/azurewebsiteterminal';
+                //this.page.title = '';
+            }
+        });
+    };
+
+    var disqus_shortname = 'blogamitapple';
+    var disqus_url = 'http://blog.amitapple.com/post/45675601255/azurewebsiteterminal';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    window.addEventListener('orientationchange', reset_disqus);
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>&copy; 2014 - Powered by <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a>.</p>
+        </footer>
+    </div> <!-- /container -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/prettify.js"></script>
+
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-34307246-1']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+    <script>
+        $('pre').addClass('prettyprint');
+        !function ($) {
+            $(function () {
+                window.prettyPrint && prettyPrint()
+            })
+        }(window.jQuery)
+    </script>
+</body>
+</html>

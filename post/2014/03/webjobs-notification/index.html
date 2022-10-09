@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="last-modified" content="2020-05-28T20:51:05.6982304+00:00" />
+    <meta name="keywords" content="Azure WebJobs" />
+    <title>Blog.Amit Apple</title>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="/stylesheets/prettify.css">
+    <link href="/stylesheets/styles.css" rel="stylesheet" media="screen">
+
+    <script type="text/javascript">
+        window.appInsights={queue:[],applicationInsightsId:null,accountId:null,appUserId:null,configUrl:null,start:function(n){function u(n){t[n]=function(){var i=arguments;t.queue.push(function(){t[n].apply(t,i)})}}function f(n,t){if(n){var u=r.createElement(i);u.type="text/javascript";u.src=n;u.async=!0;u.onload=t;u.onerror=t;r.getElementsByTagName(i)[0].parentNode.appendChild(u)}else t()}var r=document,t=this,i;t.applicationInsightsId=n;u("logEvent");u("logPageView");i="script";f(t.configUrl,function(){f("//az416426.vo.msecnd.net/scripts/a/ai.0.7.js")});t.start=function(){}}};
+        
+        appInsights.start("21e48bf6-b6c7-4526-99b0-8afef5a10e20");
+        appInsights.logPageView();
+    </script>
+
+    <link rel="canonical" href="http://blog.amitapple.com/post/2014/03/webjobs-notification/" />
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img class="img img-circle" src="http://www.gravatar.com/avatar/39b6f2748dea9f8eef5323c14e7be79d.jpg?s=80" /></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a style="font-weight: bold" href="/">Blog.Amit Apple</a></li>
+            </ul>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/category">Categories</a></li>
+                    <li><a href="/archive">Archive</a></li>
+                    <li><a href="/feed.xml">RSS</a></li>
+                </ul>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </div>
+
+    
+
+    <div class="container">
+
+        <div class="row">
+            
+
+<div class="blog-main" id="post">
+    <h1 class="blog-post-title">Getting notified when your Azure triggered WebJobs completes</h1>
+
+    <div class="blog-post-meta">
+        posted on 31 Mar 2014
+            | <a class="label label-info" href="/category/azure-webjobs">Azure WebJobs</a>
+    </div>
+
+    <div class="row">
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style row pull-right" style="margin:10px">
+            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+            <a class="addthis_button_tweet"></a>
+        </div>
+        <script type="text/javascript">var addthis_config = { "data_track_addressbar": true };</script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-537248a1187b7a5c"></script>
+    </div>
+    <div class="blog-post">
+        <!-- AddThis Button END -->
+        
+
+        <p><strong>Microsoft Azure WebJobs</strong> are awesome, and now a little bit more... I'm going to show you how you can setup a notification whenever your triggered (on-demand or scheduled) WebJobs completes.</p>
+
+<p>The notification part is done by integration between Azure and Zapier which provides many different notification types such as: email, phone call, SMS, Facebook post and more, for this post I'll use a phone call but it is very easy to use any of them.</p>
+
+<blockquote>
+  <p>NOTE: In a previous <a href="http://blog.amitapple.com/post/56390805814/deployment-email/">post</a> I explained about <a href="http://zapier.com">Zapier</a> and how you can have a notification when your Azure Web App deployment completes, this is very similar only with a triggered WebJob.</p>
+</blockquote>
+
+<p><strong>Let's do it:</strong></p>
+
+<h3>Prerequisites</h3>
+
+<ul>
+<li><p>An Azure Web App with at least 1 triggered (on-demand or scheduled) WebJob (although you can add it later).</p></li>
+<li><p>Sign up to <a href="https://zapier.com/app/signup">Zapier</a></p></li>
+<li><p>Have both the Zapier and Azure portal open</p></li>
+</ul>
+
+<h3>Steps</h3>
+
+<ul>
+<li><p>Go to Zapier and create a new zap (<em>Make a Zap!</em>).</p></li>
+<li><p>For the trigger service select <strong>Azure Web Sites</strong>.</p></li>
+<li><p>For the trigger select <strong>New Triggered WebJob Run</strong>.</p></li>
+<li><p>For the action, we'll select <strong>Phone</strong> and <strong>Call Phone</strong> for this sample but any can be selected.</p>
+
+<p><img src="/images/webjobs_phone1.png" alt="" /></p></li>
+<li><p>Click Continue</p></li>
+<li><p>We need to connect to our Azure Web Site hosting our triggered WebJob, for this we need one piece of information from the Azure portal.</p></li>
+</ul>
+
+<p><strong>This is the tricky part:</strong></p>
+
+<ul>
+<li><p>If your website has continuous deployment setup --> in the Azure portal go to your website, click on the <strong>CONFIGURE</strong> tab and under the <strong>git</strong> section copy the url which is under the <strong>DEPLOYMENT TRIGGER URL</strong>.</p>
+
+<p><img src="/images/2013-09-06-deployment-email.md3.png" alt="" /></p></li>
+<li><p>If you don't have continuous deployment, you can author this url yourself, it is: <code>https://{userName}:{password}@{siteName}.scm.azurewebsites.net/deploy</code> where you get the <code>{userName}</code> and <code>{password}</code> from your site's publishing profile.</p>
+
+<p><img src="/images/webjobs_phone3.png" alt="" /></p>
+
+<p><img src="/images/webjobs_phone4.png" alt="" /></p></li>
+<li><p>Go back to the Zapier site and paste this url to the <strong>Deployment URL</strong> textbox, enter a name for this website account and click continue.</p>
+
+<p><img src="/images/webjobs_phone2.png" alt="" /></p></li>
+<li><p>Now create your phone account by providing the phone number and verifying it.</p></li>
+<li><p>At this point you can filter when you actually want to initiate the action, for example only when the WebJob run fails or only for a specific WebJob (by name), for now we keep this empty as we want to be notified on all WebJobs runs, click continue.</p></li>
+<li><p>Next you specify the content of the message, it can be static and dynamic using the WebJob run result.</p></li>
+<li><p>For example we'll use: <code>Hello the WebJob named {{job_name}} has completed with status {{status}} and took {{duration}}</code>, on the right you can use the "Insert fields" button to add other interesting dynamic fields.</p></li>
+<li><p>You can even choose the voice of the caller (Man/Woman), I'll let you pick this one.</p>
+
+<p><img src="/images/webjobs_phone5.png" alt="" /></p></li>
+<li><p>Continue</p></li>
+<li><p><strong>Test this Zap</strong> lets you test your zap by getting previous WebJob runs and doing the selected action on them, click the button and then you can skip the step or test your Zap.</p></li>
+<li><p><strong>Name and turn this Zap on</strong></p></li>
+<li><p>Now go to your Azure portal, run your WebJob, wait for it to complete and wait for the call :)</p></li>
+</ul>
+
+<p>Get more help about <a href="https://zapier.com/help/windows-azure-web-sites/">Windows Azure Web Sites on Zapier</a>.</p>
+
+    </div>
+
+    <div id="disqus_thread"></div>
+<script>
+    var reset_disqus = function(){
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                //this.page.identifier = '';
+                this.page.url = 'http://blog.amitapple.com/post/2014/03/webjobs-notification/';
+                //this.page.title = '';
+            }
+        });
+    };
+
+    var disqus_shortname = 'blogamitapple';
+    var disqus_url = 'http://blog.amitapple.com/post/2014/03/webjobs-notification/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    window.addEventListener('orientationchange', reset_disqus);
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>&copy; 2014 - Powered by <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a>.</p>
+        </footer>
+    </div> <!-- /container -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/prettify.js"></script>
+
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-34307246-1']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+    <script>
+        $('pre').addClass('prettyprint');
+        !function ($) {
+            $(function () {
+                window.prettyPrint && prettyPrint()
+            })
+        }(window.jQuery)
+    </script>
+</body>
+</html>

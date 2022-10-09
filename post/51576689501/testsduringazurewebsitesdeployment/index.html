@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="last-modified" content="2020-05-28T20:51:05.6982304+00:00" />
+    <meta name="keywords" content="Azure Websites,Azure Web Apps" />
+    <title>Blog.Amit Apple</title>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="/stylesheets/prettify.css">
+    <link href="/stylesheets/styles.css" rel="stylesheet" media="screen">
+
+    <script type="text/javascript">
+        window.appInsights={queue:[],applicationInsightsId:null,accountId:null,appUserId:null,configUrl:null,start:function(n){function u(n){t[n]=function(){var i=arguments;t.queue.push(function(){t[n].apply(t,i)})}}function f(n,t){if(n){var u=r.createElement(i);u.type="text/javascript";u.src=n;u.async=!0;u.onload=t;u.onerror=t;r.getElementsByTagName(i)[0].parentNode.appendChild(u)}else t()}var r=document,t=this,i;t.applicationInsightsId=n;u("logEvent");u("logPageView");i="script";f(t.configUrl,function(){f("//az416426.vo.msecnd.net/scripts/a/ai.0.7.js")});t.start=function(){}}};
+        
+        appInsights.start("21e48bf6-b6c7-4526-99b0-8afef5a10e20");
+        appInsights.logPageView();
+    </script>
+
+    <link rel="canonical" href="http://blog.amitapple.com/post/51576689501/testsduringazurewebsitesdeployment" />
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img class="img img-circle" src="http://www.gravatar.com/avatar/39b6f2748dea9f8eef5323c14e7be79d.jpg?s=80" /></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a style="font-weight: bold" href="/">Blog.Amit Apple</a></li>
+            </ul>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/category">Categories</a></li>
+                    <li><a href="/archive">Archive</a></li>
+                    <li><a href="/feed.xml">RSS</a></li>
+                </ul>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </div>
+
+    
+
+    <div class="container">
+
+        <div class="row">
+            
+
+<div class="blog-main" id="post">
+    <h1 class="blog-post-title">Run tests during Azure Web Apps (Websites) deployment</h1>
+
+    <div class="blog-post-meta">
+        posted on 28 May 2013
+            | <a class="label label-info" href="/category/azure-websites">Azure Websites</a>
+            | <a class="label label-info" href="/category/azure-web-apps">Azure Web Apps</a>
+    </div>
+
+    <div class="row">
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style row pull-right" style="margin:10px">
+            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+            <a class="addthis_button_tweet"></a>
+        </div>
+        <script type="text/javascript">var addthis_config = { "data_track_addressbar": true };</script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-537248a1187b7a5c"></script>
+    </div>
+    <div class="blog-post">
+        <!-- AddThis Button END -->
+        
+
+        <p><strong>Deploying</strong> websites to Azure using GIT has never been easier, and now a new support for running .NET unit tests was added.</p>
+
+<p>To run tests during website deployment you'll need to customize your deployment by generating a deployment script, this is described in the following <a href="/post/38418009331/azurewebsitecustomdeploymentpart2" title="Microsoft Azure Web Apps - Custom Deployment Scripts Generator">article</a>.</p>
+
+<h3>In a nut shell:</h3>
+
+<ul>
+<li>Make sure you have node.js installed on your machine.</li>
+<li>Open a command shell window.</li>
+<li>Install azure-cli (if you don't have it yet) using the command: <code>npm install azure-cli -g</code>.</li>
+</ul>
+
+<p>Now that prerequisites are there, go to your root repository directory in the same command shell and generate the custom deployment script.</p>
+
+<h3>For an asp.net web application run the following command:</h3>
+
+<p><code>azure site deploymentscript --aspWAP  -s</code></p>
+
+<p>For example:</p>
+
+<p><code>azure site deploymentscript --aspWAP MyWebApp\MyWebApp.csproj -s MyWebApp.sln</code></p>
+
+<p>This will generate a <code>deploy.cmd</code> file under the root of your repository, we need to update this file in order to make the unit tests run during deployment.</p>
+
+<h3>On the default <code>deploy.cmd</code> file we have 2 steps:</h3>
+
+<ol>
+<li>Build site (to a temporary path).</li>
+<li>Copy changed files from the temporary path to your wwwroot.</li>
+</ol>
+
+<h3>We'll add 2 steps in the middle like so:</h3>
+
+<p><em>1. Build site (to a temporary path).</em></p>
+
+<p><strong>2. Build test project (because the first step will only build whatever is required for the site and not other projects that may exist in the repository).</strong></p>
+
+<p><strong>3. Run tests.</strong></p>
+
+<p><em>4. Copy changed files from the temporary path to your wwwroot (but only do this step if tests passed/build was successful).</em></p>
+
+<h3>To do that add the following code between step <code>:: 1.</code> and step <code>:: 2.</code> like so:</h3>
+
+<pre><code>:: 1. Build to the temporary path
+%MSBUILD_PATH% "%DEPLOYMENT_SOURCE%\MvcTest\MvcTest.csproj" /nologo /verbosity:m /t:Build /t:pipelinePreDeployCopyAllFilesToOneFolder /p:_PackageTempDir="%DEPLOYMENT_TEMP%";AutoParameterizationWebConfigConnectionStrings=false;Configuration=Release /p:SolutionDir="%DEPLOYMENT_SOURCE%\.\\" %SCM_BUILD_ARGS%
+IF !ERRORLEVEL! NEQ 0 goto error
+</code></pre>
+
+<hr />
+
+<pre><code>:: 2. Building test project
+echo Building test project
+"%MSBUILD_PATH%" "%DEPLOYMENT_SOURCE%\MvcTest.Tests\MvcTest.Tests.csproj"
+IF !ERRORLEVEL! NEQ 0 goto error
+
+:: 3. Running tests
+echo Running tests
+vstest.console.exe "%DEPLOYMENT_SOURCE%\MvcTest.Tests\bin\Debug\MvcTest.Tests.dll"
+IF !ERRORLEVEL! NEQ 0 goto error
+</code></pre>
+
+<hr />
+
+<pre><code>:: 4. KuduSync
+call %KUDU_SYNC_CMD% -v 50 -f "%DEPLOYMENT_TEMP%" -t "%DEPLOYMENT_TARGET%" -n "%NEXT_MANIFEST_PATH%" -p "%PREVIOUS_MANIFEST_PATH%" -i ".git;.hg;.deployment;deploy.cmd"
+IF !ERRORLEVEL! NEQ 0 goto error
+</code></pre>
+
+<p>As you can see the test runner being used is <code>vstest.console.exe</code> which is new for VS 2012, if you have VS2012 you can run this script locally (in a VS2012 command shell) to make sure your updated script works.</p>
+
+<p><code>vstest.console.exe</code> will recognize any test that exists in the supplied test assembly and will run it whether the test is mstest, xunit or nunit, and they could all be in the same assembly.</p>
+
+<p>For a full working example of this capability try the following GitHub repository (which you can deploy on a test site just to get the feel of it): <a href="https://github.com/KuduApps/MvcAppWithTests/"></a></p>
+
+    </div>
+
+    <div id="disqus_thread"></div>
+<script>
+    var reset_disqus = function(){
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                //this.page.identifier = '';
+                this.page.url = 'http://blog.amitapple.com/post/51576689501/testsduringazurewebsitesdeployment';
+                //this.page.title = '';
+            }
+        });
+    };
+
+    var disqus_shortname = 'blogamitapple';
+    var disqus_url = 'http://blog.amitapple.com/post/51576689501/testsduringazurewebsitesdeployment';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    window.addEventListener('orientationchange', reset_disqus);
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>&copy; 2014 - Powered by <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a>.</p>
+        </footer>
+    </div> <!-- /container -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/prettify.js"></script>
+
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-34307246-1']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+    <script>
+        $('pre').addClass('prettyprint');
+        !function ($) {
+            $(function () {
+                window.prettyPrint && prettyPrint()
+            })
+        }(window.jQuery)
+    </script>
+</body>
+</html>
